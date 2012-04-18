@@ -1,8 +1,20 @@
 body {
 	padding: 0 24px;
-	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-family: "HelveticaNeue-Ultralight", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-variant: Light;
 }
 
 h1 {
 	font-weight: normal;
+}
+
+body > header h1 {
+	font-weight: normal;
+	margin-bottom: 0;
+}
+body > header h2 {
+	margin-top: 0;
+	font-size: 1em;
+	font-weight: normal;
+	color: #8d8d8d;
 }
