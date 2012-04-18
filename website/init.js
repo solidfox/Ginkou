@@ -4,9 +4,12 @@ $(function() {
 		ajaxOptions: {
 			error: function( xhr, status, index, anchor ) {
 				$( anchor.hash ).html(
-					"Couldn't load this tab. We'll try to fix this as soon as possible. " +
-					"If this wouldn't be a demo." );
+					"Ojoj, ajaxfel. Illa illa dschlaug@kth.se är förmodligen skyldig." );
 			}
-		}
+		},
+//		cookie: {
+			// store cookie for a 365 days, without, it would be a session cookie
+//			expires: 365
+//		}
 	});
 });
