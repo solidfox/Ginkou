@@ -8,10 +8,12 @@
 	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js'></script>
 	<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.js'></script>
 	<script src="libraries/jquery.cookie.js" type="text/javascript"></script>
+	<script src="libraries/jquery.dataTables.js" type="text/javascript"></script>
 	
 	<script src='init.js'></script>
 	
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/cupertino/jquery-ui.css" type="text/css" />
+	<link rel="stylesheet" href="css/demo_table_jui.css" type="text/css" />
+	<link rel="stylesheet" href="css/jqueryui/jquery-ui-1.8.19.custom.css" type="text/css" />
 	<link rel="stylesheet" href="styles.css" type="text/css" />
 	
 	<!--[if lt IE 9]>
@@ -23,17 +25,94 @@
 <h1>銀行 : Ginkou</h1>
 <h2>Internetbank 2.0</h2>
 </header>
+<div id="sidebar">
+	<header>
+		<h1>Filter</h1>
+	</header>
+	<ul>
+		<li>Alla konton</li>
+		<li>Konto 1</li>
+		<li>Konto 2</li>
+	</ul>
+</div>
 <div id="maintabs">
 	<ul>
 		<li><a href="#start">Start</a></li>
 		<li><a href="#history">Kontohistorik</a></li>
 	</ul>
 	<article id="start">
-		<h1>Välkommen till Ginkou</h1>
+		<header>
+			<h1>Välkommen till Ginkou</h1>
+		</header>
 		<p>Ginkou laddar ned kontohistorik från din internetbank och sparar den i en databas.</p>
-	</article>
+		</article>
 	<article id="history">
-		
+		<table id="DThistory">
+			<thead>
+				<tr>
+					<th>Konto</th>
+					<th>Datum</th>
+					<th>Notis</th>
+					<th>Summa</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1234-56789</td>
+					<td><time datetime="2012-04-18">2012-04-18</time></td>
+					<td>tsnabben</td>
+					<td>32 kr</td>
+				</tr>
+				<tr>
+					<td>1234-56789</td>
+					<td><time datetime="2012-04-18">2012-04-19</time></td>
+					<td>coop</td>
+					<td>128 kr</td>
+				</tr>
+				<tr>
+					<td>1234-56789</td>
+					<td><time datetime="2012-04-18">2012-04-19</time></td>
+					<td>coop</td>
+					<td>128 kr</td>
+				</tr>
+				<tr>
+					<td>1234-56789</td>
+					<td><time datetime="2012-04-18">2012-04-19</time></td>
+					<td>coop</td>
+					<td>128 kr</td>
+				</tr>
+				<tr>
+					<td>1234-56789</td>
+					<td><time datetime="2012-04-18">2012-04-19</time></td>
+					<td>coop</td>
+					<td>128 kr</td>
+				</tr>
+				<tr>
+					<td>1234-56789</td>
+					<td><time datetime="2012-04-18">2012-04-19</time></td>
+					<td>coop</td>
+					<td>128 kr</td>
+				</tr>
+				<tr>
+					<td>1234-56789</td>
+					<td><time datetime="2012-04-18">2012-04-19</time></td>
+					<td>coop</td>
+					<td>128 kr</td>
+				</tr>
+				<tr>
+					<td>1234-56789</td>
+					<td><time datetime="2012-04-18">2012-04-19</time></td>
+					<td>coop</td>
+					<td>128 kr</td>
+				</tr>
+				<tr>
+					<td>1234-56789</td>
+					<td><time datetime="2012-04-18">2012-04-19</time></td>
+					<td>coop</td>
+					<td>128 kr</td>
+				</tr>
+			</tbody>
+		</table>
 	</article>
 </div>
 </body>

@@ -1,7 +1,10 @@
 body {
 	padding: 0 24px;
+	font-family: Arial, sans-serif;
+}
+
+header {
 	font-family: "HelveticaNeue-Ultralight", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	font-variant: Light;
 }
 
 h1 {
@@ -18,3 +21,105 @@ body > header h2 {
 	font-weight: normal;
 	color: #8d8d8d;
 }
+
+/* @group Sidebar */
+
+/* Room for the sidebar */
+.ui-tabs-panel {
+	margin-left: 224px;
+}
+
+#sidebar {
+	padding-left: 28px;
+	position: absolute;
+	z-index: 2;
+	top: 147px;	
+	font-size: .9em;
+	width: 198px;
+}
+#sidebar li {
+	margin: .6em 0;
+	list-style-type: none;
+}
+#sidebar ul {
+	padding-left: 0;
+}
+
+/* @end */
+
+/* @group History */
+
+#history {
+	padding: 0;
+}
+
+td.sum {
+	text-align: right;
+}
+.account {
+	width: 100px;
+}
+.date {
+	width: 100px;
+}
+.sum {
+	width: 100px;
+}
+
+/* @end */
+
+/* @group DataTables */
+
+/*
+ * Override styles needed due to the mix of three different CSS sources! For proper examples
+ * please see the themes example in the 'Examples' section of this site
+ */
+.dataTables_info { padding-top: 0; }
+.dataTables_paginate { padding-top: 0; }
+.css_right { float: right; }
+#example_wrapper .fg-toolbar { font-size: 0.8em }
+#theme_links span { float: left; padding: 2px 10px; }
+
+.dataTable {
+	width: 100%;
+}
+
+.DataTables_sort_wrapper {
+	font-family: "HelveticaNeue-Ultralight", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+.dataTables_wrapper > .ui-widget-header {
+	border: none;
+	background: none;
+}
+
+.dataTables_length {
+	margin-top: 3px;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+tr {
+	font-size: .9em;
+	font-weight: lighter;
+}
+td {
+	padding: .6em;
+}
+tr.odd {
+	background-color: #f4f4f4;
+}
+tr.odd td.sorting_1 {
+	background-color: #f1ece3;
+}
+tr.even {
+	background-color: #FFF;
+}
+tr.even td.sorting_1 {
+	background-color: #f8f6f0;
+}
+
+/* @end */
+
