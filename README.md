@@ -7,6 +7,7 @@
 * jQuery
 * jQuery UI
 * [jQuery cookie](https://github.com/carhartl/jquery-cookie)
+* [DataTables](http://datatables.net/ref#bJQueryUI)
 
 ###Använda?
 
