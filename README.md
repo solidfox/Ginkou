@@ -8,8 +8,10 @@
 * jQuery UI
 * [jQuery cookie](https://github.com/carhartl/jquery-cookie)
 * [DataTables](http://datatables.net/ref#bJQueryUI)
+* [HTTP Core](http://hc.apache.org/index.html)
 
 ###Använda?
 
 * [QUnit](http://docs.jquery.com/Qunit#Using_QUnit)
 * [SQLiteJDBC](http://www.zentus.com/sqlitejdbc/)
+* [Google GSON](http://code.google.com/p/google-gson/)

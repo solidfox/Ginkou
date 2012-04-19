@@ -1,0 +1,29 @@
+-classpath
+'/home/oleg/src/apache.org/httpcomponents/httpcore-4.1.x/target/classes:/home/oleg/src/apache.org/httpcomponents/httpcore-4.1.x/httpcore/target/classes:/home/oleg/src/apache.org/httpcomponents/httpcore-4.1.x/httpcore-nio/target/classes:/home/oleg/src/apache.org/httpcomponents/httpcore-4.1.x/httpcore-osgi/target/classes:/home/oleg/src/apache.org/httpcomponents/httpcore-4.1.x/httpcore-nio/target/httpcore-nio-4.1.4.jar:/home/oleg/src/apache.org/httpcomponents/httpcore-4.1.x/httpcore/target/httpcore-4.1.4.jar'
+-encoding
+'UTF-8'
+-protected
+-quiet
+-source
+'1.5'
+-sourcepath
+'/home/oleg/src/apache.org/httpcomponents/httpcore-4.1.x/httpcore/src/main/java:/home/oleg/src/apache.org/httpcomponents/httpcore-4.1.x/httpcore-nio/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2005-2011 <a href="http://www.apache.org/">The Apache Software Foundation</a>. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/home/oleg/src/apache.org/httpcomponents/httpcore-4.1.x/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'HttpComponents Core 4.1.4 API'
+-link
+'http://download.oracle.com/javase/1.5.0/docs/api'
+-linkoffline
+'http://download.oracle.com/javase/1.5.0/docs/api' '/home/oleg/src/apache.org/httpcomponents/httpcore-4.1.x/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'HttpComponents Core 4.1.4 API'
