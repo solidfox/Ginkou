@@ -9,7 +9,7 @@ $(function() {
 
 // Point DataTable to the history
 $(document).ready(function() {
-	$('#DThistory').dataTable({
+	historyTable = $('#DThistory').dataTable({
 		"bJQueryUI": true,
 		"aoColumns": [
 			{ "sClass": "account" },
@@ -18,4 +18,5 @@ $(document).ready(function() {
 			{ "sClass": "sum" }
 		]
 	});
+	historyTable.fnSort( [ [1,'desc'] ] );
 } );
