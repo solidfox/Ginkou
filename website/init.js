@@ -1,3 +1,5 @@
+$.getScript("/ginkou.js");
+
 // Point jQuery UI to the tabs
 $(function() {
 	$( "#maintabs" ).tabs({

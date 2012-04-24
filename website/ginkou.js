@@ -13,6 +13,16 @@ function GINBankCredentials(bank, username, password) {
 }
 
 
-function GINServer(serverurl) {
-	this.server = serverurl;
+function GINServer(url) {
+	this.url = serverurl;
+}
+
+GINServer.prototype.send = function (JSONData, path) {
+	$.ajax({
+	  type: "POST",
+	  url: this.url + path,
+	  data: JSONData
+	}).done(function( msg ) {
+	  alert( "Data Saved: " + msg );
+	});
 }
