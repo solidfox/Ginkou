@@ -30,6 +30,8 @@ package org.apache.http.examples;
 import java.io.ByteArrayInputStream;
 import java.net.Socket;
 
+import javax.net.ssl.SSLSocketFactory;
+
 import org.apache.http.ConnectionReuseStrategy;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
@@ -97,6 +99,8 @@ public class ElementalHttpPost {
 
         context.setAttribute(ExecutionContext.HTTP_CONNECTION, conn);
         context.setAttribute(ExecutionContext.HTTP_TARGET_HOST, host);
+        
+        BasicConnFactory socketFactory = new SSLSocketFactory();
 
         try {
             

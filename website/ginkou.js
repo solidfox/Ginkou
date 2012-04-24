@@ -13,16 +13,27 @@ function GINBankCredentials(bank, username, password) {
 }
 
 
-function GINServer(url) {
-	this.url = serverurl;
+function GINServer(url, port) {
+	this.url = "http://" + url + (port == undefined ? ":38602" : ":" + port);
 }
 
-GINServer.prototype.send = function (JSONData, path) {
+/* 	
+	Sends a command to the server
+	@arg callback is called 
+*/
+GINServer.prototype.send = function (JSONData, callback) {
+	success = function (data, textStatus, jqXHR) {
+		callback(true, data);
+	}
+	error = function (data, textStatus, jqXHR) {
+		callback(false, data);
+	}
 	$.ajax({
-	  type: "POST",
-	  url: this.url + path,
-	  data: JSONData
-	}).done(function( msg ) {
-	  alert( "Data Saved: " + msg );
+	  url: this.url,
+	  data: JSONData,
+	  timeout: 3000,
+	  success: success,
+	  error: error,
+	  dataType: "json"
 	});
 }
