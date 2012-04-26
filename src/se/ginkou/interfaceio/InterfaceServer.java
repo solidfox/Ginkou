@@ -176,28 +176,40 @@ public class InterfaceServer {
 
             } else {
 
-            	if(method.equals("POST") && path.equals("/ping")){                   
-                    response.setStatusCode(HttpStatus.SC_OK);
-                    
-                    NStringEntity body = new NStringEntity(inString, "UTF-8");
-                    body.setContentType("text/json; charset=UTF-8");
-                    response.setEntity(body);
-                    System.out.println("Responding to " + path);
-            	if(method.equals("POST")){
-            		if(path.equals("/ping")){
-            			response.setStatusCode(HttpStatus.SC_OK);
-
-            			StringEntity body = new StringEntity(inString, "text/html", "UTF-8");
-            			response.setEntity(body);
-            			System.out.println("Responding to " + path);
-            		}
-            		else if(path.equals("/dummybank")){
+            	if (method.equals("GET")) {
+            		if(path.equals("/dummybank")) {
             			final File file = new File(".", "dummypage.html");
             			response.setStatusCode(HttpStatus.SC_OK);
                         NFileEntity body = new NFileEntity(file, "text/html");
                         response.setEntity(body);
                         System.out.println("Serving file " + file.getPath());
-                        
+            		} 
+            	}
+            	
+            	if(method.equals("POST")){
+            		if(path.equals("/ping")){
+            			response.setStatusCode(HttpStatus.SC_OK);
+                        NStringEntity body = new NStringEntity(inString, "UTF-8");
+                        body.setContentType("text/json; charset=UTF-8");
+                        response.setEntity(body);
+                        System.out.println("Responding to " + path);
+            		} else if (path.equals("/datatables")) { 
+            			response.setStatusCode(HttpStatus.SC_OK);
+            			response.addHeader("Access-Control-Allow-Origin", "*");
+            			//DataTablesInterface DTInterface = new DataTablesInterface(inString);
+                        NStringEntity body = new NStringEntity(
+                        		"{\"sEcho\": 1, " +
+                        		"\"iTotalRecords\": \"4\", " +
+                        		"\"iTotalDisplayRecords\": \"4\", " +
+                        		"\"aaData\": [" +
+                        		"{ \"account\": \"1234-323897\", \"date\": \"2011-02-12\", \"notice\": \"Gojgoj\", \"sum\": 500 }," +
+                        		"{ \"account\": \"4321-323897\", \"date\": \"2011-02-16\", \"notice\": \"dsakjh\", \"sum\": 324 }," +
+                        		"{ \"account\": \"1234-323897\", \"date\": \"2011-02-15\", \"notice\": \"Serus\",  \"sum\": 532 }," +
+                        		"{ \"account\": \"4321-323897\", \"date\": \"2011-02-12\", \"notice\": \"Minum\",  \"sum\": 342 }" +
+                        		"]}", "UTF-8");
+                        body.setContentType("text/json; charset=UTF-8");
+                        response.setEntity(body);
+                        System.out.println("Responding to " + path);
             		}
                 }
             }
