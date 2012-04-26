@@ -1,15 +1,17 @@
 package se.ginkou;
 
-import java.sql.Date;
+import org.joda.time.DateTime;
+
 
 public class Transaction {
+	
 	private int id;
 	private Account account;
-	private Date date;
+	private DateTime date;
 	private String notice;
 //	private String category;
 	private double amount;
-	public Transaction(int id, Account account, Date date, String notice, double amount) {
+	public Transaction(int id, Account account, DateTime date, String notice, double amount) {
 		this.account = account;
 		this.date = date;
 		this.notice = notice;
@@ -22,7 +24,7 @@ public class Transaction {
 	public Account getAccount() {
 		return account;
 	}
-	public Date getDate() {
+	public DateTime getDate() {
 		return date;
 	}
 	public String getNotice() {
@@ -37,4 +39,53 @@ public class Transaction {
 //	public long getFlags() {
 //		// TODO determine flags
 //	}
+	@Override
+	public String toString() {
+		return "Transaction [id=" + id + ", account=" + account + ", date="
+				+ date + ", notice=" + notice + ", amount=" + amount + "]";
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((account == null) ? 0 : account.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(amount);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((notice == null) ? 0 : notice.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Transaction other = (Transaction) obj;
+		if (account == null) {
+			if (other.account != null)
+				return false;
+		} else if (!account.equals(other.account))
+			return false;
+		if (Double.doubleToLongBits(amount) != Double
+				.doubleToLongBits(other.amount))
+			return false;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (id != other.id)
+			return false;
+		if (notice == null) {
+			if (other.notice != null)
+				return false;
+		} else if (!notice.equals(other.notice))
+			return false;
+		return true;
+	}
 }
