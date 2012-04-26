@@ -172,12 +172,52 @@ public class InterfaceServer {
 
             } else {
 
-                response.setStatusCode(HttpStatus.SC_OK);
-                NStringEntity body = new NStringEntity("pingpong", "UTF-8");
-                body.setContentType("text/json; charset=UTF-8");
-                response.setEntity(body);
-                System.out.println("Responding to " + path);
+            	if(method.equals("POST") && path.equals("/ping")){                   
+                    response.setStatusCode(HttpStatus.SC_OK);
+                   
+                   
+                    HttpEntity entity = null;
+                    if (request instanceof HttpEntityEnclosingRequest)
+                        entity = ((HttpEntityEnclosingRequest)request).getEntity();
+                    // For some reason, just putting the incoming entity into
+                    // the response will not work. We have to buffer the message.
+                   
+                    String outp = "bananas";
+                    byte[] data;
+                    if (entity == null) {
+                        data = new byte [0];
+                    } else {
+                       
+                       
+//                        InputStream is = entity.getContent();
+//                        ArrayList<Character> ar = new ArrayList<Character>();
+//                        int i;
+//                        while((i = is.read())!=-1){
+//                            char a = (char) i;
+//                            ar.add(a);
+//                        }
+//                        StringBuilder sb = new StringBuilder();
+//                        for(i = 0; i<ar.size();++i){
+//                            sb.append(ar.get(i));
+//                        }
+//                        outp = sb.toString();
+                       
+                       
+                        data = EntityUtils.toByteArray(entity);
+                        outp = new String(data);
+                    }
+                    System.out.println(outp);
+                   
+                    StringEntity body = new StringEntity("plong", "text/json", "UTF-8");
+                    response.setEntity(body);
+                    System.out.println("Responding to " + path);
+                } else {
+                    response.setStatusCode(HttpStatus.SC_OK);
+                    StringEntity body = new StringEntity("pingpong", "text/json", "UTF-8");
+                    response.setEntity(body);
 
+                    System.out.println("Responding to " + path);
+                }
             }
         }
 

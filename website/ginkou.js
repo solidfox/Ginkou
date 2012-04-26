@@ -21,7 +21,7 @@ function GINServer(url, port) {
 	Sends a command to the server
 	@arg callback is called 
 */
-GINServer.prototype.send = function (JSONData, callback) {
+GINServer.prototype.send = function (command, JSONData, callback) {
 	success = function (data, textStatus, jqXHR) {
 		callback(true, data);
 	}
@@ -29,11 +29,12 @@ GINServer.prototype.send = function (JSONData, callback) {
 		callback(false, data);
 	}
 	$.ajax({
-	  url: this.url,
+	  url: this.url+"/"+command,
 	  data: JSONData,
 	  timeout: 3000,
 	  success: success,
 	  error: error,
-	  dataType: "json"
+	  dataType: "json",
+      type: "POST"
 	});
 }

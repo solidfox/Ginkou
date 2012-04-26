@@ -15,7 +15,7 @@
 		test("Does it respond to ping?", 1, function() {
 		  var server = new GINServer("localhost");
 		  stop();
-		  server.send("{command:\"ping\"}", function (succeeded, data) {
+		  server.send("ping", "{command:\"ping\"}", function (succeeded, data) {
 		  	ok(succeeded, "Server responded: " + data);
 		  	start();
 		  });
