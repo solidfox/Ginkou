@@ -11,7 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.joda.time.DateTime;
 
 import se.ginkou.Account;
 import se.ginkou.Transaction;
@@ -22,7 +24,7 @@ import se.ginkou.Transaction;
  */
 public class SQLiteDB implements Database {
 	
-	static SQLiteDB db = null;
+	static HashMap<String,SQLiteDB> dbs = new HashMap<String,SQLiteDB>();
 	Connection conn;
 	
 	/**
@@ -31,19 +33,30 @@ public class SQLiteDB implements Database {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
-	public static SQLiteDB getDB() throws ClassNotFoundException, SQLException {
+	public static SQLiteDB getDB(String dbPath) throws ClassNotFoundException, SQLException {
+		SQLiteDB db = dbs.get(dbPath);
 		if (db == null) {
-			db = new SQLiteDB();
+			db = new SQLiteDB(dbPath);
+			dbs.put(dbPath, db);
 		}
 		return db;
 	}
 	
-	private SQLiteDB() throws SQLException {
-		assertConnection();
+	public static SQLiteDB getDB() throws ClassNotFoundException, SQLException {
+		return getDB("ginkou.db");
+	}
+	
+	private SQLiteDB(String dbPath) throws SQLException {
+		assertConnection(dbPath);
 		assertTransactionTable();
 	}
 	
-	private void assertConnection() throws SQLException {
+	/**
+	 * Asserts that this object has a database connection. This is the only method
+	 * that should be used to achieve such a connection.
+	 * @throws SQLException
+	 */
+	private void assertConnection(String dbPath) throws SQLException {
 		if (conn != null && conn.isValid(2)) {return;}
 		try {
 			Class.forName("org.sqlite.JDBC");
@@ -51,7 +64,8 @@ public class SQLiteDB implements Database {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		this.conn = DriverManager.getConnection("jdbc:sqlite:ginkou.db");
+		this.conn = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
+		conn.setAutoCommit(false);
 	}
 	
 	private void assertTransactionTable() throws SQLException {
@@ -72,62 +86,45 @@ public class SQLiteDB implements Database {
 		InsertTransactionStatement statement = new InsertTransactionStatement();
 		statement.addTransaction(t);
 		statement.executeBatch();
+		conn.commit();
 	}
 	
+	@Override
 	public void addTransactions(Transaction[] ts) throws SQLException {
 		InsertTransactionStatement statement = new InsertTransactionStatement();
 		for (Transaction t : ts) {
 			statement.addTransaction(t);
 		}
 		statement.executeBatch();
+		conn.commit();
 	}
 
 	@Override
-	public Iterator<Transaction> getTransactions(String searchString) throws SQLException {
+	public ArrayList<Transaction> getTransactions(String searchString) throws SQLException {
 		ResultSet rs = conn.createStatement().executeQuery(searchString);
-		return new TransactionResults(rs);
+		ArrayList<Transaction> transactions = new ArrayList<Transaction>();
+		while (rs.next()) {
+			transactions.add(transactionFromResult(rs));
+		}
+		return transactions;
 	}
 	
-	class TransactionResults implements Iterator<Transaction> {
-
-		ResultSet SQLResults;
-		
-		/**
-		 * Create a Transaction Iterator from an SQL ResultSet.
-		 * @param SQLResults
-		 */
-		public TransactionResults(ResultSet SQLResults) {
-			this.SQLResults = SQLResults;
-		}
-		
-		@Override
-		public boolean hasNext() {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-		@Override
-		public Object next() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public void remove() {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		private Transaction generateTransaction() throws SQLException {
-			int id = SQLResults.getInt("id");          
-			Account account = new Account(SQLResults.getInt("accountID")); 
-			Date date = SQLResults.getDate("date");
-			String notice = SQLResults.getString("notice");
-			double amount = SQLResults.getDouble("amount");
-			return new Transaction(id, account, date, notice, amount);
-		}
-		
+	public void clearTransactions() throws SQLException {
+		conn.createStatement().execute("DROP TABLE transactions");
+		conn.commit();
+		assertTransactionTable();
 	}
+	
+	private Transaction transactionFromResult(ResultSet SQLResults) throws SQLException {
+		int id = SQLResults.getInt("id");          
+		Account account = new Account(SQLResults.getInt("accountID")); 
+		DateTime date = new DateTime(SQLResults.getDate("date"));
+		String notice = SQLResults.getString("notice");
+		double amount = SQLResults.getDouble("amount");
+		return new Transaction(id, account, date, notice, amount);
+	}
+	
+	
 	
 	class InsertTransactionStatement {
 		PreparedStatement prep;
@@ -141,7 +138,7 @@ public class SQLiteDB implements Database {
 			assertTransactionTable();
 			prep = conn.prepareStatement(
 					"insert into transactions " +
-					"(id, 	accountID, 	date, 	notice, 	amount, 	category) " +
+					"(id, 	accountID, 	date, 	notice, 	amount, 	categoryID) " +
 					"values " +
 					"(?, 	?, 			?, 		?,			?, 			?);");
 		}
@@ -149,8 +146,8 @@ public class SQLiteDB implements Database {
 		public void addTransaction(Transaction t) throws SQLException {
 			prep.setInt(1, t.getId());
 			prep.setInt(2, t.getAccount().getID());
-			prep.setDate(3, t.getDate());
-			prep.setString(3, t.getNotice());
+			prep.setDate(3, new Date(t.getDate().getMillis()));
+			prep.setString(4, t.getNotice());
 			prep.setDouble(5, t.getAmount());
 			prep.setNull(6, Types.INTEGER);
 			prep.addBatch();
@@ -194,15 +191,6 @@ public class SQLiteDB implements Database {
 		public int[] executeBatch() throws SQLException {
 			return prep.executeBatch();
 		}
-	}
-	
-	/**
-	 * @param args
-	 * @throws SQLException 
-	 * @throws ClassNotFoundException 
-	 */
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		SQLiteDB db = new SQLiteDB();
 	}
 
 }
