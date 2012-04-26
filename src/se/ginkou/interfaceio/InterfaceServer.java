@@ -46,6 +46,7 @@ import org.apache.http.impl.DefaultHttpResponseFactory;
 import org.apache.http.impl.nio.DefaultServerIOEventDispatch;
 import org.apache.http.impl.nio.reactor.DefaultListeningIOReactor;
 import org.apache.http.nio.NHttpConnection;
+import org.apache.http.nio.entity.NFileEntity;
 import org.apache.http.nio.entity.NStringEntity;
 import org.apache.http.nio.protocol.BufferingHttpServiceHandler;
 import org.apache.http.nio.protocol.EventListener;
@@ -185,6 +186,11 @@ public class InterfaceServer {
             		}
             		else if(path.equals("/dummybank")){
             			final File file = new File(".", "dummypage.html");
+            			response.setStatusCode(HttpStatus.SC_OK);
+                        NFileEntity body = new NFileEntity(file, "text/html");
+                        response.setEntity(body);
+                        System.out.println("Serving file " + file.getPath());
+                        
             		}
                 }
             }
