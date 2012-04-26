@@ -13,6 +13,10 @@ $(function() {
 $(document).ready(function() {
 	historyTable = $('#DThistory').dataTable( {
 			"bJQueryUI": true,
+			"bProcessing": true,
+	        "bServerSide": true,
+	        "sAjaxSource": "http://ginkou.se:38602/datatables",
+	        "sServerMethod": "POST",
 			"aaData": [
 				/* Reduced data set */
 				{ "accountID": "567", "account": "1234-323897", "date": "2011-02-12", "notice": "Gojgoj", "sum": 500 },
