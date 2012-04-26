@@ -19,5 +19,26 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/Ginkou/third party packages/joda-time-2.1/joda-time-2.1-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/web-harvest/webharvest_2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/afs/nada.kth.se/home/m/u1j9f3jm/Documents/inda11/Ginkou/lib/web-harvest/doc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/web-harvest/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/commons-email-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/saxon9-dom.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/saxon9.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/bsh.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/activation.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/commons-cli-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/commons-net-ftp-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/groovy-all-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/htmlcleaner.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/js.jar"/>
+	<classpathentry kind="lib" path="lib/web-harvest/mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

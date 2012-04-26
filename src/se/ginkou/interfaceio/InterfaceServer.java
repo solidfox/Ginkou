@@ -26,10 +26,10 @@
  */
 package se.ginkou.interfaceio;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.InetSocketAddress;
-import java.net.URLDecoder;
 import java.util.Locale;
 
 import org.apache.http.HttpEntity;
@@ -46,6 +46,7 @@ import org.apache.http.impl.DefaultHttpResponseFactory;
 import org.apache.http.impl.nio.DefaultServerIOEventDispatch;
 import org.apache.http.impl.nio.reactor.DefaultListeningIOReactor;
 import org.apache.http.nio.NHttpConnection;
+import org.apache.http.nio.entity.NFileEntity;
 import org.apache.http.nio.entity.NStringEntity;
 import org.apache.http.nio.protocol.BufferingHttpServiceHandler;
 import org.apache.http.nio.protocol.EventListener;
@@ -182,6 +183,22 @@ public class InterfaceServer {
                     body.setContentType("text/json; charset=UTF-8");
                     response.setEntity(body);
                     System.out.println("Responding to " + path);
+            	if(method.equals("POST")){
+            		if(path.equals("/ping")){
+            			response.setStatusCode(HttpStatus.SC_OK);
+
+            			StringEntity body = new StringEntity(inString, "text/html", "UTF-8");
+            			response.setEntity(body);
+            			System.out.println("Responding to " + path);
+            		}
+            		else if(path.equals("/dummybank")){
+            			final File file = new File(".", "dummypage.html");
+            			response.setStatusCode(HttpStatus.SC_OK);
+                        NFileEntity body = new NFileEntity(file, "text/html");
+                        response.setEntity(body);
+                        System.out.println("Serving file " + file.getPath());
+                        
+            		}
                 }
             }
         }
