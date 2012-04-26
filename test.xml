@@ -1,7 +1,10 @@
-<xpath expression="//a/@href">
-    <html-to-xml>
-        <http url="localhost:38602/dummypage.html"/>
-    </html-to-xml>
-</xpath>
+<config>
+    <xpath expression="//a/@href">
+        <html-to-xml>
+            <http url="localhost:38602/dummypage.html"/>
+        </html-to-xml>
+    </xpath>
+</config>
+
 
 
