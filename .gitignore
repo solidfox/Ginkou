@@ -1,2 +1,4 @@
 .DS_Store
-*.db
+ginkou.db*
+test.db*
+bin

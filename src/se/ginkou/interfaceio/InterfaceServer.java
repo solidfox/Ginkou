@@ -150,6 +150,7 @@ public class InterfaceServer {
                 byte[] entityContent = EntityUtils.toByteArray(entity);
                 inString = new String(entityContent);
                 System.out.println("Incoming entity content (bytes): " + entityContent.length);
+                System.out.println("Incoming entity: " + inString);
             }
 
             
@@ -158,8 +159,7 @@ public class InterfaceServer {
 
                 response.setStatusCode(HttpStatus.SC_NOT_FOUND);
                 NStringEntity entity = new NStringEntity(
-                        "<html><body><h1>Path " + path +
-                        " not found</h1></body></html>", "UTF-8");
+                        "Path " + path + " not found", "UTF-8");
                 entity.setContentType("text/html; charset=UTF-8");
                 response.setEntity(entity);
                 System.out.println("Path " + path + " not found");
@@ -176,6 +176,13 @@ public class InterfaceServer {
 
             } else {
 
+            	if(method.equals("POST") && path.equals("/ping")){                   
+                    response.setStatusCode(HttpStatus.SC_OK);
+                    
+                    NStringEntity body = new NStringEntity(inString, "UTF-8");
+                    body.setContentType("text/json; charset=UTF-8");
+                    response.setEntity(body);
+                    System.out.println("Responding to " + path);
             	if(method.equals("POST")){
             		if(path.equals("/ping")){
             			response.setStatusCode(HttpStatus.SC_OK);
