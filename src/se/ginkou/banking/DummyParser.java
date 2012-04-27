@@ -32,10 +32,10 @@ public class DummyParser {
 			System.out.println(context.size());
 			//System.out.println(context);			
 			
-			Variable login1 = (Variable) context.get("login1");
+			//Variable login1 = (Variable) context.get("login1");
 			//System.out.println(login1.toString());
-			Variable accounts = (Variable) context.get("accounts");
-			System.out.println(accounts.toString());
+			//Variable accounts = (Variable) context.get("accounts");
+			//System.out.println(accounts.toString());
 			
 			ArrayList<Transaction> al = new ArrayList<Transaction>();
 			int i=1;  
@@ -55,10 +55,11 @@ public class DummyParser {
             i = 0;
             for(Transaction t: al){
             	//System.out.println(i +": "+t.toString());
+            	//SQLiteDB.getDB().addTransaction(t);
             	++i;
             }
             
-            SQLiteDB.getDB().addTransactions((Transaction[])al.toArray());
+            //SQLiteDB.getDB().addTransactions(al.toArray());
             
 			// do something with articles...
 		} catch (FileNotFoundException e) {
