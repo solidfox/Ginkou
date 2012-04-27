@@ -16,19 +16,12 @@ $(document).ready(function() {
 			"bProcessing": true,
 	        "bServerSide": true,
 	        "sAjaxSource": "http://ginkou.se:38602/datatables",
-	        "sServerMethod": "POST",
-			"aaData": [
-				/* Reduced data set */
-				{ "accountID": "567", "account": "1234-323897", "date": "2011-02-12", "notice": "Gojgoj", "sum": 500 },
-				{ "account": "4321-323897", "date": "2011-02-16", "notice": "dsakjh", "sum": 324 },
-				{ "account": "1234-323897", "date": "2011-02-15", "notice": "Serus",  "sum": 532 },
-				{ "account": "4321-323897", "date": "2011-02-12", "notice": "Minum",  "sum": 342 }
-			], 
+	        "sServerMethod": "POST", 
 			"aoColumns": [ 
 				{ "mDataProp": "account", 	"sTitle": "Konto", 	"sClass": "account" },
 				{ "mDataProp": "date", 		"sTitle": "Datum", 	"sClass": "date" },
 				{ "mDataProp": "notice", 	"sTitle": "Notis", 	"sClass": "notice" },
-				{ "mDataProp": "sum", 		"sTitle": "Summa", 	"sClass": "sum" }
+				{ "mDataProp": "amount", 		"sTitle": "Summa", 	"sClass": "amount" }
 			]		
 	} );
 	historyTable.fnSort( [ [1,'desc'] ] );	

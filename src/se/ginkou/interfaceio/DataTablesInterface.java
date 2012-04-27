@@ -121,7 +121,7 @@ public class DataTablesInterface {
 		output.addProperty("iTotalDisplayRecords", iFilteredTotal);
 		output.add("aaData", jsonTransactions);
 		
-		return output.getAsString();
+		return output.toString();
 	}
 	
 	private String implode(String delimiter, String[] strings) {
@@ -135,6 +135,6 @@ public class DataTablesInterface {
 
 	public static void main(String[] args) {
 		DataTablesInterface DT = new DataTablesInterface("sEcho=1&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=10&mDataProp_0=account&mDataProp_1=date&mDataProp_2=notice&mDataProp_3=sum&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&bSearchable_0=true&sSearch_1=&bRegex_1=false&bSearchable_1=true&sSearch_2=&bRegex_2=false&bSearchable_2=true&sSearch_3=&bRegex_3=false&bSearchable_3=true&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=true");
-		DT.getResponse();
+		System.out.println(DT.getResponse());
 	}
 }

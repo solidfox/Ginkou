@@ -32,6 +32,7 @@ import java.io.InterruptedIOException;
 import java.net.InetSocketAddress;
 import java.util.Locale;
 
+import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpException;
@@ -137,6 +138,13 @@ public class InterfaceServer {
                 final HttpContext context) throws HttpException, IOException {
 
         	String inString = null;
+        	
+        	// Print headers
+        	Header[] headers = request.getAllHeaders();
+        	for (Header aHeader : headers) {
+        		System.out.println(aHeader.toString());
+        	}
+        	
         	
         	// Check that we support the HTTP method
             String method = request.getRequestLine().getMethod().toUpperCase(Locale.ENGLISH);

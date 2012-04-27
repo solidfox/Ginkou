@@ -48,7 +48,7 @@ body > header h2 {
 	padding: 0;
 }
 
-td.sum {
+td.amount {
 	text-align: right;
 }
 .account {
@@ -57,8 +57,8 @@ td.sum {
 .date {
 	width: 100px;
 }
-.sum {
-	width: 100px;
+.amount {
+	width: 150px;
 }
 
 /* @end */
