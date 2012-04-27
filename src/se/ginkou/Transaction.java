@@ -18,6 +18,13 @@ public class Transaction {
 		this.amount = amount;
 		this.id = id;
 	}
+	public Transaction(Account account, DateTime date, String notice, double amount) {
+		this.account = account;
+		this.date = date;
+		this.notice = notice;
+		this.amount = amount;
+		// TODO generate unique id
+	}
 	public int getId() {
 		return id;
 	}
