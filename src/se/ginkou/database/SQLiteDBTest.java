@@ -27,6 +27,8 @@ public class SQLiteDBTest extends TestCase {
 			assertEquals(testTransactions[i], result.get(i));
 		}
 		
+		assertEquals(testTransactions.length, db.sizeTransactions());
+		
 		db.clearTransactions();
 		int numberOfTransactions = db.getTransactions("SELECT * FROM transactions").size();
 		assertEquals(0, numberOfTransactions);

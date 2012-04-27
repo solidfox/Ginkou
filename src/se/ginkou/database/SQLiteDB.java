@@ -33,7 +33,7 @@ public class SQLiteDB implements Database {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
-	public static SQLiteDB getDB(String dbPath) throws ClassNotFoundException, SQLException {
+	public static SQLiteDB getDB(String dbPath) {
 		SQLiteDB db = dbs.get(dbPath);
 		if (db == null) {
 			db = new SQLiteDB(dbPath);
@@ -42,11 +42,11 @@ public class SQLiteDB implements Database {
 		return db;
 	}
 	
-	public static SQLiteDB getDB() throws ClassNotFoundException, SQLException {
+	public static SQLiteDB getDB() {
 		return getDB("ginkou.db");
 	}
 	
-	private SQLiteDB(String dbPath) throws SQLException {
+	private SQLiteDB(String dbPath) {
 		assertConnection(dbPath);
 		assertTransactionTable();
 	}
@@ -56,29 +56,54 @@ public class SQLiteDB implements Database {
 	 * that should be used to achieve such a connection.
 	 * @throws SQLException
 	 */
-	private void assertConnection(String dbPath) throws SQLException {
-		if (conn != null && conn.isValid(2)) {return;}
+	private void assertConnection(String dbPath) {
 		try {
+			if (conn != null && conn.isValid(2)) {return;}
 			Class.forName("org.sqlite.JDBC");
+			this.conn = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
+			conn.setAutoCommit(false);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		this.conn = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
-		conn.setAutoCommit(false);
+		
 	}
 	
-	private void assertTransactionTable() throws SQLException {
-		Statement stat = conn.createStatement();
-		stat.executeUpdate(
-				"CREATE TABLE IF NOT EXISTS " +
-				"transactions(" +
-					"id 		INTEGER 	PRIMARY KEY, " +
-					"accountID 	NUMERIC 	NOT NULL, " +
-					"date 		INTEGER 	NOT NULL, " +
-					"notice 	TEXT 		NOT NULL, " +
-					"amount 	NUMERIC 	NOT NULL, " +
-					"categoryID INTEGER 	DEFAULT NULL)");
+	private void assertTransactionTable() {
+		Statement stat;
+		try {
+			stat = conn.createStatement();
+			stat.executeUpdate(
+					"CREATE TABLE IF NOT EXISTS " +
+					"transactions(" +
+						"id 		INTEGER 	PRIMARY KEY, " +
+						"accountID 	NUMERIC 	NOT NULL, " +
+						"date 		INTEGER 	NOT NULL, " +
+						"notice 	TEXT 		NOT NULL, " +
+						"amount 	NUMERIC 	NOT NULL, " +
+						"categoryID INTEGER 	DEFAULT NULL)");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public int sizeTransactions() {
+		try {
+			Statement stat = conn.createStatement();
+			ResultSet rs = stat.executeQuery("SELECT Count(*) FROM transactions");
+			rs.next();
+			int size = rs.getInt(1);
+			rs.close();
+			return size;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return -1;
 	}
 
 	@Override
@@ -114,18 +139,30 @@ public class SQLiteDB implements Database {
 	}
 
 	@Override
-	public ArrayList<Transaction> getTransactions(String searchString) throws SQLException {
-		ResultSet rs = conn.createStatement().executeQuery(searchString);
+	public ArrayList<Transaction> getTransactions(String searchString) {
+		ResultSet rs;
 		ArrayList<Transaction> transactions = new ArrayList<Transaction>();
-		while (rs.next()) {
-			transactions.add(transactionFromResult(rs));
+		try {
+			rs = conn.createStatement().executeQuery(searchString);
+			while (rs.next()) {
+				transactions.add(transactionFromResult(rs));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
 		return transactions;
 	}
 	
-	public void clearTransactions() throws SQLException {
-		conn.createStatement().execute("DROP TABLE transactions");
-		conn.commit();
+	public void clearTransactions() {
+		try {
+			conn.createStatement().execute("DROP TABLE transactions");
+			conn.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		assertTransactionTable();
 	}
 	

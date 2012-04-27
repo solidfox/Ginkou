@@ -46,10 +46,19 @@ public class Transaction {
 //	public long getFlags() {
 //		// TODO determine flags
 //	}
+	
+	/**
+	 * Returns a json representation of the transaction.
+	 */
+	public String toJSON() {
+		return "{\"id\"=\"" + id + "\", \"account\"=\"" + account.getAccountNumber() + "\", \"date\"=\""
+				+ date.toString("yyyy-MM-dd") + "\", \"notice\"=\"" + notice + "\", \"amount\"=\"" + amount + "\"}";
+	}
+	
+	
 	@Override
 	public String toString() {
-		return "Transaction [id=" + id + ", account=" + account + ", date="
-				+ date + ", notice=" + notice + ", amount=" + amount + "]";
+		return this.toJSON();
 	}
 	@Override
 	public int hashCode() {
