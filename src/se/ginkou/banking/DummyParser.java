@@ -14,28 +14,28 @@ import org.webharvest.runtime.variables.Variable;
 
 import se.ginkou.Account;
 import se.ginkou.Transaction;
+import se.ginkou.database.SQLiteDB;
 public class DummyParser {
 	public static void main(String[] args) {
 	
 		// register external plugins if there are any
-		//DefinitionResolver.registerPlugin("com.my.MyPlugin1");
 
 		ScraperConfiguration config;
 		try {
 			config = new ScraperConfiguration("sebscrapper.xml");
 			Scraper scraper = new Scraper(config, ".");
-			scraper.addVariableToContext("username", "web-harvest");
-			scraper.addVariableToContext("password", "web-harvest");
-
 			//scraper.setDebug(true);
-
-			scraper.execute();
+			scraper.execute();	
 			
 			// takes variable created during execution			
 			ScraperContext context = scraper.getContext();
-			System.out.println(scraper);
 			System.out.println(context.size());
-			//System.out.println(context);
+			//System.out.println(context);			
+			
+			Variable login1 = (Variable) context.get("login1");
+			//System.out.println(login1.toString());
+			Variable accounts = (Variable) context.get("accounts");
+			System.out.println(accounts.toString());
 			
 			ArrayList<Transaction> al = new ArrayList<Transaction>();
 			int i=1;  
@@ -54,9 +54,11 @@ public class DummyParser {
 			}
             i = 0;
             for(Transaction t: al){
-            	System.out.println(i +": "+t.toString());
+            	//System.out.println(i +": "+t.toString());
             	++i;
             }
+            
+            SQLiteDB.getDB().addTransactions((Transaction[])al.toArray());
             
 			// do something with articles...
 		} catch (FileNotFoundException e) {

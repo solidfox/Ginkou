@@ -82,21 +82,35 @@ public class SQLiteDB implements Database {
 	}
 
 	@Override
-	public void addTransaction(Transaction t) throws SQLException {
-		InsertTransactionStatement statement = new InsertTransactionStatement();
-		statement.addTransaction(t);
-		statement.executeBatch();
-		conn.commit();
+	public void addTransaction(Transaction t) {
+		InsertTransactionStatement statement;
+		try {
+			statement = new InsertTransactionStatement();
+			statement.addTransaction(t);
+			statement.executeBatch();
+			conn.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	@Override
-	public void addTransactions(Transaction[] ts) throws SQLException {
-		InsertTransactionStatement statement = new InsertTransactionStatement();
-		for (Transaction t : ts) {
-			statement.addTransaction(t);
+	public void addTransactions(Transaction[] ts) {
+		InsertTransactionStatement statement;
+		try {
+			statement = new InsertTransactionStatement();
+			for (Transaction t : ts) {
+				statement.addTransaction(t);
+			}
+			statement.executeBatch();
+			conn.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		statement.executeBatch();
-		conn.commit();
+
 	}
 
 	@Override
