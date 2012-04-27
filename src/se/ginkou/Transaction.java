@@ -23,7 +23,7 @@ public class Transaction {
 		this.date = date;
 		this.notice = notice;
 		this.amount = amount;
-		// TODO generate unique id
+		this.id = this.hashCode();
 	}
 	public int getId() {
 		return id;
