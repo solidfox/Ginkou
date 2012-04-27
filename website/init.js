@@ -15,7 +15,7 @@ $(document).ready(function() {
 			"bJQueryUI": true,
 			"bProcessing": true,
 	        "bServerSide": true,
-	        "sAjaxSource": "http://ginkou.se:38602/datatables",
+	        "sAjaxSource": "http://localhost:38602/datatables",
 	        "sServerMethod": "POST", 
 			"aoColumns": [ 
 				{ "mDataProp": "account", 	"sTitle": "Konto", 	"sClass": "account" },
