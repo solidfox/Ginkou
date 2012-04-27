@@ -12,10 +12,15 @@ public class Account {
 
 	public Account(String accountNumber) {
 		this.accountNumber = accountNumber;
+		// TODO generate unique accountID
 	}
 
 	public int getID() {
 		return id;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
 	}
 
 	@Override

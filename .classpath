@@ -40,5 +40,10 @@
 	<classpathentry kind="lib" path="lib/web-harvest/htmlcleaner.jar"/>
 	<classpathentry kind="lib" path="lib/web-harvest/js.jar"/>
 	<classpathentry kind="lib" path="lib/web-harvest/mail.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/Ginkou/lib/gson-2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
