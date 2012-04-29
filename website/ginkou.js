@@ -17,6 +17,11 @@ function GINServer(url, port) {
 	this.url = "http://" + url + (port == undefined ? ":38602" : ":" + port);
 }
 
+function GINFilter() {
+	this.accounts = [ "all" ];
+	this.dateRange = { "startDate": (moment().subtract('months', 3)), "endDate": moment() }
+}
+
 /* 	
 	Sends a command to the server
 	@arg callback is called 

@@ -1,4 +1,6 @@
-$.getScript("/ginkou.js");
+var ginkou = {};
+
+ginkou.filter = new GINFilter();
 
 // Point jQuery UI to the tabs
 $(function() {
@@ -11,7 +13,7 @@ $(function() {
 
 // Point DataTable to the history
 $(document).ready(function() {
-	historyTable = $('#DThistory').dataTable( {
+	ginkou.historyTable = $('#DThistory').dataTable( {
 			"bJQueryUI": true,
 			"bProcessing": true,
 	        "bServerSide": true,
@@ -22,8 +24,11 @@ $(document).ready(function() {
 				{ "mDataProp": "date", 		"sTitle": "Datum", 	"sClass": "date" },
 				{ "mDataProp": "notice", 	"sTitle": "Notis", 	"sClass": "notice" },
 				{ "mDataProp": "amount", 		"sTitle": "Summa", 	"sClass": "amount" }
-			]		
+			],
+			"fnServerParams": function ( aoData ) {
+	            aoData.push( { "accounts": ginkou.filter.accounts, "dateRange": ginkou.filter.dateRange } );
+	        }
 	} );
-	historyTable.fnSort( [ [1,'desc'] ] );	
+	ginkou.historyTable.fnSort( [ [1,'desc'] ] );	
 } );
 
