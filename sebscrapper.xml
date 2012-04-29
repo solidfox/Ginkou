@@ -3,19 +3,18 @@
     <!-- https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx login-->
     <!-- https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=passWord accounts-->
     <!-- https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1 accounts for real?-->
-    <!-- <var-def name="login1">  
+    <var-def name="login1">  
             <http url="https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx" method="POST" charset="UTF-8">
                 <http-param name="A3">4</http-param>
-                <http-param name="A1">8702190011</http-param>
-                <http-param name="A2">ingetINGET5</http-param>
+                <http-param name="A1"><var name="userid"/></http-param>
+                <http-param name="A2"><var name="passwd"/></http-param>
             </http> 
-    </var-def> 
-    
+    </var-def>
     
     <var-def name="accounts">  
             <http url="https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1" charset="UTF-8">
             </http> 
-    </var-def> -->
+    </var-def>
 
     <var-def name="file">  
         <html-to-xml>
