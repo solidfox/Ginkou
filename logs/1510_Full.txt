@@ -1,0 +1,1006 @@
+POST https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx HTTP/1.1
+Host: m.seb.se
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Connection: keep-alive
+Referer: https://m.seb.se/cgi-bin/pts3/mpo/9000/mpo9001.aspx?P1=logon.htm
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 33
+
+A3=4&A1=8702190011&A2=ingetINGET5
+HTTP/1.1 200 OK
+Date: Wed, 02 May 2012 22:34:59 GMT
+Server: Apache
+Expires: Mon, 31 Dec 1979 23:00:00 GMT
+Pragma: no-cache
+Content-Type: text/html; charset=iso-8859-1
+Transfer-encoding: chunked
+Connection: Keep-Alive
+Set-Cookie: CPSNET=4FA1B69458#lwpaxo55dkksqlqydjdqdoy1; ; path=/; secure; domain=seb.se
+Set-Cookie: MPS=4FA1B69458#H2WNDu2JJOsQu4VS1uUmNVUGPPrgRZ; ; path=/; secure; domain=seb.se
+
+404
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+
+</title>
+    <script type="text/javascript">
+        var url = '/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1';
+        function redirect() {
+            if (url.indexOf('/pts3/') > -1) {
+                document.location.href = url;
+            }
+            else {
+                if (document.location.href.indexOf('/pts3/') > -1) {
+                    document.location.href = '/cgi-bin/pts3' + url;
+                }
+                else {
+                    document.location.href = url;
+                }
+            }
+        }   
+     </script>
+    
+<meta name="sebid" id="event" content="passwordLoginOK" />
+<meta name="sebinvoice" id="invoiceCount" content="0" />
+<meta name="sebunsigned" id="unsignedTransactionCount" content="0" /></head>
+<body onload="redirect();">
+</body>
+</html>
+
+0
+
+
+
+------------------------------------------------------------------
+
+GET https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1 HTTP/1.1
+Host: m.seb.se
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Referer: https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx
+Cookie: CPSNET=4FA1B69458#lwpaxo55dkksqlqydjdqdoy1; MPS=4FA1B69458#H2WNDu2JJOsQu4VS1uUmNVUGPPrgRZ
+Connection: keep-alive
+
+
+HTTP/1.1 200 OK
+Date: Wed, 02 May 2012 22:35:01 GMT
+Server: Apache
+Expires: Mon, 31 Dec 1979 23:00:00 GMT
+Pragma: no-cache
+Content-Type: text/html; charset=iso-8859-1
+Transfer-encoding: chunked
+Connection: Keep-Alive
+Set-Cookie: LGO=4FA1B69554#x7Th1d1M8cojC47yho1LD9epm0rgx5W5v1qX8Jixzjpucmolx0+qNX68bZ5al1Amls4DgmNycWgmozIDe9raqg==; ; path=/; secure; domain=seb.se
+Set-Cookie: MPS=4FA1B69554#H2WNDu2JJOsQu4Vsn6AZon8RG9LjRa; ; path=/; secure; domain=seb.se
+
+15e5
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head id="MPSMaster_MPSHead"><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="sebid" id="event" content="accountOverview" />
+<meta name="sebinvoice" id="invoiceCount" content="0" />
+<meta name="sebunsigned" id="unsignedTransactionCount" content="0" />
+<title>
+	Konton - Oversikt
+</title>
+    <link rel="stylesheet" type="text/css" href="/static/brands/seb/1.0.0/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/brands/seb/1.0.0/css/default.css" />
+    <script type="text/javascript" src="/static/apps/mpsjs/cookie.js"></script>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/static/brands/seb/1.0.0/favicon.ico" />
+    
+</head>
+	<body>
+	    <form name="aspnetForm" method="post" action="mps1101.aspx?X1=digipassAppl1" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="
+__VIEWSTATE" value="" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgL+raDpAgKRuO3pAgf5d+evRnlkPCCmTL6owNayi0ng" />
+            <input type="hidden" name="MPSMaster$MH2" id="MPSMaster_MH2" value="digipassAppl1" />
+		    <div id="doc">
+			    <div id="hd">
+					<div class="header">
+						<img src="/static/brands/seb/1.0.0/img/seb_logo_37x21.gif" alt="SEB" />
+						<div id="MPSMaster_lblUserName" class="webuser">Daniel Schlaug</div>
+					</div>
+					<div class="topmenu">
+						<a id="MPSMaster_hplMenuHd" href="/cgi-bin/pts3/mpo/mpo0001.aspx">Huvudmeny</a>
+						&bull;
+						<a id="MPSMaster_hplLoggonLogoff" href="/cgi-bin/pts3/mps/1000/mps1002.aspx">Logga ut</a>
+					</div>
+			    </div>
+			    <div id="bd">
+					<h1 id="MPSMaster_h1PageTitle">Kontoöversikt</h1>
+					
+					
+	<div id="MPSMaster_MainPlaceHolder_pnlOverview">
+	
+		<table>
+			<thead>
+				<tr>
+					<th class="name">Konton</th>
+					<th class="numeric">Saldo</th>
+					<th class="numeric">Disponibelt</th>
+				</tr>
+			</thead>
+			<tbody>
+                
+                        <tr class="oddrow nodivider">
+                            <td class="name" colspan="3"><a id="MPSMaster_MainPlaceHolder_repAccounts_ctl00_lnk_det_AccountStatements" href="/cgi-bin/pts3/mps/1100/mps1102.aspx?M1=show&amp;P1=pWTe6hH82HzALo5+LzCWEw==&amp;P2=1&amp;P4=1">Hushållskonto</a></td>
+                        </tr>
+                        <tr class="oddrow">
+                            <td>&nbsp;</td>
+                            <td class="numeric">14.870,24 </td>
+						    <td class="numeric">14.870,24 </td>
+                        </tr>
+                    
+                        <tr class="evenrow nodivider">
+						    <td class="name" colspan="3"><a id="MPSMaster_MainPlaceHolder_repAccounts_ctl01_lnk_det_AccountStatements" href="/cgi-bin/pts3/mps/1100/mps1102.aspx?M1=show&amp;P1=Sk423cUJcFBSfCqEeYktFA==&amp;P2=1&amp;P4=1">5380 01 554 51</a></td>
+                        </tr>
+                        <tr class="evenrow">
+                            <td>&nbsp;</td>
+						    <td class="numeric">9.829,19 </td>
+						    <td class="numeric">9.786,19 </td>
+                        </tr>
+                    
+                        <tr class="oddrow nodivider">
+                            <td class="name" colspan="3"><a id="MPSMaster_MainPlaceHolder_repAccounts_ctl02_lnk_det_AccountStatements" href="/cgi-bin/pts3/mps/1100/mps1102.aspx?M1=show&amp;P1=/NRPeRKMyUiRqde0+fK/cQ==&amp;P2=1&amp;P4=1">5273 29 334 22</a></td>
+                        </tr>
+                        <tr class="oddrow">
+                            <td>&nbsp;</td>
+                            <td class="numeric">8.328,75 </td>
+						    <td class="numeric">8.328,75 </td>
+                        </tr>
+                    
+            </tbody>
+		</table>
+	
+</div>
+
+					<div id="MPSMaster_pnlDisclaimer">
+	
+						<span id="MPSMaster_lblDisclaimer" class="disclaimer"></span>
+					
+</div>
+			    </div>
+			    <div id="ft">
+					<div class="accesskeys">
+						<ul id="MPSMaster_accesskeylist">
+							<li id="MPSMaster_accesskeylist1"><a id="MPSMaster_hplAccessKey1" accesskey="1" href="/cgi-bin/pts3/mpo/mpo0001.aspx">Huvudmeny</a></li>
+							
+							
+							
+							
+							
+							
+							<li id="MPSMaster_accesskeylist8"><a id="MPSMaster_hplAccessKey8" accesskey="8" href="/cgi-bin/pts3/mpo/mpo0004.aspx?P1=9">Ring Telefonbanken direkt</a></li>
+							
+							<li id="MPSMaster_accesskeylist0"><a id="MPSMaster_hplAccessKey0" accesskey="0" href="/cgi-bin/pts3/mps/1000/mps1002.aspx">Logga ut</a></li>
+						</ul>
+					</div>
+					<div class="renderdate">
+						2012-05-03&#160;00:35:01
+					</div>					
+					<div class="footer">
+						&#169; 2012 Skandinaviska Enskilda Banken AB (publ)
+					</div>
+
+					<!-- SiteCatalyst code version: H.19.3. Copyright 1997-2009 Omniture, Inc. More info available at http://www.omniture.com -->
+					<img alt="" src="https://102.112.2O7.net/b/ss/sebsemobile/5/H.19.3--WAP?pageName=Konton - Oversikt" />
+					<!-- End SiteCatalyst code version: H.19.3. -->
+
+			    </div>
+			</div>
+        </form>
+	</body>
+ <script type="text/javascript">
+	var loginMethod = "digipassAppl1";
+	var exdate = new Date();
+	exdate.setDate(exdate.getDate() + 180);
+	if (loginMethod.length > 0) {
+		document.cookie = "LOIN=" + "digipassAppl1" + "; path=/" + "; domain=" + getDomain() + "; expires=" + exdate.toUTCString();
+	}
+</script>
+</html>
+
+ 
+
+0
+
+
+
+------------------------------------------------------------------
+
+CONNECT 17.docs.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Connection: keep-alive
+Host: 17.docs.google.com
+
+A SSLv3-compatible ClientHello handshake was found. Fiddler extracted the parameters below.
+
+Major Version: 3
+Minor Version: 1
+Random: 4F A1 B6 94 DD D7 48 DD A3 44 8F 6C 22 4E 27 AE 43 6E 26 FA D2 6F EB AE FE CF D2 FC 7E 8D 7E A7
+SessionID: empty
+Ciphers: 
+	[00FF]	TLS_EMPTY_RENEGOTIATION_INFO_SCSV
+	[C00A]	TLS1_CK_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+	[C014]	TLS1_CK_ECDHE_RSA_WITH_AES_256_CBC_SHA
+	[0088]	TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0087]	TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA
+	[0039]	TLS_DHE_RSA_WITH_AES_256_SHA
+	[0038]	TLS_DHE_DSS_WITH_AES_256_SHA
+	[C00F]	TLS_ECDH_RSA_WITH_AES_256_CBC_SHA
+	[C005]	TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA
+	[0084]	TLS_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0035]	TLS_RSA_AES_256_SHA
+	[C007]	TLS_ECDHE_ECDSA_WITH_RC4_128_SHA
+	[C009]	TLS1_CK_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+	[C011]	TLS_ECDHE_RSA_WITH_RC4_128_SHA
+	[C013]	TLS1_CK_ECDHE_RSA_WITH_AES_128_CBC_SHA
+	[0045]	TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0044]	TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA
+	[0033]	TLS_DHE_RSA_WITH_AES_128_SHA
+	[0032]	TLS_DHE_DSS_WITH_AES_128_SHA
+	[C00C]	TLS_ECDH_RSA_WITH_RC4_128_SHA
+	[C00E]	TLS_ECDH_RSA_WITH_AES_128_CBC_SHA
+	[C002]	TLS_ECDH_ECDSA_WITH_RC4_128_SHA
+	[C004]	TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA
+	[0096]	TLS_RSA_WITH_SEED_CBC_SHA
+	[0041]	TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0004]	SSL_RSA_WITH_RC4_128_MD5
+	[0005]	SSL_RSA_WITH_RC4_128_SHA
+	[002F]	TLS_RSA_AES_128_SHA
+	[C008]	TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[C012]	TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+	[0016]	SSL_DHE_RSA_WITH_3DES_EDE_SHA
+	[0013]	SSL_DHE_DSS_WITH_3DES_EDE_SHA
+	[C00D]	TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA
+	[C003]	TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[FEFF]	SSL_RSA_FIPS_WITH_3DES_EDE_SHA
+	[000A]	SSL_RSA_WITH_3DES_EDE_SHA
+
+Compression: 
+	[00]	NO_COMPRESSION
+
+Extensions: 
+	server_name	17.docs.google.com
+	elliptic_curves	00 06 00 17 00 18 00 19
+	ec_point_formats	01 00
+	SessionTicket TLS	empty
+
+
+HTTP/1.1 200 Connection Established
+FiddlerGateway: Direct
+StartTime: 00:35:00.843
+Connection: close
+
+Encrypted HTTPS traffic flows through this CONNECT tunnel. HTTPS Decryption is enabled in Fiddler, so decrypted sessions running in this tunnel will be shown in the Web Sessions list.
+
+Secure Protocol: Tls
+Cipher: Rc4 128bits
+Hash Algorithm: Sha1 160bitsKey Exchange: RsaSign 1024bits
+
+== Server Certificate ==========
+[Subject]
+  CN=*.mail.google.com, O=Google Inc, L=Mountain View, S=California, C=US
+
+[Issuer]
+  CN=Google Internet Authority, O=Google Inc, C=US
+
+[Serial Number]
+  1653DB750000000051BF
+
+[Not Before]
+  2012-04-20 04:57:39
+
+[Not After]
+  2013-04-20 05:07:39
+
+[Thumbprint]
+  724D4AC3159C32B485D9C81BCB39A24C888365D1
+
+
+
+------------------------------------------------------------------
+
+GET https://m.seb.se/static/apps/mpsjs/cookie.js HTTP/1.1
+Host: m.seb.se
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Referer: https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1
+Cookie: CPSNET=4FA1B69458#lwpaxo55dkksqlqydjdqdoy1; MPS=4FA1B69554#H2WNDu2JJOsQu4Vsn6AZon8RG9LjRa; LGO=4FA1B69554#x7Th1d1M8cojC47yho1LD9epm0rgx5W5v1qX8Jixzjpucmolx0+qNX68bZ5al1Amls4DgmNycWgmozIDe9raqg==
+Connection: keep-alive
+
+
+HTTP/1.1 200 OK
+Date: Wed, 02 May 2012 22:34:10 GMT
+Server: Apache
+Last-Modified: Mon, 21 Mar 2011 13:07:27 GMT
+ETag: "939b-733-49efdcf3341c0"
+Accept-Ranges: bytes
+Content-Type: application/x-javascript
+Content-length: 1843
+Connection: Keep-Alive
+Age: 53
+
+        function getCookie(name) {
+            var sPos = document.cookie.indexOf(name + "=");
+            var len = sPos + name.length + 1;
+            if ((!sPos) && (name != document.cookie.substring(0, name.length))) {
+                return null;
+            }
+            if (sPos == -1) {
+                return null;
+            }
+            var ePos = document.cookie.indexOf(';', len);
+            if (ePos == -1) ePos = document.cookie.length;
+            return unescape(document.cookie.substring(len, ePos));
+        }
+
+        function setCookie(name, value, expires, path, domain, secure) {
+            var today = new Date();
+            if (expires) {
+                expires = expires * 1000 * 3600 * 24;
+            }
+            document.cookie = name + '=' + escape(value) +
+        ((expires) ? ';expires=' + new Date(today.getTime() + expires).toGMTString() : '') +
+        ((path) ? ';path=' + path : '') +
+        ((domain) ? ';domain=' + domain : '') +
+        ((secure) ? ';secure' : '');
+        }
+
+        function deleteCookie(name) {
+            var path = "/";
+            var domain = getDomain();
+
+            if (getCookie(name)) {
+                setCookie(name, '', -30, path, domain);
+            }
+        }
+        function getDomain() {
+            var sPageUrl = window.location.href;
+            var sDomain = '';
+            sPageUrl.toLowerCase();
+            if (sPageUrl.indexOf('seb.se') != -1) {
+                sDomain = 'seb.se';
+            }
+	    else if (sPageUrl.indexOf('/pts3/') != -1) {
+               if (sPageUrl.indexOf('swp9') != -1) {
+                  sDomain = '.sebank.se';
+               }
+               else {
+                  sDomain = '.vv.sebank.se';
+               }
+            }
+            return sDomain;
+        }
+
+------------------------------------------------------------------
+
+CONNECT 102.112.2o7.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Connection: keep-alive
+Host: 102.112.2o7.net
+
+A SSLv3-compatible ClientHello handshake was found. Fiddler extracted the parameters below.
+
+Major Version: 3
+Minor Version: 1
+Random: 4F A1 B6 95 A8 36 79 9F 23 BB 76 01 E6 2F B8 3E 61 20 AD 70 C3 51 CA A9 55 06 EC 4F 03 FA 15 2B
+SessionID: empty
+Ciphers: 
+	[00FF]	TLS_EMPTY_RENEGOTIATION_INFO_SCSV
+	[C00A]	TLS1_CK_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+	[C014]	TLS1_CK_ECDHE_RSA_WITH_AES_256_CBC_SHA
+	[0088]	TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0087]	TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA
+	[0039]	TLS_DHE_RSA_WITH_AES_256_SHA
+	[0038]	TLS_DHE_DSS_WITH_AES_256_SHA
+	[C00F]	TLS_ECDH_RSA_WITH_AES_256_CBC_SHA
+	[C005]	TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA
+	[0084]	TLS_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0035]	TLS_RSA_AES_256_SHA
+	[C007]	TLS_ECDHE_ECDSA_WITH_RC4_128_SHA
+	[C009]	TLS1_CK_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+	[C011]	TLS_ECDHE_RSA_WITH_RC4_128_SHA
+	[C013]	TLS1_CK_ECDHE_RSA_WITH_AES_128_CBC_SHA
+	[0045]	TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0044]	TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA
+	[0033]	TLS_DHE_RSA_WITH_AES_128_SHA
+	[0032]	TLS_DHE_DSS_WITH_AES_128_SHA
+	[C00C]	TLS_ECDH_RSA_WITH_RC4_128_SHA
+	[C00E]	TLS_ECDH_RSA_WITH_AES_128_CBC_SHA
+	[C002]	TLS_ECDH_ECDSA_WITH_RC4_128_SHA
+	[C004]	TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA
+	[0096]	TLS_RSA_WITH_SEED_CBC_SHA
+	[0041]	TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0004]	SSL_RSA_WITH_RC4_128_MD5
+	[0005]	SSL_RSA_WITH_RC4_128_SHA
+	[002F]	TLS_RSA_AES_128_SHA
+	[C008]	TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[C012]	TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+	[0016]	SSL_DHE_RSA_WITH_3DES_EDE_SHA
+	[0013]	SSL_DHE_DSS_WITH_3DES_EDE_SHA
+	[C00D]	TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA
+	[C003]	TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[FEFF]	SSL_RSA_FIPS_WITH_3DES_EDE_SHA
+	[000A]	SSL_RSA_WITH_3DES_EDE_SHA
+
+Compression: 
+	[00]	NO_COMPRESSION
+
+Extensions: 
+	server_name	102.112.2o7.net
+	elliptic_curves	00 06 00 17 00 18 00 19
+	ec_point_formats	01 00
+	SessionTicket TLS	empty
+
+
+HTTP/1.1 200 Connection Established
+FiddlerGateway: Direct
+StartTime: 00:35:01.515
+Connection: close
+
+Encrypted HTTPS traffic flows through this CONNECT tunnel. HTTPS Decryption is enabled in Fiddler, so decrypted sessions running in this tunnel will be shown in the Web Sessions list.
+
+Secure Protocol: Tls
+Cipher: Rc4 128bits
+Hash Algorithm: Sha1 160bitsKey Exchange: RsaSign 2048bits
+
+== Server Certificate ==========
+[Subject]
+  CN=*.112.2o7.net, OU=Omniture BU, O=Adobe Systems Incorporated, L=Orem, S=Utah, C=US, SERIALNUMBER=qIlB3onsErxknzrePxXdx0w2gGCDbJdu
+
+[Issuer]
+  OU=Equifax Secure Certificate Authority, O=Equifax, C=US
+
+[Serial Number]
+  15748B
+
+[Not Before]
+  2011-01-20 20:35:28
+
+[Not After]
+  2013-03-23 06:48:13
+
+[Thumbprint]
+  4E8DD04F30A2232AC17623F3C1398144D08AD199
+
+
+
+------------------------------------------------------------------
+
+CONNECT www.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Connection: keep-alive
+Host: www.google.com
+
+A SSLv3-compatible ClientHello handshake was found. Fiddler extracted the parameters below.
+
+Major Version: 3
+Minor Version: 1
+Random: 4F A1 B6 95 C5 93 B5 D1 83 A0 83 F4 71 BA B6 E6 C3 29 28 55 73 AF 50 3B 9F F4 19 E5 B5 22 BB 38
+SessionID: empty
+Ciphers: 
+	[00FF]	TLS_EMPTY_RENEGOTIATION_INFO_SCSV
+	[C00A]	TLS1_CK_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+	[C014]	TLS1_CK_ECDHE_RSA_WITH_AES_256_CBC_SHA
+	[0088]	TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0087]	TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA
+	[0039]	TLS_DHE_RSA_WITH_AES_256_SHA
+	[0038]	TLS_DHE_DSS_WITH_AES_256_SHA
+	[C00F]	TLS_ECDH_RSA_WITH_AES_256_CBC_SHA
+	[C005]	TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA
+	[0084]	TLS_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0035]	TLS_RSA_AES_256_SHA
+	[C007]	TLS_ECDHE_ECDSA_WITH_RC4_128_SHA
+	[C009]	TLS1_CK_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+	[C011]	TLS_ECDHE_RSA_WITH_RC4_128_SHA
+	[C013]	TLS1_CK_ECDHE_RSA_WITH_AES_128_CBC_SHA
+	[0045]	TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0044]	TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA
+	[0033]	TLS_DHE_RSA_WITH_AES_128_SHA
+	[0032]	TLS_DHE_DSS_WITH_AES_128_SHA
+	[C00C]	TLS_ECDH_RSA_WITH_RC4_128_SHA
+	[C00E]	TLS_ECDH_RSA_WITH_AES_128_CBC_SHA
+	[C002]	TLS_ECDH_ECDSA_WITH_RC4_128_SHA
+	[C004]	TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA
+	[0096]	TLS_RSA_WITH_SEED_CBC_SHA
+	[0041]	TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0004]	SSL_RSA_WITH_RC4_128_MD5
+	[0005]	SSL_RSA_WITH_RC4_128_SHA
+	[002F]	TLS_RSA_AES_128_SHA
+	[C008]	TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[C012]	TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+	[0016]	SSL_DHE_RSA_WITH_3DES_EDE_SHA
+	[0013]	SSL_DHE_DSS_WITH_3DES_EDE_SHA
+	[C00D]	TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA
+	[C003]	TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[FEFF]	SSL_RSA_FIPS_WITH_3DES_EDE_SHA
+	[000A]	SSL_RSA_WITH_3DES_EDE_SHA
+
+Compression: 
+	[00]	NO_COMPRESSION
+
+Extensions: 
+	server_name	www.google.com
+	elliptic_curves	00 06 00 17 00 18 00 19
+	ec_point_formats	01 00
+	SessionTicket TLS	empty
+
+
+HTTP/1.1 200 Connection Established
+FiddlerGateway: Direct
+StartTime: 00:35:01.390
+Connection: close
+
+Encrypted HTTPS traffic flows through this CONNECT tunnel. HTTPS Decryption is enabled in Fiddler, so decrypted sessions running in this tunnel will be shown in the Web Sessions list.
+
+Secure Protocol: Tls
+Cipher: Rc4 128bits
+Hash Algorithm: Sha1 160bitsKey Exchange: RsaSign 1024bits
+
+== Server Certificate ==========
+[Subject]
+  CN=www.google.com, O=Google Inc, L=Mountain View, S=California, C=US
+
+[Issuer]
+  CN=Thawte SGC CA, O=Thawte Consulting (Pty) Ltd., C=ZA
+
+[Serial Number]
+  4F9D96D966B0992B54C2957CB4157D4D
+
+[Not Before]
+  2011-10-26 02:00:00
+
+[Not After]
+  2013-10-01 01:59:59
+
+[Thumbprint]
+  C1956DC8A7DFB2A5A56934DA09778E3A11023358
+
+
+
+------------------------------------------------------------------
+
+GET https://m.seb.se/cgi-bin/pts3/mps/1100/mps1102.aspx?M1=show&P1=pWTe6hH82HzALo5+LzCWEw==&P2=1&P4=1 HTTP/1.1
+Host: m.seb.se
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Referer: https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1
+Cookie: CPSNET=4FA1B69458#lwpaxo55dkksqlqydjdqdoy1; MPS=4FA1B69554#H2WNDu2JJOsQu4Vsn6AZon8RG9LjRa; LGO=4FA1B69554#x7Th1d1M8cojC47yho1LD9epm0rgx5W5v1qX8Jixzjpucmolx0+qNX68bZ5al1Amls4DgmNycWgmozIDe9raqg==; LOIN=digipassAppl1
+Connection: keep-alive
+
+
+HTTP/1.1 200 OK
+Date: Wed, 02 May 2012 22:35:05 GMT
+Server: Apache
+Expires: Mon, 31 Dec 1979 23:00:00 GMT
+Pragma: no-cache
+Content-Type: text/html; charset=iso-8859-1
+Transfer-encoding: chunked
+Connection: Keep-Alive
+Set-Cookie: LGO=4FA1B69963#x7Th1d1M8cojC47yho1LD9epm0rgx5W5v1qX8Jixzjpucmolx0+qNX68bZ5al1AmSCNRg2vyhz4RcqUt5ggnOA==; ; path=/; secure; domain=seb.se
+Set-Cookie: MPS=4FA1B69963#H2WNDu2JJOsQu4VmLWG3q7SEV7cTnS; ; path=/; secure; domain=seb.se
+
+86e
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head id="MPSMaster_MPSHead"><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="sebid" id="event" content="Kontohändelser" /><title>
+	Konton - Kontohandelser
+</title>
+    <link rel="stylesheet" type="text/css" href="/static/brands/seb/1.0.0/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/brands/seb/1.0.0/css/default.css" />
+    <script type="text/javascript" src="/static/apps/mpsjs/cookie.js"></script>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/static/brands/seb/1.0.0/favicon.ico" />
+    
+</head>
+	<body>
+	    <form name="aspnetForm" method="post" action="mps1102.aspx?M1=show&amp;P1=pWTe6hH82HzALo5+LzCWEw%3d%3d&amp;P2=1&amp;P4=1" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="
+__VIEWSTATE" value="" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBQL+raDpAgKRuO3pAgKwxLDkBwKwxPTSDQKwxMycDG70YWcgbzX7kxYFaauDQrQ8e0YL" />
+            <input type="hidden" name="MPSMaster$MH2" id="MPSMaster_MH2" />
+		    <div id="doc">
+			    <div id="hd">
+					<div class="header">
+						<img src="/static/brands/seb/1.0.0/img/seb_logo_37x21.gif" alt="SEB" />
+						<div id="MPSMaster_lblUserName" class="webuser">Daniel Schlaug</div>
+					</div>
+					<div class="topmenu">
+						<a id="MPSMaster_hplMenuHd" href="/cgi-bin/pts3/mpo/mpo0001.aspx">Huvudmeny</a>
+						&bull;
+						<a id="MPSMaster_hplLoggonLogoff" href="/cgi-bin/pts3/mps/1000/mps1002.aspx">Logga ut</a>
+					</div>
+			    </div>
+			    <div id="bd">
+					<h1 id="MPSMaster_h1PageTitle">Kontohändelser</h1>
+					
+					
+	<input type="hidden" name="MPSMaster$MainPlaceHolder$P1" id="MPSMaster_MainPlaceHolder_P1" value="pWTe6hH82HzALo5+LzCWEw%3d%3d" />
+    <input type="hidden" name="MPSMaster$MainPlaceHolder$P2" id="MPSMaster_MainPlaceHolder_P2" value="1" />
+    <input type="hidden" name="MPSMaster$MainPlaceHolder$P4" id="MPSMaster_MainPlaceHolder_P4" value="1" 
+24a8
+/>
+
+	<p><a id="MPSMaster_MainPlaceHolder_lnkBackTop" class="previous" href="/cgi-bin/pts3/mps/1100/mps1101.aspx">Tillbaka</a></p>
+    <div id="MPSMaster_MainPlaceHolder_pnlAccountTransactions">
+	
+        <table>
+			<thead>
+	            <tr>
+	                <th><span class="name">Hushållskonto<br />5251 00 440 36<br />Privatkonto</span></th>
+		        </tr>
+		        <tr>
+		            <th><span class="name">Disponibelt:</span>
+		                <span class="value">14.870,24 </span></th>
+	            </tr>
+			</thead>
+            
+					<tr class="oddrow">
+						<td>
+							120502
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl00_lblKkTxt" class="name">Lf</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl00_lblRorBel" class="value">-100,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120430
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl01_lblKkTxt" class="name">Kastruller</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl01_lblRorBel" class="value">-546,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120429
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl02_lblKkTxt" class="name">Hsb Stockholm Ek För Hyr</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl02_lblRorBel" class="value">-2.817,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120429
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl03_lblKkTxt" class="name">Handelsbankenfakt.tj 652</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl03_lblRorBel" class="value">-296,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120429
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl04_lblKkTxt" class="name">Handelsbankenfakt.tj 652</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl04_lblRorBel" class="value">-229,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120429
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl05_lblKkTxt" class="name">SEB Kort</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl05_lblRorBel" class="value">-7.150,52 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120427
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl06_lblKkTxt" class="name">Com Hem AB</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl06_lblRorBel" class="value">-100,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120426
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl07_lblKkTxt" class="name">Com Hem AB</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl07_lblRorBel" class="value">-100,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120423
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl08_lblKkTxt" class="name">Från Sara</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl08_lblRorBel" class="value">10.000,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120422
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl09_lblKkTxt" class="name">Fr Daniel</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl09_lblRorBel" class="value">10.000,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120405
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl10_lblKkTxt" class="name">SEB Masterca</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl10_lblRorBel" class="value">-7.172,72 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120405
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl11_lblKkTxt" class="name">52730306927</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl11_lblRorBel" class="value">-15,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120402
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl12_lblKkTxt" class="name">Lf</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl12_lblRorBel" class="value">-100,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120329
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl13_lblKkTxt" class="name">Hsb Stockholm Ek För Hyr</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl13_lblRorBel" class="value">-2.822,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120329
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl14_lblKkTxt" class="name">Länsförsäkringar Stockho</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl14_lblRorBel" class="value">-350,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120328
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl15_lblKkTxt" class="name">Fortum Markets AB Kundre</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl15_lblRorBel" class="value">-434,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120306
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl16_lblKkTxt" class="name">Com Hem AB</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl16_lblRorBel" class="value">-115,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120305
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl17_lblKkTxt" class="name">Fr Sara</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl17_lblRorBel" class="value">10.000,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120304
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl18_lblKkTxt" class="name">Handelsbankenfakt.tj 652</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl18_lblRorBel" class="value">-288,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120304
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl19_lblKkTxt" class="name">SEB Kort</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl19_lblRorBel" class="value">-3.975,03 </span>
+						</td>
+					</tr>
+				
+        </table>
+        <br />
+    
+</div>
+    <div id="MPSMaster_MainPlaceHolder_pnlLinks">
+	
+        <br />
+        <br />
+        <a id="MPSMaster_MainPlaceHolder_lnkNext" class="tablenext" href="/cgi-bin/pts3/mps/1100/mps1102.aspx?M1=show&amp;P1=pWTe6hH82HzALo5 LzCWEw==&amp;P2=1&amp;P4=2">Nästa</a>
+		<p><a id="MPSMaster_MainPlaceHolder_lnkComingTransactions" class="readmore" href="/cgi-bin/pts3/mps/1100/mps1113.aspx?P1=pWTe6hH82HzALo5+LzCWEw==&amp;P2=P7gVvAwLAOaQG0VQDUEr+Q==">Kommande händelser</a></p>
+		<p><a id="MPSMaster_MainPlaceHolder_lnkBack" class="previous" href="/cgi-bin/pts3/mps/1100/mps1101.aspx">Tillbaka</a></p>
+    
+</div>
+
+					<div id="MPSMaster_pnlDisclaimer">
+	
+						<span id="MPSMaster_lblDisclaimer" class="disclaimer"></span>
+					
+</div>
+			    </div>
+			    <div id="ft">
+					<div class="accesskeys">
+						<ul id="MPSMaster_accesskeylist">
+							<li id="MPSMaster_accesskeylist1"><a id="MPSMaster_hplAccessKey1" accesskey="1" href="/cgi-bin/pts3/mpo/mpo0001.aspx">Huvudmeny</a></li>
+							
+							
+							
+							
+							
+							
+							<li id="MPSMaster_accesskeylist8"><a id="MPSMaster_hplAccessKey8" accesskey="8" href="/cgi-bin/pts3/mpo/mpo0004.aspx?P1=9">Ring Telefonbanken direkt</a></li>
+							
+							<li id="MPSMaster_accesskeylist0"><a id="MPSMaster_hplAccessKey0" accesskey="0" href="/cgi-bin/pts3/mps/1000/mps1002.aspx">Logga ut</a></li>
+						</ul>
+					</div>
+					<div class="renderdate">
+						2012-05-03&#160;00:35:06
+					</div>					
+					<div class="footer">
+						&#169; 2012 Skandinaviska Enskilda Banken AB (publ)
+					</div>
+
+					<!-- SiteCatalyst code version: H.19.3. Copyright 1997-2009 Omniture, Inc. More info available at http://www.omniture.com -->
+					<img alt="" src="https://102.112.2O7.net/b/ss/sebsemobile/5/H.19.3--WAP?pageName=Konton - Kontohandelser" />
+					<!-- End SiteCatalyst code version: H.19.3. -->
+
+			    </div>
+			</div>
+        </form>
+	</body>
+ <script type="text/javascript">
+	var loginMethod = "";
+	var exdate = new Date();
+	exdate.setDate(exdate.getDate() + 180);
+	if (loginMethod.length > 0) {
+		document.cookie = "LOIN=" + "" + "; path=
+64
+/" + "; domain=" + getDomain() + "; expires=" + exdate.toUTCString();
+	}
+</script>
+</html>
+
+ 
+
+0
+
+
+
+------------------------------------------------------------------
+
+CONNECT 102.112.2o7.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Connection: keep-alive
+Host: 102.112.2o7.net
+
+A SSLv3-compatible ClientHello handshake was found. Fiddler extracted the parameters below.
+
+Major Version: 3
+Minor Version: 1
+Random: 4F A1 B6 99 05 4D 38 4D 03 1F DF 76 E7 83 07 C3 54 DB D7 1D BD 55 6F A8 66 F8 42 C3 13 6B 87 CD
+SessionID: empty
+Ciphers: 
+	[00FF]	TLS_EMPTY_RENEGOTIATION_INFO_SCSV
+	[C00A]	TLS1_CK_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+	[C014]	TLS1_CK_ECDHE_RSA_WITH_AES_256_CBC_SHA
+	[0088]	TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0087]	TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA
+	[0039]	TLS_DHE_RSA_WITH_AES_256_SHA
+	[0038]	TLS_DHE_DSS_WITH_AES_256_SHA
+	[C00F]	TLS_ECDH_RSA_WITH_AES_256_CBC_SHA
+	[C005]	TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA
+	[0084]	TLS_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0035]	TLS_RSA_AES_256_SHA
+	[C007]	TLS_ECDHE_ECDSA_WITH_RC4_128_SHA
+	[C009]	TLS1_CK_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+	[C011]	TLS_ECDHE_RSA_WITH_RC4_128_SHA
+	[C013]	TLS1_CK_ECDHE_RSA_WITH_AES_128_CBC_SHA
+	[0045]	TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0044]	TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA
+	[0033]	TLS_DHE_RSA_WITH_AES_128_SHA
+	[0032]	TLS_DHE_DSS_WITH_AES_128_SHA
+	[C00C]	TLS_ECDH_RSA_WITH_RC4_128_SHA
+	[C00E]	TLS_ECDH_RSA_WITH_AES_128_CBC_SHA
+	[C002]	TLS_ECDH_ECDSA_WITH_RC4_128_SHA
+	[C004]	TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA
+	[0096]	TLS_RSA_WITH_SEED_CBC_SHA
+	[0041]	TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0004]	SSL_RSA_WITH_RC4_128_MD5
+	[0005]	SSL_RSA_WITH_RC4_128_SHA
+	[002F]	TLS_RSA_AES_128_SHA
+	[C008]	TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[C012]	TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+	[0016]	SSL_DHE_RSA_WITH_3DES_EDE_SHA
+	[0013]	SSL_DHE_DSS_WITH_3DES_EDE_SHA
+	[C00D]	TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA
+	[C003]	TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[FEFF]	SSL_RSA_FIPS_WITH_3DES_EDE_SHA
+	[000A]	SSL_RSA_WITH_3DES_EDE_SHA
+
+Compression: 
+	[00]	NO_COMPRESSION
+
+Extensions: 
+	server_name	102.112.2o7.net
+	elliptic_curves	00 06 00 17 00 18 00 19
+	ec_point_formats	01 00
+	SessionTicket TLS	empty
+
+
+HTTP/1.1 200 Connection Established
+FiddlerGateway: Direct
+StartTime: 00:35:05.000
+Connection: close
+
+Encrypted HTTPS traffic flows through this CONNECT tunnel. HTTPS Decryption is enabled in Fiddler, so decrypted sessions running in this tunnel will be shown in the Web Sessions list.
+
+Secure Protocol: Tls
+Cipher: Rc4 128bits
+Hash Algorithm: Sha1 160bitsKey Exchange: RsaSign 2048bits
+
+== Server Certificate ==========
+[Subject]
+  CN=*.112.2o7.net, OU=Omniture BU, O=Adobe Systems Incorporated, L=Orem, S=Utah, C=US, SERIALNUMBER=qIlB3onsErxknzrePxXdx0w2gGCDbJdu
+
+[Issuer]
+  OU=Equifax Secure Certificate Authority, O=Equifax, C=US
+
+[Serial Number]
+  15748B
+
+[Not Before]
+  2011-01-20 20:35:28
+
+[Not After]
+  2013-03-23 06:48:13
+
+[Thumbprint]
+  4E8DD04F30A2232AC17623F3C1398144D08AD199
+
+
+
+------------------------------------------------------------------
+

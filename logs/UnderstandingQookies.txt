@@ -1,0 +1,11 @@
+CPSNET utdelas vid login.
+LOIN skapas med javascript som returneras vid ett GET direkt efter att kontöversikten "visats".
+MPS utdelas vid login. Ändras ofta.
+LGO utdelas när kontomenysidan returneras. Ändras ofta.
+
+Response syntax för nya kakor:
+Set-Cookie: QookieName=TimeCodeIPresume#DataIBelieve; path=/; ; path=/; secure; domain=seb.se
+->Kaka som ska returneras vid nästa request.
+
+Syntax för requests:
+Cookie: CPSNET=4FA1C71F21#pj1b0fzpcuy1xwv20hk4x045; MPS=4FA1C71F21#1t0fvt9R9pcJ3yT07vc10xsE20DtL9

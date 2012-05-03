@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+
+</title>
+    <script type="text/javascript">
+        var url = '/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1';
+        function redirect() {
+            if (url.indexOf('/pts3/') > -1) {
+                document.location.href = url;
+            }
+            else {
+                if (document.location.href.indexOf('/pts3/') > -1) {
+                    document.location.href = '/cgi-bin/pts3' + url;
+                }
+                else {
+                    document.location.href = url;
+                }
+            }
+        }   
+     </script>
+    
+<meta name="sebid" id="event" content="passwordLoginOK" />
+<meta name="sebinvoice" id="invoiceCount" content="0" />
+<meta name="sebunsigned" id="unsignedTransactionCount" content="0" /></head>
+<body onload="redirect();">
+</body>
+</html>

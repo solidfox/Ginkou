@@ -39,10 +39,8 @@ public class XmlParser {
 			//System.out.println(context.size());
 			//System.out.println(context);			
 			
-			//Variable login1 = (Variable) context.get("login1");
-			//System.out.println(login1.toString());
-			//Variable accounts = (Variable) context.get("accounts");
-			//System.out.println(accounts.toString());
+			System.out.println(((Variable) context.get("login1")).toString());
+			System.out.println(((Variable) context.get("accounts")).toString());
 			
 			ArrayList<Transaction> al = new ArrayList<Transaction>();
 			int i=1;  
@@ -61,7 +59,7 @@ public class XmlParser {
 			}
 			i = 0;
 			for(Transaction t: al){
-				System.out.println(i +": "+t.toString());
+				//System.out.println(i +": "+t.toString());
             	//SQLiteDB.getDB().addTransaction(t);
             	++i;
             }

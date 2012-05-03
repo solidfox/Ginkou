@@ -1,0 +1,1093 @@
+POST https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx HTTP/1.1
+Host: m.seb.se
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Connection: keep-alive
+Referer: https://m.seb.se/cgi-bin/pts3/mpo/9000/mpo9001.aspx?P1=logon.htm
+Cookie: s_cc=true; s_nr=1335990554956; omt_s_eVar6=New; omt_s_eVar10=seb.se%2CPrivat%2CStartpage%2CSEB%20Privat; s_sq=%5B%5BB%5D%5D; SebSeInloggPref=4FA198C926#1; WURL=4FA1A2291B#; LGO=4FA1A2291B#
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 33
+
+A3=4&A1=8702190011&A2=ingetINGET5
+HTTP/1.1 200 OK
+Date: Wed, 02 May 2012 21:08:53 GMT
+Server: Apache
+Expires: Mon, 31 Dec 1979 23:00:00 GMT
+Pragma: no-cache
+Content-Type: text/html; charset=iso-8859-1
+Transfer-encoding: chunked
+Connection: Keep-Alive
+Set-Cookie: CPSNET=4FA1A26604#zir3enyavk3lv2jnx4btwd45; ; path=/; secure; domain=seb.se
+Set-Cookie: MPS=4FA1A26604#Q6TEt442sHozy313EvrB6CSavxDdsc; ; path=/; secure; domain=seb.se
+
+404
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+
+</title>
+    <script type="text/javascript">
+        var url = '/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1';
+        function redirect() {
+            if (url.indexOf('/pts3/') > -1) {
+                document.location.href = url;
+            }
+            else {
+                if (document.location.href.indexOf('/pts3/') > -1) {
+                    document.location.href = '/cgi-bin/pts3' + url;
+                }
+                else {
+                    document.location.href = url;
+                }
+            }
+        }   
+     </script>
+    
+<meta name="sebid" id="event" content="passwordLoginOK" />
+<meta name="sebinvoice" id="invoiceCount" content="0" />
+<meta name="sebunsigned" id="unsignedTransactionCount" content="0" /></head>
+<body onload="redirect();">
+</body>
+</html>
+
+0
+
+
+
+------------------------------------------------------------------
+
+GET https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1 HTTP/1.1
+Host: m.seb.se
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Referer: https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx
+Cookie: s_cc=true; s_nr=1335990554956; omt_s_eVar6=New; omt_s_eVar10=seb.se%2CPrivat%2CStartpage%2CSEB%20Privat; s_sq=%5B%5BB%5D%5D; SebSeInloggPref=4FA198C926#1; WURL=4FA1A2291B#; LGO=4FA1A2291B#; CPSNET=4FA1A26604#zir3enyavk3lv2jnx4btwd45; MPS=4FA1A26604#Q6TEt442sHozy313EvrB6CSavxDdsc
+Connection: keep-alive
+
+
+HTTP/1.1 200 OK
+Date: Wed, 02 May 2012 21:08:54 GMT
+Server: Apache
+Expires: Mon, 31 Dec 1979 23:00:00 GMT
+Pragma: no-cache
+Content-Type: text/html; charset=iso-8859-1
+Transfer-encoding: chunked
+Connection: Keep-Alive
+Set-Cookie: LGO=4FA1A26701#x7Th1d1M8cojC47yho1LD9epm0rgx5W5v1qX8JixzjrebmGaxc+UqT0J3BM35XvMw2OVy2bd+r/++tOWN+Lodw==; ; path=/; secure; domain=seb.se
+Set-Cookie: MPS=4FA1A26701#Q6TEt442sHozy31fhL5F5VX4nk83Nw; ; path=/; secure; domain=seb.se
+
+1581
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head id="MPSMaster_MPSHead"><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="sebid" id="event" content="accountOverview" />
+<meta name="sebinvoice" id="invoiceCount" content="0" />
+<meta name="sebunsigned" id="unsignedTransactionCount" content="0" />
+<title>
+	Konton - Oversikt
+</title>
+    <link rel="stylesheet" type="text/css" href="/static/brands/seb/1.0.0/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/brands/seb/1.0.0/css/default.css" />
+    <script type="text/javascript" src="/static/apps/mpsjs/cookie.js"></script>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/static/brands/seb/1.0.0/favicon.ico" />
+    
+</head>
+	<body>
+	    <form name="aspnetForm" method="post" action="mps1101.aspx?X1=digipassAppl1" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="
+__VIEWSTATE" value="" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgL+raDpAgKRuO3pAgf5d+evRnlkPCCmTL6owNayi0ng" />
+            <input type="hidden" name="MPSMaster$MH2" id="MPSMaster_MH2" value="digipassAppl1" />
+		    <div id="doc">
+			    <div id="hd">
+					<div class="header">
+						<img src="/static/brands/seb/1.0.0/img/seb_logo_37x21.gif" alt="SEB" />
+						<div id="MPSMaster_lblUserName" class="webuser">Daniel Schlaug</div>
+					</div>
+					<div class="topmenu">
+						<a id="MPSMaster_hplMenuHd" href="/cgi-bin/pts3/mpo/mpo0001.aspx">Huvudmeny</a>
+						&bull;
+						<a id="MPSMaster_hplLoggonLogoff" href="/cgi-bin/pts3/mps/1000/mps1002.aspx">Logga ut</a>
+					</div>
+			    </div>
+			    <div id="bd">
+					<h1 id="MPSMaster_h1PageTitle">Kontoˆversikt</h1>
+					
+					
+	<div id="MPSMaster_MainPlaceHolder_pnlOverview">
+	
+		<table>
+			<thead>
+				<tr>
+					<th class="name">Konton</th>
+					<th class="numeric">Saldo</th>
+					<th class="numeric">Disponibelt</th>
+				</tr>
+			</thead>
+			<tbody>
+                
+                        <tr class="oddrow nodivider">
+                            <td class="name" colspan="3"><a id="MPSMaster_MainPlaceHolder_repAccounts_ctl00_lnk_det_AccountStatements" href="/cgi-bin/pts3/mps/1100/mps1102.aspx?M1=show&amp;P1=pWTe6hH82HzALo5+LzCWEw==&amp;P2=1&amp;P4=1">HushÂllskonto</a></td>
+                        </tr>
+                        <tr class="oddrow">
+                            <td>&nbsp;</td>
+                            <td class="numeric">14.870,24 </td>
+						    <td class="numeric">14.870,24 </td>
+                        </tr>
+                    
+                        <tr class="evenrow nodivider">
+						    <td class="name" colspan="3"><a id="MPSMaster_MainPlaceHolder_repAccounts_ctl01_lnk_det_AccountStatements" href="/cgi-bin/pts3/mps/1100/mps1102.aspx?M1=show&amp;P1=Sk423cUJcFBSfCqEeYktFA==&amp;P2=1&amp;P4=1">5380 01 554 51</a></td>
+                        </tr>
+                        <tr class="evenrow">
+                            <td>&nbsp;</td>
+						    <td class="numeric">9.829,19 </td>
+						    <td class="numeric">9.786,19 </td>
+                        </tr>
+                    
+                        <tr class="oddrow nodivider">
+                            <td class="name" colspan="3"><a id="MPSMaster_MainPlaceHolder_repAccounts_ctl02_lnk_det_AccountStatements" href="/cgi-bin/pts3/mps/1100/mps1102.aspx?M1=show&amp;P1=/NRPeRKMyUiRqde0+fK/cQ==&amp;P2=1&amp;P4=1">5273 29 334 22</a></td>
+                        </tr>
+                        <tr class="oddrow">
+                            <td>&nbsp;</td>
+                            <td class="numeric">8.328,75 </td>
+						    <td class="numeric">8.328,75 </td>
+                        </tr>
+                    
+            </tbody>
+		</table>
+	
+</div>
+
+					<div id="MPSMaster_pnlDisclaimer">
+	
+						<span id="MPSMaster_lblDisclaimer" class="disclaimer"></span>
+					
+</div>
+			    </div>
+			    <div id="ft">
+					<div class="accesskeys">
+						<ul id="MPSMaster_accesskeylist">
+							<li id="MPSMaster_accesskeylist1"><a id="MPSMaster_hplAccessKey1" accesskey="1" href="/cgi-bin/pts3/mpo/mpo0001.aspx">Huvudmeny</a></li>
+							
+							
+							
+							
+							
+							
+							<li id="MPSMaster_accesskeylist8"><a id="MPSMaster_hplAccessKey8" accesskey="8" href="/cgi-bin/pts3/mpo/mpo0004.aspx?P1=9">Ring Telefonbanken direkt</a></li>
+							
+							<li id="MPSMaster_accesskeylist0"><a id="MPSMaster_hplAccessKey0" accesskey="0" href="/cgi-bin/pts3/mps/1000/mps1002.aspx">Logga ut</a></li>
+						</ul>
+					</div>
+					<div class="renderdate">
+						2012-05-02&#160;23:08:54
+					</div>					
+					<div class="footer">
+						&#169; 2012 Skandinaviska Enskilda Banken AB (publ)
+					</div>
+
+					<!-- SiteCatalyst code version: H.19.3. Copyright 1997-2009 Omniture, Inc. More info available at http://www.omniture.com -->
+					<img alt="" src="https://102.112.2O7.net/b/ss/sebsemobile/5/H.19.3--WAP?pageName=Konton - Oversikt" />
+					<!-- End SiteCatalyst code version: H.19.3. -->
+
+			    </div>
+			</div>
+        </form>
+	</body>
+ <script type="text/javascript">
+	var loginMethod = "digipassAppl1";
+	var exdate = new Date();
+	exdate.setDate(exdate.getDate() + 180);
+	if (loginMethod.length > 0) {
+		document.cookie = "LOIN=" + "digipassAppl1" + "; path=
+64
+/" + "; domain=" + getDomain() + "; expires=" + exdate.toUTCString();
+	}
+</script>
+</html>
+
+ 
+
+0
+
+
+
+------------------------------------------------------------------
+
+GET https://m.seb.se/static/apps/mpsjs/cookie.js HTTP/1.1
+Host: m.seb.se
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Referer: https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1
+Cookie: s_cc=true; s_nr=1335990554956; omt_s_eVar6=New; omt_s_eVar10=seb.se%2CPrivat%2CStartpage%2CSEB%20Privat; s_sq=%5B%5BB%5D%5D; SebSeInloggPref=4FA198C926#1; WURL=4FA1A2291B#; LGO=4FA1A26701#x7Th1d1M8cojC47yho1LD9epm0rgx5W5v1qX8JixzjrebmGaxc+UqT0J3BM35XvMw2OVy2bd+r/++tOWN+Lodw==; CPSNET=4FA1A26604#zir3enyavk3lv2jnx4btwd45; MPS=4FA1A26701#Q6TEt442sHozy31fhL5F5VX4nk83Nw
+Connection: keep-alive
+
+
+HTTP/1.1 200 OK
+Date: Wed, 02 May 2012 21:05:16 GMT
+Server: Apache
+Last-Modified: Mon, 21 Mar 2011 13:07:27 GMT
+ETag: "939b-733-49efdcf3341c0"
+Accept-Ranges: bytes
+Content-Type: application/x-javascript
+Content-length: 1843
+Connection: Keep-Alive
+Age: 220
+
+        function getCookie(name) {
+            var sPos = document.cookie.indexOf(name + "=");
+            var len = sPos + name.length + 1;
+            if ((!sPos) && (name != document.cookie.substring(0, name.length))) {
+                return null;
+            }
+            if (sPos == -1) {
+                return null;
+            }
+            var ePos = document.cookie.indexOf(';', len);
+            if (ePos == -1) ePos = document.cookie.length;
+            return unescape(document.cookie.substring(len, ePos));
+        }
+
+        function setCookie(name, value, expires, path, domain, secure) {
+            var today = new Date();
+            if (expires) {
+                expires = expires * 1000 * 3600 * 24;
+            }
+            document.cookie = name + '=' + escape(value) +
+        ((expires) ? ';expires=' + new Date(today.getTime() + expires).toGMTString() : '') +
+        ((path) ? ';path=' + path : '') +
+        ((domain) ? ';domain=' + domain : '') +
+        ((secure) ? ';secure' : '');
+        }
+
+        function deleteCookie(name) {
+            var path = "/";
+            var domain = getDomain();
+
+            if (getCookie(name)) {
+                setCookie(name, '', -30, path, domain);
+            }
+        }
+        function getDomain() {
+            var sPageUrl = window.location.href;
+            var sDomain = '';
+            sPageUrl.toLowerCase();
+            if (sPageUrl.indexOf('seb.se') != -1) {
+                sDomain = 'seb.se';
+            }
+	    else if (sPageUrl.indexOf('/pts3/') != -1) {
+               if (sPageUrl.indexOf('swp9') != -1) {
+                  sDomain = '.sebank.se';
+               }
+               else {
+                  sDomain = '.vv.sebank.se';
+               }
+            }
+            return sDomain;
+        }
+
+------------------------------------------------------------------
+
+CONNECT 102.112.2o7.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Connection: keep-alive
+Host: 102.112.2o7.net
+
+A SSLv3-compatible ClientHello handshake was found. Fiddler extracted the parameters below.
+
+Major Version: 3
+Minor Version: 1
+Random: 4F A1 A2 67 C9 2C DA AC 89 5F 5E C5 8F 1C 5C 5A 25 A4 0B 60 CA 06 03 9A E7 3F A0 D6 5E 2D D2 2C
+SessionID: empty
+Ciphers: 
+	[00FF]	TLS_EMPTY_RENEGOTIATION_INFO_SCSV
+	[C00A]	TLS1_CK_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+	[C014]	TLS1_CK_ECDHE_RSA_WITH_AES_256_CBC_SHA
+	[0088]	TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0087]	TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA
+	[0039]	TLS_DHE_RSA_WITH_AES_256_SHA
+	[0038]	TLS_DHE_DSS_WITH_AES_256_SHA
+	[C00F]	TLS_ECDH_RSA_WITH_AES_256_CBC_SHA
+	[C005]	TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA
+	[0084]	TLS_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0035]	TLS_RSA_AES_256_SHA
+	[C007]	TLS_ECDHE_ECDSA_WITH_RC4_128_SHA
+	[C009]	TLS1_CK_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+	[C011]	TLS_ECDHE_RSA_WITH_RC4_128_SHA
+	[C013]	TLS1_CK_ECDHE_RSA_WITH_AES_128_CBC_SHA
+	[0045]	TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0044]	TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA
+	[0033]	TLS_DHE_RSA_WITH_AES_128_SHA
+	[0032]	TLS_DHE_DSS_WITH_AES_128_SHA
+	[C00C]	TLS_ECDH_RSA_WITH_RC4_128_SHA
+	[C00E]	TLS_ECDH_RSA_WITH_AES_128_CBC_SHA
+	[C002]	TLS_ECDH_ECDSA_WITH_RC4_128_SHA
+	[C004]	TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA
+	[0096]	TLS_RSA_WITH_SEED_CBC_SHA
+	[0041]	TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0004]	SSL_RSA_WITH_RC4_128_MD5
+	[0005]	SSL_RSA_WITH_RC4_128_SHA
+	[002F]	TLS_RSA_AES_128_SHA
+	[C008]	TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[C012]	TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+	[0016]	SSL_DHE_RSA_WITH_3DES_EDE_SHA
+	[0013]	SSL_DHE_DSS_WITH_3DES_EDE_SHA
+	[C00D]	TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA
+	[C003]	TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[FEFF]	SSL_RSA_FIPS_WITH_3DES_EDE_SHA
+	[000A]	SSL_RSA_WITH_3DES_EDE_SHA
+
+Compression: 
+	[00]	NO_COMPRESSION
+
+Extensions: 
+	server_name	102.112.2o7.net
+	elliptic_curves	00 06 00 17 00 18 00 19
+	ec_point_formats	01 00
+	SessionTicket TLS	empty
+
+
+HTTP/1.1 200 Connection Established
+FiddlerGateway: Direct
+StartTime: 23:08:55.140
+Connection: close
+
+Encrypted HTTPS traffic flows through this CONNECT tunnel. HTTPS Decryption is enabled in Fiddler, so decrypted sessions running in this tunnel will be shown in the Web Sessions list.
+
+Secure Protocol: Tls
+Cipher: Rc4 128bits
+Hash Algorithm: Sha1 160bitsKey Exchange: RsaSign 2048bits
+
+== Server Certificate ==========
+[Subject]
+  CN=*.112.2o7.net, OU=Omniture BU, O=Adobe Systems Incorporated, L=Orem, S=Utah, C=US, SERIALNUMBER=qIlB3onsErxknzrePxXdx0w2gGCDbJdu
+
+[Issuer]
+  OU=Equifax Secure Certificate Authority, O=Equifax, C=US
+
+[Serial Number]
+  15748B
+
+[Not Before]
+  2011-01-20 20:35:28
+
+[Not After]
+  2013-03-23 06:48:13
+
+[Thumbprint]
+  4E8DD04F30A2232AC17623F3C1398144D08AD199
+
+
+
+------------------------------------------------------------------
+
+POST http://safebrowsing.clients.google.com/safebrowsing/downloads?client=navclient-auto-ffox&appver=11.0&pver=2.2&wrkey=AKEgNivGswc9RGA4xcHnPgAZgEyV27JwHm6-4bMiZP0L6FqUzVyHc3VXArNxP-q9cyltxOH9M5vetx_O0TipsyezA1ojM_WlOQ== HTTP/1.1
+Host: safebrowsing.clients.google.com
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Connection: keep-alive
+Content-Length: 104
+Content-Type: text/plain
+Cookie: PREF=ID=d8eaec631111d78a:U=adb0ed6a2b2e8d5d:FF=0:TM=1334419337:LM=1334439359:GM=1:S=h6GUQSOU0tuszLZC; rememberme=true; NID=59=fRtcJv-mq-fsaM-SyLccTuhlfHXnJNbl4-1aKSGlYy1Qi20ebV84vDgjZDg-S6v7byFWhNNLwv4golgyEd2cfdJJJBRjfkF63K6kRQ7P4YAkrNIo_t1qHCKMmpjTgg9CvfTOKNzMIYKn4fVEtpFNXjenkF3Dan7M73EpbtlzbKZ1O0w_cgwBxOMDkUolecCDmlsr; SID=DQAAALsAAABMl1zrYbr2hkpDkkMpqww28cG1Itq0mNTqKkXkwI5OTxU_4qkUK647tB2T_WpqsfUCtuXgvFlnBFsYFEHI1PLO3Xamq16Oi0Hp9vgmUVyE8EjwNwNc9rMHtmMNgLZtHaHj1UUMX-PIeQgaDz4zlD0zS17oEzxNurOnkpLrCVIY7tb6bx1pVKDymCHt9yFJ7Kii4pcHDD_xG4taYPJbMpTk8Ohby1u5y71SejMabCeWoy6vLG8mDvPlRDWzuC-wSho; HSID=Aoi8B5pqCsfn-wPxV; APISID=cRxNg_oEku550Alu/AlkJmds7cYTqlQ80Y; SS=DQAAAL0AAADz5DpPyzuvNsXyIr5a8WHF3ThiaYu-3HoebhQ7CT0knoc_HSos64-KZ-YGrgNglT0OxAtAYgLyg1dGjx8UNVoHIsRlnNQJALXn1v9GOygRbrZ3WvlmfhtKXiyMrPaXrQIhmk-VG1xd7fblr2MuAZEy0ObJ2pCinJZMQI9Ceh-bjlzjJJnPduTf_YSt2miyD-WRHW2cGmCfMgYeQqlOpfBZSauA8CU741hXl7BQi5lXYIk46tHZFKNHKTo_H3-xf8s
+Pragma: no-cache
+Cache-Control: no-cache
+
+goog-malware-shavar;a:69019-77407:s:59904-83579:mac
+goog-phish-shavar;a:203220-210104:s:94617-98783:mac
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.google.safebrowsing-update
+X-Content-Type-Options: nosniff
+Date: Wed, 02 May 2012 21:09:03 GMT
+Server: Chunked Update Server
+Content-Length: 683
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+
+m:1_zksu3j7k_ls8M_bXjbgi_qKC4=
+n:1808
+i:goog-malware-shavar
+u:safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyEAEY94wFIPyMBTIFd0YBAD8,LEqHPNL1POZkPb1NwtD6dWuocj8=
+u:safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyEAAY2dwEIIDdBCoJYS4BAP____8AMgZZLgEA_wA,qaySPhn_4YcV_t4NmiQTemXbddM=
+i:goog-phish-shavar
+ad:203220-203221
+sd:94617-94618
+u:safebrowsing-cache.google.com/safebrowsing/rd/ChFnb29nLXBoaXNoLXNoYXZhchABGKGDBiDAhAYqEOKBAQD______________38yDaGBAQD__________wE,ekhxxA0DENwjjbW7NYdNUwH2gJk=
+u:safebrowsing-cache.google.com/safebrowsing/rd/ChFnb29nLXBoaXNoLXNoYXZhchAAGLfpDCC86QwqBbs0AwADMgW3NAMADw,UdIhnrd39hONw9B3NSSQhfpd8nc=
+
+
+------------------------------------------------------------------
+
+GET http://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyEAEY94wFIPyMBTIFd0YBAD8 HTTP/1.1
+Host: safebrowsing-cache.google.com
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Connection: keep-alive
+Cookie: PREF=ID=d8eaec631111d78a:U=adb0ed6a2b2e8d5d:FF=0:TM=1334419337:LM=1334439359:GM=1:S=h6GUQSOU0tuszLZC; rememberme=true; NID=59=fRtcJv-mq-fsaM-SyLccTuhlfHXnJNbl4-1aKSGlYy1Qi20ebV84vDgjZDg-S6v7byFWhNNLwv4golgyEd2cfdJJJBRjfkF63K6kRQ7P4YAkrNIo_t1qHCKMmpjTgg9CvfTOKNzMIYKn4fVEtpFNXjenkF3Dan7M73EpbtlzbKZ1O0w_cgwBxOMDkUolecCDmlsr; SID=DQAAALsAAABMl1zrYbr2hkpDkkMpqww28cG1Itq0mNTqKkXkwI5OTxU_4qkUK647tB2T_WpqsfUCtuXgvFlnBFsYFEHI1PLO3Xamq16Oi0Hp9vgmUVyE8EjwNwNc9rMHtmMNgLZtHaHj1UUMX-PIeQgaDz4zlD0zS17oEzxNurOnkpLrCVIY7tb6bx1pVKDymCHt9yFJ7Kii4pcHDD_xG4taYPJbMpTk8Ohby1u5y71SejMabCeWoy6vLG8mDvPlRDWzuC-wSho; HSID=Aoi8B5pqCsfn-wPxV; APISID=cRxNg_oEku550Alu/AlkJmds7cYTqlQ80Y; SS=DQAAAL0AAADz5DpPyzuvNsXyIr5a8WHF3ThiaYu-3HoebhQ7CT0knoc_HSos64-KZ-YGrgNglT0OxAtAYgLyg1dGjx8UNVoHIsRlnNQJALXn1v9GOygRbrZ3WvlmfhtKXiyMrPaXrQIhmk-VG1xd7fblr2MuAZEy0ObJ2pCinJZMQI9Ceh-bjlzjJJnPduTf_YSt2miyD-WRHW2cGmCfMgYeQqlOpfBZSauA8CU741hXl7BQi5lXYIk46tHZFKNHKTo_H3-xf8s
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.google.safebrowsing-chunk
+X-Content-Type-Options: nosniff
+Date: Wed, 02 May 2012 20:40:57 GMT
+Server: Chunked Update Server
+Content-Length: 3174
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Cache-Control: public,max-age=172800
+Age: 1687
+
+s:83575:4:424
+a˜Õ  $˙)Iœ< .G(±÷÷]n  -ä€€B  $›á˚Õ  -˘Qƒ®· 'ÍFTgOí2≈  +ŒH$=Â  ?ÌxÀ  +◊jï^`  +•¥W/  -Ω-V' .Ztâ:i”Ns  :ïIÃ  &QLGí -aÖu\¬ -”¥vËªpVx  ã”Â2Ö  +ÃÎv4(  *Ã]«X  -ª2x±  b]  ÷âP=¸  .¥ôøı  "7¬dR£  'Å<◊w¿  :D—‰  -4/§[  h¡≥Ü[iŸÌê -hµ∆–¬6©≥  ®3yÛ   mUl#e -‘Ú~aé -◊#AÚx‹Ãh  .ZnRz  5ˇ} SÒ4ø[ni*  M¨:ﬂe  -$A¢–‘  $_!Ób  +lÑB± *I$3Òqë"∫ +C‹áÌ .Z1M©s:83576:4:686
+)ƒÓ  &û£òÎË  ’Gú◊  -]v;≥  -,˙ÅV $ô§©\KÜß  (,§ÌÉ  -b&  ,¸Á…'ß d˝Kü´7MÓ (˜Ø⁄V~ÚÍ.`  .3à@  ¥Á4Œ√  .ZÜä<y  +á·ë]  .Z‚œªõ  ]3A£  )HXx¶™  +û5r]  -ç É˛& ‹*äÀ¯õÂ:  +:?Âu	 *Œ‹'Íó )™∆.Á (›K.∏J (Â	Yä, 'x≈-1Ω (‚U®c™ )@=à◊ï *ø[;b% (¿îû[6—  +ù@””d D\0ÿÙ5±  -⁄êhZ&  (Äá•   S÷Ê\k  +I„∏  4X¸M .[t‚Îé(4˜  ,&IÉãΩ ?-Û‘≠≤  !ˆ∫©î˘  .[±„  -¸ß»v  +[fgdO  +"»í¿/  gèó˚`  
+\Ò  )Ø∞» .-€KÑØ@ç  ->æH=  &?èç˙é  .2J´¿Î .LÎå2%Bˇ  +So`9  ,/á9Ωé  .Id˚^”  ,/Pﬂ .EZóˆßPq∞  bà—«  ,‰?√N5  ñDJâB  Ïq˙$  .ÛIgL  .ö]%Ò  +ÃOÒyû  WX	e  .Kùï  -ë÷©ò%  +®ávs¶ .X([G .X≠k4y .Xe¿ù}s:83577:4:833
+˙P2À . u˙Åç0™;E  -√…Vû}  )ÛC¢  +§˚ZÛJ  +l(]Øú  ‹…q  +Z	Œ]Æ  «gÌ7  (ˆØgåˆ  -UÓ:æÀ  'ïE†´Ö  )±≥∞¶≠  lπ!  +°¥	w·  -Ÿ1“2d  -◊Ó9‡ -`ÔÛÊå÷PŸ9  -ûÌCù¢  *-“„ã~  Á\Ã– .\≠»˚ Ä,á4 mŸÜmEêQ…)  -,´®N3  +•B˛úJ  -b7˘Nq +´ùxÀ±Åü h¯fM–eœ‡-  +Ìµˇç&  +˘€’+ .˚óëz&I  .
+DÜÂ ØîÜ∆*òQ  “Yı·Â  .p)e  +™Á·ã$  !*π˚;  +ØIÉãΩ 6&Oyß˛M  íú   Hc=€Ã  *≠XEÃw  ïèa˙“  ëŒ$X≠  ,?ÿ∏  Ç®ªd  +C
+h¡  ΩÛà
+  %ƒ•◊˚‰  *Vânr  +V3∆ï§  +¶´ê5 .‰æ%…	nG  √ÍÈ- +¶€
+ﬂ•à  Ì”È  ,î*;  (Û3 -Ê  +€ßõo–  .EWê%z +Œ≠¥J¿£~g  -√dúH¨  .¶!u  7i†  ,òPﬂ .E|(ê≥ŒÅn  .Iài™Ó  I#ï  *˙9P}M  Sëjz ÆñséEˇπ  Ù®Ü  .:ß K£  (≠´cü cë¬eªrÒúë  ,◊ ÏΩ  M•O  ¸Î=∏  +dyvJ†  *'äΩFP  WWì _ßb˘haÆp  ,†A¢–‘ .[À:€ƒlN  )áÛ˙´v  ,-s:83578:4:410
+û»≥  -Úwˇ• .\IG[ +:ñò˚$Ωùw -ÿFÓg?}1G  =&Az 'ß≈ûZ« )"2W 'ÖxrˇK 'vÒ‘=⁄ %Ai}±O 'x*Ò 'xfF@ák3  -¸}0/  -ƒÄ/π  %i¶^  -´êÄ6O -5fzf .]l]Ô	æh€‘  *o"_@  (TAÚü  +Dd%qû  -˚âc,o  *Õ É˛& ‹ÇÚ´¡ﬁ‹  -]òêéy -ÿWúµ‘≠-˝  r≥N'  ,ˇ˛ˇΩÜ  MB·∞‰  EëcÊ  -3î≈∑*  +SP  -±X÷Ó  ,wÎ¶“•  ,íöc¬ .]XV‹Yâ’]  —#Äªj  -nˇ} Svø‘wÆjê  -◊ç‚Á ø˙â„!úsJú $
+ƒ™››s:83579:4:306
+$πw© .EI@wTùp…  (¯‰
+IÂ  +¥;yc‡  (‚8òà  Ê&Râª  ”Àı  ,°nº†  - à’–  πﬁ‹ .^$òìcÏ~ >G®.πrFŸ  ·úŒ‹Å +®Î–Ä∆Z∞˝[  2ü V  *≤ã√´  [{  .^˜0À‚ .VLÁFÑ;”úA  ˙EDáu  )€huó   ,‰cK  +™ß˙P  >ªÄ#u +∂öBÃßï÷° [Xbás#ù§Ö  +¶plf)  +Ms•g  -bLº Ø«Í ¨Üiv .^]°És:83580:4:431
+€…kª  -36P~s  -RúÖ .ZàÆÄ‘ .Zˇ‡n§4Ê7µ
+ -≈@˜ï) -≈ù`
+Y ,…ÖA≥∫ ,…˜ªÊ ,…Û¬…| ,…B≤@¨ ,…ñ≤ˆ ,…˝¥ı %ÜΩõÔs ,√NáÕe4™  -á:^Èù <"óCŒë  B∞`r  ¿¯ﬁH  +±je‰á  -›˙VH  eÑI ,ï0ô å¬^e J¿π“∏vØ*  ,íÑÎ¯  …Ã¨ﬁ  .LX‹´C +•µ∑π˜ *L µñ,Ån
+  !ezçkx  -ŒÙÄ0  ¢^§ 6	ë ›è…±O ›Cì0 € ;‚ í~SQ˙ßõo– .]Y7é .]f 39 .]»ü‹>(4e ,‘3pg ,—:≥„p , :≥èúÖ¯.  -jÓ7  ÃÊU
+Â  )Ø∑”ü  -Ì
+
+------------------------------------------------------------------
+
+GET http://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyEAAY2dwEIIDdBCoJYS4BAP____8AMgZZLgEA_wA HTTP/1.1
+Host: safebrowsing-cache.google.com
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Connection: keep-alive
+Cookie: PREF=ID=d8eaec631111d78a:U=adb0ed6a2b2e8d5d:FF=0:TM=1334419337:LM=1334439359:GM=1:S=h6GUQSOU0tuszLZC; rememberme=true; NID=59=fRtcJv-mq-fsaM-SyLccTuhlfHXnJNbl4-1aKSGlYy1Qi20ebV84vDgjZDg-S6v7byFWhNNLwv4golgyEd2cfdJJJBRjfkF63K6kRQ7P4YAkrNIo_t1qHCKMmpjTgg9CvfTOKNzMIYKn4fVEtpFNXjenkF3Dan7M73EpbtlzbKZ1O0w_cgwBxOMDkUolecCDmlsr; SID=DQAAALsAAABMl1zrYbr2hkpDkkMpqww28cG1Itq0mNTqKkXkwI5OTxU_4qkUK647tB2T_WpqsfUCtuXgvFlnBFsYFEHI1PLO3Xamq16Oi0Hp9vgmUVyE8EjwNwNc9rMHtmMNgLZtHaHj1UUMX-PIeQgaDz4zlD0zS17oEzxNurOnkpLrCVIY7tb6bx1pVKDymCHt9yFJ7Kii4pcHDD_xG4taYPJbMpTk8Ohby1u5y71SejMabCeWoy6vLG8mDvPlRDWzuC-wSho; HSID=Aoi8B5pqCsfn-wPxV; APISID=cRxNg_oEku550Alu/AlkJmds7cYTqlQ80Y; SS=DQAAAL0AAADz5DpPyzuvNsXyIr5a8WHF3ThiaYu-3HoebhQ7CT0knoc_HSos64-KZ-YGrgNglT0OxAtAYgLyg1dGjx8UNVoHIsRlnNQJALXn1v9GOygRbrZ3WvlmfhtKXiyMrPaXrQIhmk-VG1xd7fblr2MuAZEy0ObJ2pCinJZMQI9Ceh-bjlzjJJnPduTf_YSt2miyD-WRHW2cGmCfMgYeQqlOpfBZSauA8CU741hXl7BQi5lXYIk46tHZFKNHKTo_H3-xf8s
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.google.safebrowsing-chunk
+X-Content-Type-Options: nosniff
+Date: Wed, 02 May 2012 20:40:56 GMT
+Server: Chunked Update Server
+Content-Length: 2316
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Cache-Control: public,max-age=172800
+Age: 1688
+
+a:77401:4:5
+:ÿ¸ a:77402:4:284
+:;Õ… «¶ÈtX”ï{Zπ,•,§…E˝–‰7_ "8B$ úÖàÆÄ‘ˇ‡n§—∞n1 7œÀ≈F9l ≠˙T Á4Œ√ T%  ∂aá á·ë] 'ÁRzâÁE≈¶∞ M»¢& -V'tâ:iØøŸ⁄EYltb1 áÆ‘ß`?9¸°x5Ä$Ù.-`W „c˛ de”ıvC®∫™Ë?~;9Ó<{HË* =E√≥≠∂p	Ì^3¸É⁄√	'ë˙bOÈ÷M>;nóÚ¬2`‘ i»Í[≠≥.ÁR˘ x‹Ãh "≤ÿø >˛6D 1ˇË]§Úqë"∫1M©Z» a:77403:4:118
+‡ÓŒ˚ ”˘áû =⁄∞@ ?´ ± üÔg˚ ¶VÜ‹ „lÊÙ!ﬂ2-V'"æ.Ã""Ç∂ X¸Mt‚Î∫©î˘ D—‰lçp≤mgf*n \'|JBp ‚”TO A¢–‘À:€∏ë‹ që"∫ a:77404:4:439
+‚ÿ·« )ƒÓ8Ñ≈49?∞ 	*ƒü’¨∞øè–úù j(R¸∏ŒÚîø€Ê Vj…g7CÁ#wˇ•IG[Ï„ -ﬂ+¸ OÖ»
+ Ä§p' Vo∏ €Ü˚& Àã\âZh”é?’ß Cd(c ≈XäZò…]ÃvØËY \Ã–≠»˚ ±¡Ω: ÌàNT vÛ^ On”i V"ƒ Rò,Ï˜Ÿπÿa¯¯ ˇ9¶ Ä+≠ä ◊?Êg Mπs◊ ‡m µr‡„ û∏Õj Ä¿∞	 §¸3  ªƒl¶ ÷uı”ÖÊ l4b◊ ?s‹ü ™Àz£
+µ—Õ≈Ó† X¸M ≈,í‘ âd≈}[ê¡‡¯]±ÇªˆÑ å2    ◊¿• _	Ú s€} Í)ˆ n¥mZ ⁄ ¶wè\ ‚õ˝„0}ÉÙ∂ºíÎ©`ª•õG⁄ ∑Üs â°1 ÿLU G›D "˚ÙÂ HÙò˜$ÈU°w© ç”¶d ÒÂB Õ§È ¨ËÅ †ì÷B êaˇè äv-g 7ÈcÌ µuéJ a:77405:4:381
+ëõÕô Ÿ˘£ ﬂSjâ⁄:ld7˛EÆ ©ìbsøÓ∆±è§ ê‰rd dÆø ÜéÃH _YC^“v≥$Ìz‚ êÄ6Ol]Ô	Õ¥˝ \Ã–ïv¸ìÆ† "”m∫ ·§uÏ µˇç&µ:¢D‘ìÚ qQµ ê®π à¥h¬Å)ñ÷	‘u écxÛ…ëO¶˛' …"4[ªQ>dˆ Én ™Àz˙∏¥<{ÿõ∑l4kﬂ8úD o(= oh7_\Ì¿;=ä º»Õ…≤H…Äë)»n C¿R+ü¢µ5˜g ⁄‡ˆ© ßõo–Y7éf 39»ü‹>áxí6åπ#£û öc¬XV‹Êˆy ,a@ ¿:∆) #ï÷ó .3_b¯>õÄhπÚfÒÒRü‰ÉÏÉV ÒÉb3 ‡>onO—˛3ﬁá∂¡2S0Zª h¢ öz
+ à˝m a:77406:4:399
+™'«‹ 
+‰rh wˇ• Ωùw
+§ÆäùCVÿƒé«µèß‚ Í…≥…IOîÄ∆ôÂîê.‡SÒÁ©¿…+·*,˝p ≈∏#¢ D∆ø ^Ù$ ©ìbsËÕ)aÉo€ XO—O ﬂoÇO êÄ6O ßQ> AÚü¥o‹x}k",0Ò["6ôè~0jÈf®ªpõ8ÀûÀ0d:O a!2T˘d‹Õ.÷4∏(w-V'7–Ù™N∞  ﬁ‹$ò™öDˇ  √\e„Óê ï˝” { #ƒí! )Hq^ –Ÿé æŒåw Ú™=Î ÀÃm ÷k7ÅàÙ™¸öc¬	¯ πf4R '˚E fŒ‡\£ï?fÍ  íÄ£ ÒÌﬂh ÖrÇo ÜM≤ ¡j2_ 9!öA©•Ø8C \Ë TN d*9f ≤xä© Æ(qÁ¨¯„,àe≈î –ëñ v˘ïø mä° Üiv]°É1nÀŸ a:77407:4:261
+ãYbŸ =Ág4¨p˛»ƒwÖr KÍÍ 8Üq ÛÚi≤MKîp¿Ùﬁœ◊ÌÏ’Ru }úé&`p¶—Ø¿R uog∑ YLp(ŸìV¡6\iD7u≤˝ËË≤õÒŸ∆˙ b`9: ‰&0# •&ìÔ 4p=J ‰ó—íÜ ˝7ﬁZòBÕÆOéI– Ã•b˝ †pÏ/Bﬂc;”úAÛÊ  ˜0À‚ x›l, Bn® €∏Ö ⁄§áÄ~V$ñÔf3‰ Î–Yï'ùir(“ø *4˜© âZõ ~’≥« zÂ ª^c˙Èp˘8Üiv Ìr˜Ì ö"jå a:77408:4:319
+ã˝ J7‚ ë™¨V Œ~»˜ΩÌThÀΩì êWˇ àßí \¯iá œbcT=FHãO V~® £;7/ âÔˇ≈  H´ ï2ˆB ±P f4ı¶ ﬂŒ˛ÖÍß.9©Åä UZtV Í”çP;¨Í_õ^Õ¸„UÙê´‰ô R
+
+ $êù Xƒ˛Ú /‚l eÍ(° ó˜É ª£M5 
+Pº" TŸ˘/ ‡p QÊÙ ‚˛Û \‰µw Óî 3¡T $ˇi ¥¿ùË Bî¸ ò+,Y X‹´Cp?”1ªl◊˘ #]E{ m]˛ß /Ö•ú k˘IÅ ÿ∂jÈWÅe]RüÑ´wIÀæˆ@ :€"† ?/ñÜw9À »≠p ¯⁄ ¢èÌ≠ 
+
+------------------------------------------------------------------
+
+GET http://safebrowsing-cache.google.com/safebrowsing/rd/ChFnb29nLXBoaXNoLXNoYXZhchABGKGDBiDAhAYqEOKBAQD______________38yDaGBAQD__________wE HTTP/1.1
+Host: safebrowsing-cache.google.com
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Connection: keep-alive
+Cookie: PREF=ID=d8eaec631111d78a:U=adb0ed6a2b2e8d5d:FF=0:TM=1334419337:LM=1334439359:GM=1:S=h6GUQSOU0tuszLZC; rememberme=true; NID=59=fRtcJv-mq-fsaM-SyLccTuhlfHXnJNbl4-1aKSGlYy1Qi20ebV84vDgjZDg-S6v7byFWhNNLwv4golgyEd2cfdJJJBRjfkF63K6kRQ7P4YAkrNIo_t1qHCKMmpjTgg9CvfTOKNzMIYKn4fVEtpFNXjenkF3Dan7M73EpbtlzbKZ1O0w_cgwBxOMDkUolecCDmlsr; SID=DQAAALsAAABMl1zrYbr2hkpDkkMpqww28cG1Itq0mNTqKkXkwI5OTxU_4qkUK647tB2T_WpqsfUCtuXgvFlnBFsYFEHI1PLO3Xamq16Oi0Hp9vgmUVyE8EjwNwNc9rMHtmMNgLZtHaHj1UUMX-PIeQgaDz4zlD0zS17oEzxNurOnkpLrCVIY7tb6bx1pVKDymCHt9yFJ7Kii4pcHDD_xG4taYPJbMpTk8Ohby1u5y71SejMabCeWoy6vLG8mDvPlRDWzuC-wSho; HSID=Aoi8B5pqCsfn-wPxV; APISID=cRxNg_oEku550Alu/AlkJmds7cYTqlQ80Y; SS=DQAAAL0AAADz5DpPyzuvNsXyIr5a8WHF3ThiaYu-3HoebhQ7CT0knoc_HSos64-KZ-YGrgNglT0OxAtAYgLyg1dGjx8UNVoHIsRlnNQJALXn1v9GOygRbrZ3WvlmfhtKXiyMrPaXrQIhmk-VG1xd7fblr2MuAZEy0ObJ2pCinJZMQI9Ceh-bjlzjJJnPduTf_YSt2miyD-WRHW2cGmCfMgYeQqlOpfBZSauA8CU741hXl7BQi5lXYIk46tHZFKNHKTo_H3-xf8s
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.google.safebrowsing-chunk
+X-Content-Type-Options: nosniff
+Date: Wed, 02 May 2012 20:55:03 GMT
+Server: Chunked Update Server
+Content-Length: 2898
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Cache-Control: public,max-age=172800
+Age: 841
+
+s:98721:4:26
+ëâ¯Y 49æ˜ì)˙£ 49Æ›‚˝s:98722:4:13
+H]_‰ 1u1NCAs:98723:4:13
+[•Ul 3'Eµ°ös:98724:4:26
+éÜ 45Y0Ÿ≠%éâ 4xÁs:98725:4:42
+8Tè 45¯≥	 45°Ur¬Ô·f? 450åñp 45^ç>s:98726:4:13
+ëâ¯Y 4Hæ˜s:98727:4:13
+xRn 3ÎƒîÚIs:98728:4:13
+ì)˙£ 4NÈœA.s:98729:4:13
+I‰ÿq 3y…õ›s:98730:4:102
+#,±– 4Dµõ_m8Tè 4Dßß4Ùëâ¯Y 4Læ˜xRn 3úıU∆© 3úîA≤Jq £ 1u¥+%S·∞\T 3µçd 3∂F∑? 4/Kaæ<s:98731:4:26
+– ,o 4
+¶Ïæì)˙£ 4TÆ›‚˝s:98732:4:13
+ì)˙£ 4XÈœA.s:98733:4:81
+◊oM€ 1`Øl$MÌ© 3ì⁄—_˛8Tè 4Q¯≥	 4Q°Ur¬≈û} 45÷cmFÔ·f? 4Q0åñp 4Q^ç>s:98734:4:13
+ê´ªﬁ 3W<ñ's:98735:4:13
+ﬁÀc /6ò@G©s:98736:4:13
+ëâ¯Y 4\æ˜s:98737:4:31
+¡!ƒ*  0jNïrx  4)%yÀp 3Ê>6∆s:98738:4:9
+⁄úzf  /s:98739:4:47
+…ƒ *]¶‡Û€ )âéa3Òëâ¯Y 4hæ˜ú∞`? 4ıÏs:98740:4:9
+Œî&“  3os:98741:4:26
+ïçí ’”2bpì)˙£ 4jÆ›‚˝s:98742:4:26
+∂SãÛ 4V÷Æá‰ì)˙£ 4lÈœA.s:98743:4:52
+9(¶» "iÃ'˚°¸Â 4≤êŒ®8Tè 4aßß4Ùq £ 4a¥+%Ss:98744:4:13
+ëâ¯Y 4næ˜s:98745:4:26
+G_ƒ 3m8òcì)˙£ 4r‹,`›s:98746:4:13
+UyxÇ 2«á«=s:98747:4:35
+J∫i 3j∏LÖ∂Ú˚ÿ 1–æPXHõ  4is:98748:4:13
+ëâ¯Y 4uæ˜s:98749:4:77
+8Tè 4p¯≥	 4p°Ur¬S0∑ 3·ÊDÙq®(?€ 3é»¿X¶Ô·f? 4p0åñp 4p^ç>Hõ  4xs:98750:4:39
+ëâ¯Y 4{æ˜ú∞`? 4lıÏì)˙£ 4zÈœA.s:98751:4:13
+ëâ¯Y 4æ˜s:98752:4:42
+_Ê5h 4CSû` 4°QÙ LWô 38øœ≈ 38ﬂ¥˘:s:98753:4:42
+πU~Ö 3≤⁄g 3•i§&‚ 4ô˛∫∫Œ 4tÙ†≈„s:98754:4:34
+≠ÚUó 3mlœ?•˜S 2’.†Ç 4ß†Bs:98755:4:13
+ëâ¯Y 4Éæ˜s:98756:4:73
+#,±– 4pµõ_m8Tè 4{ßß4Ùjí›≈ 4E8ì√.q £ 4{¥+%SBjÂ 3gT™*` 3k∂æs:98757:4:26
+jí›≈ 4.Àhòëâ¯Y 4Öæ˜s:98758:4:26
+ëâ¯Y 4áæ˜ì)˙£ 4à‹,`›s:98759:4:13
+.: 4é0µQs:98760:4:68
+8Tè 4Ö¯≥	 4Ö°Ur¬ëâ¯Y 4åæ˜gÔ˝) 4<πørÔ·f? 4Ö0åñp 4Ö^ç>s:98761:4:26
+ëâ¯Y 4èæ˜Âßv 4As:98762:4:26
+ëâ¯Y 4ìæ˜ì)˙£ 4ìÆ›‚˝s:98763:4:22
+UG2  4íËG~õ 2!¥y*s:98764:4:26
+˘•û 3¢4∆≠Ωì)˙£ 4ïÆ›‚˝s:98765:4:26
+8Tè 4éßß4Ùq £ 4é¥+%Ss:98766:4:26
+ëâ¯Y 4ïæ˜Ü∞â¸ 4s6$s:98767:4:39
+Ò“™4 4Ü·÷»YÍÍÒ 1¸ ÊÔ™|π 4î⁄‘Wºs:98768:4:13
+ëâ¯Y 4öæ˜s:98769:4:13
+PK∫ 4dc≠®$s:98770:4:84
+›π?E 4å4•C 4åØ›]ù 4åtuyË 4åKL ëëâ¯Y 4üæ˜q¶˛  !Q1ÆÒÚñù 4ÇÚü›ô 4ÇòI)s:98771:4:121
+Oã◊ü 3ñktôŸ-<äX 3>ûÂ1Ô™|π 4ìÓ◊·Ç 4ì∂uSS 4ìÊßìØ 4ìOìL≥ 4òä'm6 4óJÿ[~8Tè 4ó¯≥	 4ó°Ur¬Ô·f? 4ó0åñp 4ó^ç>s:98772:4:34
+¿åG 4¢êå÷É 4¢)#∑‡%f 41‚†Zs:98773:4:52
+o¸L 3f˙ÄË∑ß™ 1ÔóoÖ¢[1Î0 4åP&ªsú5@ q Ø≠ss:98774:4:39
+8Tè 4°ßß4Ù2‡è 4ö”∂6òq £ 4°¥+%Ss:98775:4:13
+iÙ,ê 3¸¨ÿÍXs:98776:4:13
+qâ˜˘ 4©-©¯Ÿs:98777:4:13
+@9x 4©ÊÜòs:98778:4:21
+oıÕó 4òÉqC 4¢·¯ïZs:98779:4:13
+ËÔâg 2ÛÚ°¬s:98780:4:42
+&›œp 4Q‚x∑ïÎ˜î‡ 4¢6* 4¢Aëÿ 2ÚﬂDJs:98781:4:85
+Æ6‚
+ 4±]√∞? 4±®⁄ 4∞ù'  4ÆX™≠º 4∞l2Ÿ∏ 4Øo©« 4Ø⁄Ó€~ 4∞5?;Ê 4ØªE˚ 4ØÁ—?,s:98782:4:68
+#,±– 4°µõ_m8Tè 4™¯≥	 4™°Ur¬[÷g 4©ÅÇ@vÔ·f? 4™0åñp 4™^ç>s:98783:4:13
+˘ÌÔl 4¥ÿi@ˆs:98784:4:13
+»vT˝ 4≥3ÛüCs:98785:4:13
+2â∆ø 3ÖËª
+
+------------------------------------------------------------------
+
+GET http://safebrowsing-cache.google.com/safebrowsing/rd/ChFnb29nLXBoaXNoLXNoYXZhchAAGLfpDCC86QwqBbs0AwADMgW3NAMADw HTTP/1.1
+Host: safebrowsing-cache.google.com
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Connection: keep-alive
+Cookie: PREF=ID=d8eaec631111d78a:U=adb0ed6a2b2e8d5d:FF=0:TM=1334419337:LM=1334439359:GM=1:S=h6GUQSOU0tuszLZC; rememberme=true; NID=59=fRtcJv-mq-fsaM-SyLccTuhlfHXnJNbl4-1aKSGlYy1Qi20ebV84vDgjZDg-S6v7byFWhNNLwv4golgyEd2cfdJJJBRjfkF63K6kRQ7P4YAkrNIo_t1qHCKMmpjTgg9CvfTOKNzMIYKn4fVEtpFNXjenkF3Dan7M73EpbtlzbKZ1O0w_cgwBxOMDkUolecCDmlsr; SID=DQAAALsAAABMl1zrYbr2hkpDkkMpqww28cG1Itq0mNTqKkXkwI5OTxU_4qkUK647tB2T_WpqsfUCtuXgvFlnBFsYFEHI1PLO3Xamq16Oi0Hp9vgmUVyE8EjwNwNc9rMHtmMNgLZtHaHj1UUMX-PIeQgaDz4zlD0zS17oEzxNurOnkpLrCVIY7tb6bx1pVKDymCHt9yFJ7Kii4pcHDD_xG4taYPJbMpTk8Ohby1u5y71SejMabCeWoy6vLG8mDvPlRDWzuC-wSho; HSID=Aoi8B5pqCsfn-wPxV; APISID=cRxNg_oEku550Alu/AlkJmds7cYTqlQ80Y; SS=DQAAAL0AAADz5DpPyzuvNsXyIr5a8WHF3ThiaYu-3HoebhQ7CT0knoc_HSos64-KZ-YGrgNglT0OxAtAYgLyg1dGjx8UNVoHIsRlnNQJALXn1v9GOygRbrZ3WvlmfhtKXiyMrPaXrQIhmk-VG1xd7fblr2MuAZEy0ObJ2pCinJZMQI9Ceh-bjlzjJJnPduTf_YSt2miyD-WRHW2cGmCfMgYeQqlOpfBZSauA8CU741hXl7BQi5lXYIk46tHZFKNHKTo_H3-xf8s
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.google.safebrowsing-chunk
+X-Content-Type-Options: nosniff
+Date: Wed, 02 May 2012 20:55:03 GMT
+Server: Chunked Update Server
+Content-Length: 4562
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Cache-Control: public,max-age=172800
+Age: 841
+
+a:210103:4:1168
+€[ÅD⁄Û®$w/≤P99
+Ωò&[<†–∆‰44nËdò¶ßl(œ9ÊVhª‰‚T7o•b†<€•ò“~¿≠√¢é‡ÁàÑ=A∆Ù«Œ\±7|èÅ^@—≤UÙÎpi∞ÁπÏ< ⁄∏téi7˚óích'π”w‰L°†°‘™?Ùv¿J◊W>U“%ÖL	~˙êÀ	Ñ‘—rît 	ï$ƒEõ=ñ)G†0r)CrMu/RVîLAﬁßè6V´‰ ñ‡uVÍ†~yMÿ•y(“WIÔ4–îûêåÌ-'øá}ëUä
+n2HÑíùÁ›ZÿGNmàï¢a!Ó‹≈6£πX€ªkÊ#8s⁄p{†÷4≤Müπ	≤äò°∆¯ñsv«Ó`G“E⁄S•€:U%~ıÛèÁC˜î#,b¥vJe√Xù8°Œ0!Ñ≠ Å,Nx≠—„˛œ\ võ•zYø∫ÌLÇÈ?˚Ì’~m-5P≠ —Sb5{*Á4–ïé#x6ú[~œD¿OïÇE”Ω—õhÁw“ï)‘W˚dw/8”2ø®FﬁîQÎı˚FJæÌ8:'1ËÁ◊È‡Ë(ÿ)xı˘óÏ˝	ÙrˆÎx∑Ü7ŸætèŒ	Í˜EÑSôSòß Qolb˜û8‘9dlvÜõ^ÀAÇ’4ß4ıõ…Ã¸Î%è;¨,±\w""´˜∆ÏûÎıC+}*(T¿ß•´Yj~êvz≈C63ﬂ	K∑⁄‘SÕk˜E~˛jfxÈÕ‰V ¯ N’ÚHy›Ωb»pq(ÏæŒü“
+“{ ûR£ìÛ¡|oh·4Fn(¥3Ò9‰¬	∫≤ﬂ∞6È¥)5Ä‡Æ«vÇ~÷Û=’êü˙'&iÑÙ "Z#E^˚RÀÿ±]]∂z…◊û;P*Ò±PA.71vÛﬂO<zŒuH%0Ü
+¿Üª+XÔè€∫±ÃyŒji¯m˙ö‘éúR)â±˝±•µ-G¿â˜à+–N;W√w\Ã$˝˙ÃÒ™π~?xÎ¸¯¨ÿ!ÅáR(íı£ØÉ‘U÷A|ëﬂië [Ω®$qÚõ„˘õ>ﬂO7Ç>÷˘
+[rèfÛ€BÔq∫|˜;JÊ£Á∏Vjaû«◊ß{-ã⁄fè¯∂ykÖhˇÉ°s(k/2µ∑t6#Ò4íìk¶„k»wΩô˚TitÏe÷WxÅx=åÍ[jZj´ ÷7Û4˝Ê∏e›’› wíë≥Kz:’2§2≠=˝ı˙∆¯Ü9 ≠È¢m˛ﬂ™XÀ˙ì·•væÄò£µTà⁄6Y÷‚e¡˘∂∆¢¢|Ú≤OËÂ∞t5©–=\Q¨+k“∞À|OE&ôr”_Å˜ãQwøJ†Á<~ºñh]o‹Ê]¨äxe `k¥‹_˜Ló(˘ 8”7’òr)ßœKıWóâÅ¡˙˙ŒHµ∑}qAIˆÏ5J¯±˝·CåÁvõ»Û1´£‡a:210104:4:430
+Ê≠n˛ñ≈§$˝ëÙ≤5zq+ ‡¬M¨‹≈6£‰{ÚÜõ^ †®¡Np∞\´È˜Y÷K©à√∏9 Æ~L…XÇì°Z∫•WÍ›8$è[˙,F0Kﬁ˙0DÎ∂– ◊ß{-˘V-D≈ë'óh„Âπ¸≤•\/ŒÃx+¡óUÅ–¨Ö ∑t6#3Ç@){¿Ù1…oçˆYVÍ1©ˇ-)•FkR hA¡√Í·!0î;ë[»Sd–÷πg›9èô%ıbaçÙÊGí”îN”¿<Ãzr÷úÎEU–hQõj3ÒaË¡â⁄1¨pπø\ê0>`V>œ¨+k“i…¥=ítz8çi>Ø:⁄ºU>A—ó≠ß…F*rÕ;¿|FªÿÎ(l™ΩN{\\¨?¥®	âÉ'SW‘Ò:tÔrúl≥·ß®…_ŸõÕ∫,O©G¶øs–≥Õt£R{"ëoèóŒ‹¶–Ä˛UJŒÀ˙Ät`Á<~ºÙä”k5›]Oó4 œ,	€R˛a:210105:4:1350
+Ê≠nò]Dã‘%RGË°úáUß°Éﬂô#ø"<ß!∆ä∏O>)®ªAl§M_o—ı6√Ë‰ï…Üõ^,∫>ã[s‚»üZ°;x á:3 wÖ5BˆXT5ıNÓ!a¢ïvyàπ’kô/ﬁ(	ª¥9Ûo1eI(áï,ô∫ñ‚∆ƒsèÍózË·b˘∏œõ*&ØŒÉÙÖÃØâO˘.ŒÙâ™˜(ƒQ£[9Ù˙«BGÊS$<∂^ƒ‡‘)K2ˇøÊäû<MŸò√WM°µ˙Êe†∫·f∫B2ﬂn+òÔØp⁄Ço/gˇ'Üh’Gç«m0ÓÎ;ıå6}W∫ΩqÛﬂJ§,çKBÁ êÏ;ºê∫ñçËÒ Sì””¿‚àe∂lé.†ÌUH~}e%˚ñë ìxÄ–≠˛ŸdA#|¢ ¢O"°ÛI\°ñQØJQV?˝¶ÙXåœg	q⁄  Qj¥FNNj∫ﬁW1<√6øƒI9|Üa´@¡ÿ®p_ˇSù◊˚ù§·"Sº›Ê∂pÍ
+π@Kß(hŒ„ç8√ Dia;Ωïbaç:∂Âo◊„VjF,–\rÀ/?2˘≤óÃã∞2” ÷ëoõ∆°•àH,ﬂÿfÅ⁄…ZaÚ÷ÿ	À¥ LiÏ)k'Óm∂Ç}æé|úï`ÑrÜªŸöaÓòs û”⁄∞1ÂÔÃ¬*ˇs˘ŒÑ&€˜¢ŒßÜﬁ¿ÆF˚.R*)L]ˇÔbﬂe¬ú|≥ââìÒØﬂÂˆæà€):p‡˚Â“T^ßV9D≈iõ≥ûÚmÌ,Â?Û~™/IiÄêSk°[ªK≠îÿ›åÎÙïDÿ}®ê◊∏D&@(m"«ËáFQZ>—’ÓçÔ˝!˙èFfiN8_ä»¨+k“<Â¥„…	\Áù}®	â(:êÙbÑ˜à$ÒP´¥h‚K±ﬁ`~q°àÍ—©}å. ¡gùÕ≤ŸB7c'°P§N¡
+r]bókëä⁄ Õπ—U≤( ZVCM¿c¥ÙõtEH∏ıãXÇÔ«x_S»ÀæU ˛C›@+6Ê:)s{ûC®ù«O:È˜ê4ıÓÉÀΩó∏ˇ^A¸óxS÷,ıB∫bh8o∆gU¿K•´>†≥;dü‚wsN§µ·∏`%∫21â∂ú∑≥±ªF°ÁpÁH”Ê@áÄºÃŸv$OãJBxUmñp–~Ë¶ıbXÿΩ^^)Rl÷LLJ∫¢ÄU¡ñfUB`ó<è»8Ñ¿lÍÓtN`@Ö‰*2È91å´=ìËO§Ÿ“9∑Î)G®Cœ¬áôs]ﬁì‰˝ˇkäY l™mÃﬁx£7A^’}!øº0iﬂÂï@]GÊÎ\M–ÀW5˚&q–Ô÷lÂ@ßÁäÇñ˙;∞ı$˚Èëáª2l€Éçƒ!UÎá–sb¬Wéœ7[4euæwÂﬂπ@[Ä0Ü „6Ã-¿Öj+”ı4Â◊@ukR‰çıÖ #íbmügeN.	NIo#PEÂ±aÔ Â÷¯S» ÿD”g„…„±èr> ©¯ä∫
+Ï\Vb∂*Ñ±÷	p/E”¯mB%¢é‡!ÚízñÔ«ÁO›/
+	0–;;'æÙîyÑËq#]%–h®Ä6Ó˚
+l∏(Ù¸S≥å‘…´ı=õ1‘∞m
+3DØMÀEö
+Ì°c4Ö*Áûc∏§√Ô∫OWÌ>†⁄ı+á»$ô∂˘û∆'€ı«Ø⁄›zû±é#-a:210106:4:1551
+.ß∏∫≥Cú4_¢¶LÓ6ÛÙ*©ßû˘‚1&÷pz–î7‹ONÚdZg ´EÕ[≥ˇ3.ÚÁïóã®ÿ∆7 Œ˚º™Ô}6
+´◊z∏û√≥»_j¸ úÃ—§BNmàï≈]¬√Al§M˚§ÿï6√Ë~°hÚ˙TÙà2	O<yﬁˆTUèØMÆeÀ8Ètfö3pîªãc≈8∞A1œ˝"<  ã]M˝ö„YQpúœôi^"‹<W&Ω˚çËÒ ,’¿‚àe n„m◊˚®’ü◊ºnË«•…K «Zmïn_\®n42ÀWèﬂ[-ìxÄ–!eøÜ@∆9ìøH[¯kœ(≈W‡b3ü˝˝(8–{ [%{içﬂ∞ïÔŸÀé‘"ö•6wï‡&1ûπ∞UùU6tHp®Ã=)ü¨I†hhó }π…LRB∂¿{vÓÅ·Ol9ÿ≥∫–ndSií@§ÕWk˜ËowbûˆR® d Û· ≤£ ¬J™¨óG\◊TmZpQ¡´W$˘´2cãv˜ﬂΩWe˘€∫Sm∆L ∑∆K∆MUÍÓoZÛYº!ÌkÈV∫ã2ïÖÓQµ3ª„zº=H? J–œd‚Æ}‡ølnﬁµ0jÀl≈"˜ÇF8¢T6¥ÈU<3å—Ì©N≠Õ2ƒÎèS•¶ãZ/ öæoÙuÇpÏÜ°Ö©M”BX
+õî˝¶.ÚóP©¨6tqôã’fÖ¢È‡∫FˇEpg÷_WƒÚnâ∂¨`/MñeÔ|ÅX±e' %Í÷á9]w[C∆Òˆ†«^}Héñö∞KpÔhÜ◊Ôf∆ª]¥ áFü˝[ﬁ0|ËÍs˜$‹Ù4’™„# Ÿ7°[ÑV0Ÿ!G·=3ÌP8‚N]ê◊π1UÙfæ„FÊ∆D#"'çq~,¬∞Ω‰£†◊ÒÈ?Û§˚wŸØ'"ˇ`8Ç~’ÊX23\Ò_KPΩOOÍÏﬂ"Â¯˜ˆ9~X|◊QbÑ˛iÓü
+ãtùpœÖü%c4Ï?Nıô•r∏–@De~	ËD‚§ﬂÛS≠Ñπ™©r?c¥w-6¨bGk…Oë”∏¯sÓäÁ0Û”Ä≤"≈ãT§;óT®•@Ñb¬€3@TY:à[ûÁΩz -ÓÔ#⁄é{“≤1 –Pø‚ÁæÔÏó;*6c°îØ◊æ&™>’ÉÍ√t	…¥“∆f±’`Y ‘e·ª-§dJ„`v>‚ÄÉéq–=Ç÷¿Yï$·PÌWÑz4Ê!˙è®ıÓ&*í≈å;∆'¿xéëà™_G¥˘=lB+,WúYS˙É˙ƒ„34”èj™Îë∞∂Ω]˘≤ô≠˘W»√£Mä∑“vM‰9.y‡ùêJrC)M˜n˙≈¬†œ®øìGwÙ§{Mk6˛P√ó7v·∂Ω+ûµ˚~pËQ£’ˆÕçÑˇv&?ûZl€Ç“ÏM&2úe Å√§i‘Qqî^YºÁÃîG∑‚õõi˙@êÈVÛæ‚Îﬂ^ÑkÒuèGpÁ£I≈ùé‘Íà®…ˇÛü≈” –-∂a	î◊ITe°ÊÙ8"î	ÑÁQsãí√ÖîWÅJ!{ØOø∑ø¸í@.Ô‹5Q^n¸˝º”π9≠‡ﬂ≤Û2∏ŒÍ‰Úeíƒ©6%kß\¯7V^ç€Êº∆˝F√o◊¥Î‹ÔÖ*èU!/÷H/·?ò@˜{FY
+ì0ûdß2âLi◊∞}',ç».fniRÓÇı˝çÛ~æ‹ù@µŒæ
+	ŸƒõhÊkÇã®Î1Ó˛:Ûú9£À–ÉÄªÎâ7Ë	¡¨¯¥sàE≈≈N-§Ó§ÈÓª>ªä∑siÏWãÉ&
+yCO≠0?ú"«.9é~ó?Åã¢—ª-Ÿ i7Ä('¿ÆíÈ∞dÿ˘ø∂ºZ5`√ﬁ_·ßN‘Ïc2ÏnÎºπÆ&ÃÈkùyû	ÔÕ`C¨Öí™£ôFÅZ˙L¸:¶–9Õ®≠ó
+
+------------------------------------------------------------------
+
+CONNECT 3.docs.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Connection: keep-alive
+Host: 3.docs.google.com
+
+A SSLv3-compatible ClientHello handshake was found. Fiddler extracted the parameters below.
+
+Major Version: 3
+Minor Version: 1
+Random: 4F A1 A2 73 CC 54 0B 01 44 7D CB A5 D9 29 F3 88 63 F3 D0 42 D3 FE 3C 97 A9 F6 E9 0C B0 E3 E1 6E
+SessionID: empty
+Ciphers: 
+	[00FF]	TLS_EMPTY_RENEGOTIATION_INFO_SCSV
+	[C00A]	TLS1_CK_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+	[C014]	TLS1_CK_ECDHE_RSA_WITH_AES_256_CBC_SHA
+	[0088]	TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0087]	TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA
+	[0039]	TLS_DHE_RSA_WITH_AES_256_SHA
+	[0038]	TLS_DHE_DSS_WITH_AES_256_SHA
+	[C00F]	TLS_ECDH_RSA_WITH_AES_256_CBC_SHA
+	[C005]	TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA
+	[0084]	TLS_RSA_WITH_CAMELLIA_256_CBC_SHA
+	[0035]	TLS_RSA_AES_256_SHA
+	[C007]	TLS_ECDHE_ECDSA_WITH_RC4_128_SHA
+	[C009]	TLS1_CK_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+	[C011]	TLS_ECDHE_RSA_WITH_RC4_128_SHA
+	[C013]	TLS1_CK_ECDHE_RSA_WITH_AES_128_CBC_SHA
+	[0045]	TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0044]	TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA
+	[0033]	TLS_DHE_RSA_WITH_AES_128_SHA
+	[0032]	TLS_DHE_DSS_WITH_AES_128_SHA
+	[C00C]	TLS_ECDH_RSA_WITH_RC4_128_SHA
+	[C00E]	TLS_ECDH_RSA_WITH_AES_128_CBC_SHA
+	[C002]	TLS_ECDH_ECDSA_WITH_RC4_128_SHA
+	[C004]	TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA
+	[0096]	TLS_RSA_WITH_SEED_CBC_SHA
+	[0041]	TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
+	[0004]	SSL_RSA_WITH_RC4_128_MD5
+	[0005]	SSL_RSA_WITH_RC4_128_SHA
+	[002F]	TLS_RSA_AES_128_SHA
+	[C008]	TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[C012]	TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+	[0016]	SSL_DHE_RSA_WITH_3DES_EDE_SHA
+	[0013]	SSL_DHE_DSS_WITH_3DES_EDE_SHA
+	[C00D]	TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA
+	[C003]	TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA
+	[FEFF]	SSL_RSA_FIPS_WITH_3DES_EDE_SHA
+	[000A]	SSL_RSA_WITH_3DES_EDE_SHA
+
+Compression: 
+	[00]	NO_COMPRESSION
+
+Extensions: 
+	server_name	3.docs.google.com
+	elliptic_curves	00 06 00 17 00 18 00 19
+	ec_point_formats	01 00
+	SessionTicket TLS	empty
+
+
+HTTP/1.1 200 Connection Established
+FiddlerGateway: Direct
+StartTime: 23:09:07.062
+Connection: close
+
+Encrypted HTTPS traffic flows through this CONNECT tunnel. HTTPS Decryption is enabled in Fiddler, so decrypted sessions running in this tunnel will be shown in the Web Sessions list.
+
+Secure Protocol: Tls
+Cipher: Rc4 128bits
+Hash Algorithm: Sha1 160bitsKey Exchange: RsaSign 1024bits
+
+== Server Certificate ==========
+[Subject]
+  CN=*.mail.google.com, O=Google Inc, L=Mountain View, S=California, C=US
+
+[Issuer]
+  CN=Google Internet Authority, O=Google Inc, C=US
+
+[Serial Number]
+  1653DB750000000051BF
+
+[Not Before]
+  2012-04-20 04:57:39
+
+[Not After]
+  2013-04-20 05:07:39
+
+[Thumbprint]
+  724D4AC3159C32B485D9C81BCB39A24C888365D1
+
+
+
+------------------------------------------------------------------
+
+GET https://m.seb.se/cgi-bin/pts3/mps/1100/mps1102.aspx?M1=show&P1=pWTe6hH82HzALo5+LzCWEw==&P2=1&P4=1 HTTP/1.1
+Host: m.seb.se
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Referer: https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1
+Cookie: s_cc=true; s_nr=1335990554956; omt_s_eVar6=New; omt_s_eVar10=seb.se%2CPrivat%2CStartpage%2CSEB%20Privat; s_sq=%5B%5BB%5D%5D; SebSeInloggPref=4FA198C926#1; WURL=4FA1A2291B#; LGO=4FA1A26701#x7Th1d1M8cojC47yho1LD9epm0rgx5W5v1qX8JixzjrebmGaxc+UqT0J3BM35XvMw2OVy2bd+r/++tOWN+Lodw==; CPSNET=4FA1A26604#zir3enyavk3lv2jnx4btwd45; MPS=4FA1A26701#Q6TEt442sHozy31fhL5F5VX4nk83Nw; LOIN=digipassAppl1
+Connection: keep-alive
+
+
+HTTP/1.1 200 OK
+Date: Wed, 02 May 2012 21:09:21 GMT
+Server: Apache
+Expires: Mon, 31 Dec 1979 23:00:00 GMT
+Pragma: no-cache
+Content-Type: text/html; charset=iso-8859-1
+Transfer-encoding: chunked
+Connection: Keep-Alive
+Set-Cookie: LGO=4FA1A28122#x7Th1d1M8cojC47yho1LD9epm0rgx5W5v1qX8Jixzjq3JDEDd/w5OdzBlYoO6pdVh4XMqH6O57vQiSmW3UNCCA==; ; path=/; secure; domain=seb.se
+Set-Cookie: MPS=4FA1A28122#Q6TEt442sHozy31espklKDUFquHR25; ; path=/; secure; domain=seb.se
+
+2d7a
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head id="MPSMaster_MPSHead"><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="sebid" id="event" content="Kontoh‰ndelser" /><title>
+	Konton - Kontohandelser
+</title>
+    <link rel="stylesheet" type="text/css" href="/static/brands/seb/1.0.0/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/brands/seb/1.0.0/css/default.css" />
+    <script type="text/javascript" src="/static/apps/mpsjs/cookie.js"></script>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/static/brands/seb/1.0.0/favicon.ico" />
+    
+</head>
+	<body>
+	    <form name="aspnetForm" method="post" action="mps1102.aspx?M1=show&amp;P1=pWTe6hH82HzALo5+LzCWEw%3d%3d&amp;P2=1&amp;P4=1" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="
+__VIEWSTATE" value="" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBQL+raDpAgKRuO3pAgKwxLDkBwKwxPTSDQKwxMycDG70YWcgbzX7kxYFaauDQrQ8e0YL" />
+            <input type="hidden" name="MPSMaster$MH2" id="MPSMaster_MH2" />
+		    <div id="doc">
+			    <div id="hd">
+					<div class="header">
+						<img src="/static/brands/seb/1.0.0/img/seb_logo_37x21.gif" alt="SEB" />
+						<div id="MPSMaster_lblUserName" class="webuser">Daniel Schlaug</div>
+					</div>
+					<div class="topmenu">
+						<a id="MPSMaster_hplMenuHd" href="/cgi-bin/pts3/mpo/mpo0001.aspx">Huvudmeny</a>
+						&bull;
+						<a id="MPSMaster_hplLoggonLogoff" href="/cgi-bin/pts3/mps/1000/mps1002.aspx">Logga ut</a>
+					</div>
+			    </div>
+			    <div id="bd">
+					<h1 id="MPSMaster_h1PageTitle">Kontoh‰ndelser</h1>
+					
+					
+	<input type="hidden" name="MPSMaster$MainPlaceHolder$P1" id="MPSMaster_MainPlaceHolder_P1" value="pWTe6hH82HzALo5+LzCWEw%3d%3d" />
+    <input type="hidden" name="MPSMaster$MainPlaceHolder$P2" id="MPSMaster_MainPlaceHolder_P2" value="1" />
+    <input type="hidden" name="MPSMaster$MainPlaceHolder$P4" id="MPSMaster_MainPlaceHolder_P4" value="1" />
+
+	<p><a id="MPSMaster_MainPlaceHolder_lnkBackTop" class="previous" href="/cgi-bin/pts3/mps/1100/mps1101.aspx">Tillbaka</a></p>
+    <div id="MPSMaster_MainPlaceHolder_pnlAccountTransactions">
+	
+        <table>
+			<thead>
+	            <tr>
+	                <th><span class="name">HushÂllskonto<br />5251 00 440 36<br />Privatkonto</span></th>
+		        </tr>
+		        <tr>
+		            <th><span class="name">Disponibelt:</span>
+		                <span class="value">14.870,24 </span></th>
+	            </tr>
+			</thead>
+            
+					<tr class="oddrow">
+						<td>
+							120502
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl00_lblKkTxt" class="name">Lf</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl00_lblRorBel" class="value">-100,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120430
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl01_lblKkTxt" class="name">Kastruller</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl01_lblRorBel" class="value">-546,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120429
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl02_lblKkTxt" class="name">Hsb Stockholm Ek Fˆr Hyr</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl02_lblRorBel" class="value">-2.817,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120429
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl03_lblKkTxt" class="name">Handelsbankenfakt.tj 652</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl03_lblRorBel" class="value">-296,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120429
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl04_lblKkTxt" class="name">Handelsbankenfakt.tj 652</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl04_lblRorBel" class="value">-229,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120429
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl05_lblKkTxt" class="name">SEB Kort</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl05_lblRorBel" class="value">-7.150,52 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120427
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl06_lblKkTxt" class="name">Com Hem AB</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl06_lblRorBel" class="value">-100,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120426
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl07_lblKkTxt" class="name">Com Hem AB</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl07_lblRorBel" class="value">-100,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120423
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl08_lblKkTxt" class="name">FrÂn Sara</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl08_lblRorBel" class="value">10.000,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120422
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl09_lblKkTxt" class="name">Fr Daniel</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl09_lblRorBel" class="value">10.000,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120405
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl10_lblKkTxt" class="name">SEB Masterca</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl10_lblRorBel" class="value">-7.172,72 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120405
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl11_lblKkTxt" class="name">52730306927</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl11_lblRorBel" class="value">-15,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120402
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl12_lblKkTxt" class="name">Lf</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl12_lblRorBel" class="value">-100,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120329
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl13_lblKkTxt" class="name">Hsb Stockholm Ek Fˆr Hyr</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl13_lblRorBel" class="value">-2.822,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120329
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl14_lblKkTxt" class="name">L‰nsfˆrs‰kringar Stockho</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl14_lblRorBel" class="value">-350,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120328
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl15_lblKkTxt" class="name">Fortum Markets AB Kundre</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl15_lblRorBel" class="value">-434,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120306
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl16_lblKkTxt" class="name">Com Hem AB</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl16_lblRorBel" class="value">-115,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120305
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl17_lblKkTxt" class="name">Fr Sara</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl17_lblRorBel" class="value">10.000,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="oddrow">
+						<td>
+							120304
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl18_lblKkTxt" class="name">Handelsbankenfakt.tj 652</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl18_lblRorBel" class="value">-288,00 </span>
+						</td>
+					</tr>
+				
+					<tr class="evenrow">
+						<td>
+							120304
+							<br />
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl19_lblKkTxt" class="name">SEB Kort</span>
+							<span id="MPSMaster_MainPlaceHolder_repAccountTransactions_ctl19_lblRorBel" class="value">-3.975,03 </span>
+						</td>
+					</tr>
+				
+        </table>
+        <br />
+    
+</div>
+    <div id="MPSMaster_MainPlaceHolder_pnlLinks">
+	
+        <br />
+        <br />
+        <a id="MPSMaster_MainPlaceHolder_lnkNext" class="tablenext" href="/cgi-bin/pts3/mps/1100/mps1102.aspx?M1=show&amp;P1=pWTe6hH82HzALo5 LzCWEw==&amp;P2=1&amp;P4=2">N‰sta</a>
+		<p><a id="MPSMaster_MainPlaceHolder_lnkComingTransactions" class="readmore" href="/cgi-bin/pts3/mps/1100/mps1113.aspx?P1=pWTe6hH82HzALo5+LzCWEw==&amp;P2=P7gVvAwLAOaQG0VQDUEr+Q==">Kommande h‰ndelser</a></p>
+		<p><a id="MPSMaster_MainPlaceHolder_lnkBack" class="previous" href="/cgi-bin/pts3/mps/1100/mps1101.aspx">Tillbaka</a></p>
+    
+</div>
+
+					<div id="MPSMaster_pnlDisclaimer">
+	
+						<span id="MPSMaster_lblDisclaimer" class="disclaimer"></span>
+					
+</div>
+			    </div>
+			    <div id="ft">
+					<div class="accesskeys">
+						<ul id="MPSMaster_accesskeylist">
+							<li id="MPSMaster_accesskeylist1"><a id="MPSMaster_hplAccessKey1" accesskey="1" href="/cgi-bin/pts3/mpo/mpo0001.aspx">Huvudmeny</a></li>
+							
+							
+							
+							
+							
+							
+							<li id="MPSMaster_accesskeylist8"><a id="MPSMaster_hplAccessKey8" accesskey="8" href="/cgi-bin/pts3/mpo/mpo0004.aspx?P1=9">Ring Telefonbanken direkt</a></li>
+							
+							<li id="MPSMaster_accesskeylist0"><a id="MPSMaster_hplAccessKey0" accesskey="0" href="/cgi-bin/pts3/mps/1000/mps1002.aspx">Logga ut</a></li>
+						</ul>
+					</div>
+					<div class="renderdate">
+						2012-05-02&#160;23:09:21
+					</div>					
+					<div class="footer">
+						&#169; 2012 Skandinaviska Enskilda Banken AB (publ)
+					</div>
+
+					<!-- SiteCatalyst code version: H.19.3. Copyright 1997-2009 Omniture, Inc. More info available at http://www.omniture.com -->
+					<img alt="" src="https://102.112.2O7.net/b/ss/sebsemobile/5/H.19.3--WAP?pageName=Konton - Kontohandelser" />
+					<!-- End SiteCatalyst code version: H.19.3. -->
+
+			    </div>
+			</div>
+        </form>
+	</body>
+ <script type="text/javascript">
+	var loginMethod = "";
+	var exdate = new Date();
+	exdate.setDate(exdate.getDate() + 180);
+	if (loginMethod.length > 0) {
+		document.cookie = "LOIN=" + "" + "; path=/" + "; domain=" + getDomain() + "; expires=" + exdate.toUTCString();
+	}
+</script>
+</html>
+
+ 
+
+0
+
+
+
+------------------------------------------------------------------
+
