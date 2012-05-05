@@ -1,11 +1,15 @@
 package se.ginkou.database;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
+import se.ginkou.Account;
 import se.ginkou.Transaction;
 
 public interface Database {
-	public void addTransaction(Transaction t) throws SQLException;
-	public ArrayList<Transaction> getTransactions(String searchString) throws SQLException;
-	void addTransactions(Transaction[] ts) throws SQLException;
+	
+	public void addTransaction(Transaction t);
+	boolean addTransactions(Transaction[] ts);
+	
+	public Transaction[] getTransactions(String searchString);
+	
+	public Account[] getAccounts();
+	
 }

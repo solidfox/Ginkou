@@ -4,6 +4,11 @@ import java.util.HashMap;
 
 import se.ginkou.database.SQLiteDB;
 
+/**
+ * This class represents a bank account.
+ * @author Daniel Schlaug
+ * @version 0.1
+ */
 public class Account {
 	
 	private final int number; // Unique account number

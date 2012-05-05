@@ -51,8 +51,13 @@ public class Transaction {
 	 * Returns a json representation of the transaction.
 	 */
 	public String toJSON() {
-		return "{\"id\"=\"" + id + "\", \"account\"=\"" + account.getAccountNumber() + "\", \"date\"=\""
-				+ date.toString("yyyy-MM-dd") + "\", \"notice\"=\"" + notice + "\", \"amount\"=\"" + amount + "\"}";
+		return "{" +
+					"\"id\"=\"" + id + "\", " +
+					"\"account\"=\"" + account.getNumber() + "\", " +
+					"\"date\"=\"" + date.toString("yyyy-MM-dd") + "\", " +
+					"\"notice\"=\"" + notice + "\", " +
+					"\"amount\"=\"" + amount + "\"" +
+				"}";
 	}
 	
 	

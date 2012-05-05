@@ -42,13 +42,14 @@ public class SQLiteDB implements Database {
 		return db;
 	}
 	
-	public static SQLiteDB getDB() {
+	public static Database getDB() {
 		return getDB("ginkou.db");
 	}
 	
 	private SQLiteDB(String dbPath) {
 		assertConnection(dbPath);
 		assertTransactionTable();
+		assertAccountTable();
 	}
 	
 	/**
@@ -85,6 +86,21 @@ public class SQLiteDB implements Database {
 						"notice 	TEXT 		NOT NULL, " +
 						"amount 	NUMERIC 	NOT NULL, " +
 						"categoryID INTEGER 	DEFAULT NULL)");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private void assertAccountTable() {
+		Statement stat;
+		try {
+			stat = conn.createStatement();
+			stat.executeUpdate(
+					"CREATE TABLE IF NOT EXISTS " +
+					"accounts(" +
+						"id	 		NUMERIC 	NOT NULL, " +
+						"name 		TEXT 		DEFAULT NULL)");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -155,7 +171,7 @@ public class SQLiteDB implements Database {
 		return transactions;
 	}
 	
-	public void clearTransactions() {
+	public void clearAllTransactions() {
 		try {
 			conn.createStatement().execute("DROP TABLE transactions");
 			conn.commit();

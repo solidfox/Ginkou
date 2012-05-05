@@ -82,8 +82,11 @@ public class InterfaceServer {
 	public static final int PORT = 38602;
 
     public static void main(String[] args) throws Exception {
-        
-        HttpParams params = new SyncBasicHttpParams();
+        startServer();
+    }
+    
+    public static void startServer() throws Exception {
+    	HttpParams params = new SyncBasicHttpParams();
         params
             .setIntParameter(CoreConnectionPNames.SO_TIMEOUT, 5000)
             .setIntParameter(CoreConnectionPNames.SOCKET_BUFFER_SIZE, 8 * 1024)
