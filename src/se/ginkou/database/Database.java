@@ -1,15 +1,18 @@
 package se.ginkou.database;
 
+import java.util.List;
+
 import se.ginkou.Account;
 import se.ginkou.Transaction;
 
 public interface Database {
 	
-	public void addTransaction(Transaction t);
-	boolean addTransactions(Transaction[] ts);
+	public boolean addTransaction(Transaction t);
+	public boolean addTransactions(Transaction[] ts);
 	
-	public Transaction[] getTransactions(String searchString);
+	public List<Transaction> getTransactions(String searchString);
 	
-	public Account[] getAccounts();
+	public boolean addAccount(Account a); 
+	public List<Account> getAccounts();
 	
 }

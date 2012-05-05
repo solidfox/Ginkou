@@ -1,7 +1,8 @@
 package se.ginkou.database;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
+
 import org.joda.time.DateTime;
 import org.junit.Test;
 
@@ -17,9 +18,9 @@ public class SQLiteDBTest extends TestCase {
 		SQLiteDB db =  SQLiteDB.getDB("test.db");
 		Transaction[] testTransactions = uniqueDummyTransactions();
 		
-		db.clearTransactions();
+		db.clearAllTransactions();
 		db.addTransactions(testTransactions);
-		ArrayList<Transaction> result = db.getTransactions("select * from transactions");
+		List<Transaction> result = db.getTransactions("select * from transactions");
 		
 		assertEquals(testTransactions.length, result.size());
 		
@@ -29,7 +30,7 @@ public class SQLiteDBTest extends TestCase {
 		
 		assertEquals(testTransactions.length, db.sizeTransactions());
 		
-		db.clearTransactions();
+		db.clearAllTransactions();
 		int numberOfTransactions = db.getTransactions("SELECT * FROM transactions").size();
 		assertEquals(0, numberOfTransactions);
 	}
@@ -39,7 +40,7 @@ public class SQLiteDBTest extends TestCase {
 		
 		for (int i = 0; i < 10; i++) {
 			transactions[i] = new Transaction(i, 
-					new Account("5123-2897892"), 
+					AccountDB.add(new Account(51232897892L, null)), 
 					new DateTime(), 
 					"Test transaction " + i, 
 					(double)(i*2000 + i*37));
