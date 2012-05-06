@@ -14,10 +14,18 @@ import org.webharvest.runtime.variables.Variable;
 
 import se.ginkou.Account;
 import se.ginkou.Transaction;
+import se.ginkou.database.Database;
 import se.ginkou.database.SQLiteDB;
+
 public class DummyParser {
-	public static void main(String[] args) {
+	private Database db;
 	
+	public DummyParser(Database db) {
+		this.db = db;
+	}
+	
+	public void parse() {
+
 		// register external plugins if there are any
 
 		ScraperConfiguration config;
@@ -46,7 +54,7 @@ public class DummyParser {
 						(notice = (Variable) context.get("notice."+i))  != null &&
 						(amount = (Variable) context.get("amount."+i))  != null){
 					transactions.add(new Transaction(
-							new Account(account.toString()), 
+							new Account(Long.parseLong(account.toString().replace("[ \\-]", "")), ""), 
 							DateTime.parse(date.toString().trim(), DateTimeFormat.forPattern("yyMMdd")), 
 							notice.toString(), 
 							Double.parseDouble(amount.toString().replace(".", "").replace(",", "."))));
@@ -54,18 +62,25 @@ public class DummyParser {
 				}
 			}
             i = 0;
-            for(Transaction t: al){
+            for(Transaction t: transactions){
             	//System.out.println(i +": "+t.toString());
-            	//SQLiteDB.getDB().addTransaction(t);
-            	++i;
+            	db.addTransaction(t);
+            	i++;
             }
             
-            //SQLiteDB.getDB().addTransactions(al.toArray());
+            //db.addTransactions(al.toArray());
             
 			// do something with articles...
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public static void main(String[] args) {
+		Database db = SQLiteDB.getDB("test.db");
+		DummyParser parser = new DummyParser(db);
+		db.clear();
+		parser.parse();
 	}
 }
