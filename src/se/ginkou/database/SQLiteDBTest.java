@@ -12,10 +12,12 @@ import se.ginkou.Transaction;
 import junit.framework.TestCase;
 
 public class SQLiteDBTest extends TestCase {
+	
+	private static SQLiteDB db;
 
 	@Test
 	public static void test() throws SQLException, ClassNotFoundException {
-		SQLiteDB db =  SQLiteDB.getDB("test.db");
+		db =  SQLiteDB.getDB("test.db");
 		Transaction[] testTransactions = uniqueDummyTransactions();
 		
 		db.clearAllTransactions();
@@ -40,7 +42,7 @@ public class SQLiteDBTest extends TestCase {
 		
 		for (int i = 0; i < 10; i++) {
 			transactions[i] = new Transaction(i, 
-					AccountDB.add(new Account(51232897892L, null)), 
+					db.accounts.add(new Account(51232897892L, null)), 
 					new DateTime(), 
 					"Test transaction " + i, 
 					(double)(i*2000 + i*37));

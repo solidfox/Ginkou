@@ -7,10 +7,10 @@ import se.ginkou.Transaction;
 
 public interface Database {
 	
-	public boolean addTransaction(Transaction t);
-	public boolean addTransactions(Transaction[] ts);
-	
-	public List<Transaction> getTransactions(String searchString);
+	public boolean 				addTransaction(Transaction t);
+	public boolean 				addTransactions(Transaction[] ts);
+	public List<Transaction> 	getTransactions(String searchString);
+	public int 					sizeTransactions();
 	
 	public boolean addAccount(Account a); 
 	public List<Account> getAccounts();

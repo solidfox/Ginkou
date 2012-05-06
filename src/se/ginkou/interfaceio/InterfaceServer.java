@@ -198,12 +198,14 @@ public class InterfaceServer {
             	}
             	
             	if(method.equals("POST")){
+            		
             		if(path.equals("/ping")){
             			response.setStatusCode(HttpStatus.SC_OK);
                         NStringEntity body = new NStringEntity(inString, "UTF-8");
                         body.setContentType("text/json; charset=UTF-8");
                         response.setEntity(body);
                         System.out.println("Responding to " + path);
+                        
             		} else if (path.equals("/datatables")) { 
             			response.setStatusCode(HttpStatus.SC_OK);
             			response.addHeader("Access-Control-Allow-Origin", "*");

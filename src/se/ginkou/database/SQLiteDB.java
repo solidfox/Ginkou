@@ -27,13 +27,13 @@ import se.ginkou.Transaction;
 public class SQLiteDB implements Database {
 	
 	static HashMap<String,SQLiteDB> dbs = new HashMap<String,SQLiteDB>();
-	Connection conn;
+	private Connection conn;
+	public final AccountDB accounts;
 	
 	/**
 	 * Factory method to get a database object.
-	 * @return a SQLiteDB object.
-	 * @throws ClassNotFoundException
-	 * @throws SQLException
+	 * @param dbPath the path of the database.
+	 * @return an SQLiteDB object.
 	 */
 	public static SQLiteDB getDB(String dbPath) {
 		SQLiteDB db = dbs.get(dbPath);
@@ -52,6 +52,7 @@ public class SQLiteDB implements Database {
 		assertConnection(dbPath);
 		assertTransactionTable();
 		assertAccountTable();
+		accounts = new AccountDB(this);
 	}
 	
 	/**
@@ -223,7 +224,7 @@ public class SQLiteDB implements Database {
 	
 	private Transaction transactionFromResult(ResultSet sqlResults) throws SQLException {
 		int id = sqlResults.getInt("id");          
-		Account account = AccountDB.get(sqlResults.getLong("accountID")); 
+		Account account = accounts.get(sqlResults.getLong("accountID")); 
 		DateTime date = new DateTime(sqlResults.getDate("date"));
 		String notice = sqlResults.getString("notice");
 		double amount = sqlResults.getDouble("amount");
@@ -258,7 +259,7 @@ public class SQLiteDB implements Database {
 		}
 		
 		public void addTransaction(Transaction t) throws SQLException {
-			AccountDB.add(t.getAccount());
+			accounts.add(t.getAccount());
 			prep.setInt(1, t.getId());
 			prep.setLong(2, t.getAccount().getNumber());
 			prep.setDate(3, new Date(t.getDate().getMillis()));

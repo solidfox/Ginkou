@@ -32,7 +32,7 @@ public class Account {
 	}
 
 	/**
-	 * Returns a string containing information about the account.
+	 * Returns a string with information about the account.
 	 */
 	@Override
 	public String toString() {
