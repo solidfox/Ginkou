@@ -37,7 +37,7 @@ public class DummyParser {
 			//Variable accounts = (Variable) context.get("accounts");
 			//System.out.println(accounts.toString());
 			
-			ArrayList<Transaction> al = new ArrayList<Transaction>();
+			ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 			int i=1;  
 			Variable account, date, notice, amount;
 			if((account = (Variable) context.get("account"))  != null){
@@ -45,7 +45,8 @@ public class DummyParser {
 				while ((date = (Variable) context.get("date."+i))  != null && 
 						(notice = (Variable) context.get("notice."+i))  != null &&
 						(amount = (Variable) context.get("amount."+i))  != null){
-					al.add(new Transaction(new Account(account.toString()), 
+					transactions.add(new Transaction(
+							new Account(account.toString()), 
 							DateTime.parse(date.toString().trim(), DateTimeFormat.forPattern("yyMMdd")), 
 							notice.toString(), 
 							Double.parseDouble(amount.toString().replace(".", "").replace(",", "."))));
