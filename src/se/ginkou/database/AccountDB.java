@@ -44,12 +44,14 @@ public class AccountDB {
 	public Account get(long accountNumber) {
 		if (cache.containsKey(accountNumber)) {
 			return cache.get(accountNumber);
+		} else {
+			updateCache();
+			return cache.get(accountNumber);
 		}
-		updateCache();
-		return cache.get(accountNumber);
 	}
 
 	private void updateCache() {
+		cache.clear();
 		List<Account> fromDB = db.getAccounts();
 		for (Account acc : fromDB) {
 			cache.put(acc.getNumber(), acc);

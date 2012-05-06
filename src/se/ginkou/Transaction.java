@@ -98,8 +98,6 @@ public class Transaction {
 				return false;
 		} else if (!date.equals(other.date))
 			return false;
-		if (SQLid != other.SQLid)
-			return false;
 		if (notice == null) {
 			if (other.notice != null)
 				return false;

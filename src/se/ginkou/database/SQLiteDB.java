@@ -96,9 +96,8 @@ public class SQLiteDB implements Database {
 	}
 	
 	private void assertAccountTable() {
-		Statement stat;
 		try {
-			stat = conn.createStatement();
+			Statement stat = conn.createStatement();
 			stat.executeUpdate(
 					"CREATE TABLE IF NOT EXISTS " +
 					"accounts(" +
@@ -159,6 +158,11 @@ public class SQLiteDB implements Database {
 	}
 	
 	@Override
+	public boolean addTransactions(List<Transaction> ts) {
+		return addTransactions(ts.toArray(new Transaction[ts.size()]));
+	}
+
+	@Override
 	public boolean addTransactions(Transaction[] ts) {
 		InsertTransactionStatement statement;
 		try {
@@ -179,6 +183,7 @@ public class SQLiteDB implements Database {
 
 	@Override
 	public List<Account> getAccounts() {
+		assertAccountTable();
 		ResultSet rs;
 		ArrayList<Account> accounts = new ArrayList<Account>();
 		try {
@@ -211,9 +216,25 @@ public class SQLiteDB implements Database {
 		return transactions;
 	}
 	
+	public void clear() {
+		clearAllTransactions();
+		clearAllAccounts();
+	}
+
 	public void clearAllTransactions() {
 		try {
 			conn.createStatement().execute("DROP TABLE transactions");
+			conn.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		assertTransactionTable();
+	}
+	
+	public void clearAllAccounts() {
+		try {
+			conn.createStatement().execute("DROP TABLE accounts");
 			conn.commit();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -253,19 +274,18 @@ public class SQLiteDB implements Database {
 			assertTransactionTable();
 			prep = conn.prepareStatement(
 					"insert into transactions " +
-					"(id, 	accountID, 	date, 	notice, 	amount, 	categoryID) " +
+					"(accountID, 	date, 	notice, 	amount, 	categoryID) " +
 					"values " +
-					"(?, 	?, 			?, 		?,			?, 			?);");
+					"(?, 			?, 		?,			?, 			?);");
 		}
 		
 		public void addTransaction(Transaction t) throws SQLException {
 			accounts.add(t.getAccount());
-			prep.setInt(1, t.getId());
-			prep.setLong(2, t.getAccount().getNumber());
-			prep.setDate(3, new Date(t.getDate().getMillis()));
-			prep.setString(4, t.getNotice());
-			prep.setDouble(5, t.getAmount());
-			prep.setNull(6, Types.INTEGER);
+			prep.setLong(1, t.getAccount().getNumber());
+			prep.setDate(2, new Date(t.getDate().getMillis()));
+			prep.setString(3, t.getNotice());
+			prep.setDouble(4, t.getAmount());
+			prep.setNull(5, Types.INTEGER);
 			prep.addBatch();
 		}
 		
