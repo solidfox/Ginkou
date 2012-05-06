@@ -1,5 +1,7 @@
 package se.ginkou.interfaceio;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,8 +22,12 @@ public class DataTablesInterface {
 	TreeMap<String, String> commands;
 	Database db;
 	
-	public DataTablesInterface(String inString) {
-		String[] rawCommands = inString.split("&");
+	public DataTablesInterface(final String inString) {
+		String decodedString = "";
+		try {
+			decodedString = URLDecoder.decode(inString, "utf-8");
+		} catch (UnsupportedEncodingException e) {throw new IllegalStateException("The URLDecoder could not handle utf-8");}
+		String[] rawCommands = decodedString.split("&");
 		commands = new TreeMap<String,String>();
 		for (String aCommand : rawCommands) {
 			String[] commandParts = aCommand.split("=");
