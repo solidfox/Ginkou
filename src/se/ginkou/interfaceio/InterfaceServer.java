@@ -30,27 +30,43 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.InetSocketAddress;
+import java.net.URL;
+import java.security.KeyStore;
 import java.util.Locale;
 
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpEntityEnclosingRequest;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
+
 import org.apache.http.HttpException;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpResponseInterceptor;
 import org.apache.http.HttpStatus;
 import org.apache.http.MethodNotSupportedException;
-import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.ContentType;
+import org.apache.http.examples.nio.NHttpServer;
 import org.apache.http.impl.DefaultConnectionReuseStrategy;
 import org.apache.http.impl.DefaultHttpResponseFactory;
+import org.apache.http.impl.nio.DefaultHttpServerIODispatch;
+import org.apache.http.impl.nio.DefaultNHttpServerConnection;
+import org.apache.http.impl.nio.DefaultNHttpServerConnectionFactory;
 import org.apache.http.impl.nio.DefaultServerIOEventDispatch;
+import org.apache.http.impl.nio.SSLNHttpServerConnectionFactory;
 import org.apache.http.impl.nio.reactor.DefaultListeningIOReactor;
 import org.apache.http.nio.NHttpConnection;
+import org.apache.http.nio.NHttpConnectionFactory;
+import org.apache.http.nio.NHttpServerConnection;
 import org.apache.http.nio.entity.NFileEntity;
-import org.apache.http.nio.entity.NStringEntity;
+import org.apache.http.nio.protocol.BasicAsyncRequestConsumer;
+import org.apache.http.nio.protocol.BasicAsyncResponseProducer;
 import org.apache.http.nio.protocol.BufferingHttpServiceHandler;
 import org.apache.http.nio.protocol.EventListener;
+import org.apache.http.nio.protocol.HttpAsyncExchange;
+import org.apache.http.nio.protocol.HttpAsyncRequestConsumer;
+import org.apache.http.nio.protocol.HttpAsyncRequestHandler;
+import org.apache.http.nio.protocol.HttpAsyncRequestHandlerRegistry;
+import org.apache.http.nio.protocol.HttpAsyncService;
 import org.apache.http.nio.reactor.IOEventDispatch;
 import org.apache.http.nio.reactor.ListeningIOReactor;
 import org.apache.http.params.CoreConnectionPNames;
@@ -66,7 +82,6 @@ import org.apache.http.protocol.ResponseConnControl;
 import org.apache.http.protocol.ResponseContent;
 import org.apache.http.protocol.ResponseDate;
 import org.apache.http.protocol.ResponseServer;
-import org.apache.http.util.EntityUtils;
 
 /**
  * Basic, yet fully functional and spec compliant, HTTP/1.1 server based on the non-blocking 
@@ -86,41 +101,75 @@ public class InterfaceServer {
     }
     
     public static void startServer() throws Exception {
+    	// HTTP parameters for the server
     	HttpParams params = new SyncBasicHttpParams();
         params
             .setIntParameter(CoreConnectionPNames.SO_TIMEOUT, 5000)
             .setIntParameter(CoreConnectionPNames.SOCKET_BUFFER_SIZE, 8 * 1024)
-            .setBooleanParameter(CoreConnectionPNames.STALE_CONNECTION_CHECK, false)
             .setBooleanParameter(CoreConnectionPNames.TCP_NODELAY, true)
             .setParameter(CoreProtocolPNames.ORIGIN_SERVER, "HttpComponents/1.1");
 
+        // Create HTTP protocol processing chain
         HttpProcessor httpproc = new ImmutableHttpProcessor(new HttpResponseInterceptor[] {
+                // Use standard server-side protocol interceptors
                 new ResponseDate(),
                 new ResponseServer(),
                 new ResponseContent(),
                 new ResponseConnControl()
         });
-        
-        BufferingHttpServiceHandler handler = new BufferingHttpServiceHandler(
-                httpproc,
-                new DefaultHttpResponseFactory(),
-                new DefaultConnectionReuseStrategy(),
-                params);
 
         // Set up request handlers
-        HttpRequestHandlerRegistry reqistry = new HttpRequestHandlerRegistry();
+        HttpAsyncRequestHandlerRegistry reqistry = new HttpAsyncRequestHandlerRegistry();
         reqistry.register("*/datatables", new DataTablesHandler());
-        reqistry.register("*", new HttpJSONHandler());
+        reqistry.register("*", new HttpFileHandler(new File("website")));
+        reqistry.register("*/dummybank", new HttpJSONHandler());
 
-        handler.setHandlerResolver(reqistry);
+        // Create server-side HTTP protocol handler
+        HttpAsyncService protocolHandler = new HttpAsyncService(
+                httpproc, new DefaultConnectionReuseStrategy(), reqistry, params) {
 
-        // Provide an event logger
-        handler.setEventListener(new EventLogger());
+            @Override
+            public void connected(final NHttpServerConnection conn) {
+                System.out.println(conn + ": connection open");
+                super.connected(conn);
+            }
 
-        IOEventDispatch ioEventDispatch = new DefaultServerIOEventDispatch(handler, params);
-        ListeningIOReactor ioReactor = new DefaultListeningIOReactor(2, params);
+            @Override
+            public void closed(final NHttpServerConnection conn) {
+                System.out.println(conn + ": connection closed");
+                super.closed(conn);
+            }
+
+        };
+        // Create HTTP connection factory
+        NHttpConnectionFactory<DefaultNHttpServerConnection> connFactory;
+        
+//        // Initialize SSL context
+//        ClassLoader cl = NHttpServer.class.getClassLoader();
+//        URL url = cl.getResource("my.keystore");
+//        if (url == null) {
+//            System.out.println("Keystore not found");
+//            System.exit(1);
+//        }
+//        KeyStore keystore  = KeyStore.getInstance("jks");
+//        keystore.load(url.openStream(), "secret".toCharArray());
+//        KeyManagerFactory kmfactory = KeyManagerFactory.getInstance(
+//                KeyManagerFactory.getDefaultAlgorithm());
+//        kmfactory.init(keystore, "secret".toCharArray());
+//        KeyManager[] keymanagers = kmfactory.getKeyManagers();
+//        SSLContext sslcontext = SSLContext.getInstance("TLS");
+//        sslcontext.init(keymanagers, null, null);
+//        connFactory = new SSLNHttpServerConnectionFactory(sslcontext, null, params);
+        connFactory = new DefaultNHttpServerConnectionFactory(params);
+        
+        // Create server-side I/O event dispatch
+        IOEventDispatch ioEventDispatch = new DefaultHttpServerIODispatch(protocolHandler, connFactory);
+        // Create server-side I/O reactor
+        ListeningIOReactor ioReactor = new DefaultListeningIOReactor();
         try {
+            // Listen of the given port
             ioReactor.listen(new InetSocketAddress(PORT));
+            // Ready to go!
             ioReactor.execute(ioEventDispatch);
         } catch (InterruptedIOException ex) {
             System.err.println("Interrupted");
@@ -130,24 +179,32 @@ public class InterfaceServer {
         System.out.println("Shutdown");
     }
 
-    static class HttpJSONHandler implements HttpRequestHandler  {
+    static class HttpJSONHandler implements HttpAsyncRequestHandler<HttpRequest>  {
 
         public HttpJSONHandler() {
             super();
         }
 
+        public HttpAsyncRequestConsumer<HttpRequest> processRequest(
+                final HttpRequest request,
+                final HttpContext context) {
+            // Buffer request content in memory for simplicity
+            return new BasicAsyncRequestConsumer();
+        }
+        
         public void handle(
+                final HttpRequest request,
+                final HttpAsyncExchange httpexchange,
+                final HttpContext context) throws HttpException, IOException {
+            HttpResponse response = httpexchange.getResponse();
+            handleInternal(request, response, context);
+            httpexchange.submitResponse(new BasicAsyncResponseProducer(response));
+        }
+        
+        public void handleInternal(
                 final HttpRequest request,
                 final HttpResponse response,
                 final HttpContext context) throws HttpException, IOException {
-
-        	String inString = null;
-        	
-        	// Print headers
-        	Header[] headers = request.getAllHeaders();
-        	for (Header aHeader : headers) {
-        		System.out.println(aHeader.toString());
-        	}
         	
         	
         	// Check that we support the HTTP method
@@ -158,72 +215,15 @@ public class InterfaceServer {
 
             
             String path = request.getRequestLine().getUri();
-            if (!existsPath(path)) {
-
-                response.setStatusCode(HttpStatus.SC_NOT_FOUND);
-                NStringEntity entity = new NStringEntity(
-                        "Path " + path + " not found", "UTF-8");
-                entity.setContentType("text/html; charset=UTF-8");
-                response.setEntity(entity);
-                System.out.println("Path " + path + " not found");
-
-            } else if (!userMayAccess(path)) {
-
-                response.setStatusCode(HttpStatus.SC_FORBIDDEN);
-                NStringEntity entity = new NStringEntity(
-                        "<html><body><h1>Access denied</h1></body></html>",
-                        "UTF-8");
-                entity.setContentType("text/html; charset=UTF-8");
-                response.setEntity(entity);
-                System.out.println("User forbidden to access " + path);
-
-            } else {
-            	if (method.equals("GET")) {
+            if (method.equals("GET")) {
             		if(path.equals("/dummybank")) {
             			final File file = new File(".", "dummypage.html");
             			response.setStatusCode(HttpStatus.SC_OK);
-                        NFileEntity body = new NFileEntity(file, "text/html");
+                        NFileEntity body = new NFileEntity(file, ContentType.create("text/html"));
                         response.setEntity(body);
                         System.out.println("Serving file " + file.getPath());
             		} 
-            	}
             }
         }
-
-		private boolean userMayAccess(String path) {
-			// TODO Auto-generated method stub
-			return true;
-		}
-
-		private boolean existsPath(String path) {
-			// TODO Auto-generated method stub
-			return true;
-		}
-
     }
-
-    static class EventLogger implements EventListener {
-
-        public void connectionOpen(final NHttpConnection conn) {
-            System.out.println("Connection open: " + conn);
-        }
-
-        public void connectionTimeout(final NHttpConnection conn) {
-            System.out.println("Connection timed out: " + conn);
-        }
-
-        public void connectionClosed(final NHttpConnection conn) {
-            System.out.println("Connection closed: " + conn);
-        }
-
-        public void fatalIOException(final IOException ex, final NHttpConnection conn) {
-            System.err.println("I/O error: " + ex.getMessage());
-        }
-
-        public void fatalProtocolException(final HttpException ex, final NHttpConnection conn) {
-            System.err.println("HTTP error: " + ex.getMessage());
-        }
-
-    }
-
 }

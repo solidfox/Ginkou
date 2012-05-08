@@ -1,18 +1,24 @@
 package se.ginkou.interfaceio;
 
-import java.io.UnsupportedEncodingException;
+import java.io.IOException;
 import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.HttpException;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.nio.entity.NStringEntity;
+import org.apache.http.nio.protocol.BasicAsyncRequestConsumer;
+import org.apache.http.nio.protocol.BasicAsyncResponseProducer;
+import org.apache.http.nio.protocol.HttpAsyncExchange;
+import org.apache.http.nio.protocol.HttpAsyncRequestConsumer;
 import org.apache.http.protocol.HttpContext;
 
 public class DataTablesHandler extends HttpRequestHandler {
 	
-	@Override
-	public void handle(HttpRequest request, HttpResponse response,
-			HttpContext context) {
+	public void handleInternal(
+			HttpRequest request, 
+			HttpResponse response,
+			HttpContext context) throws HttpException, IOException {
 		
 		if (
 				!(request instanceof HttpEntityEnclosingRequest) ||
@@ -26,11 +32,9 @@ public class DataTablesHandler extends HttpRequestHandler {
 		response.addHeader("Access-Control-Allow-Origin", "*");
 		DataTablesInterface DTInterface = new DataTablesInterface(getBody(request));
 	    NStringEntity body;
-		try {
-			body = new NStringEntity(DTInterface.getResponse(), "UTF-8");
-			body.setContentType("text/json; charset=UTF-8");
-		    response.setEntity(body);
-		} catch (UnsupportedEncodingException e) {}
+		body = new NStringEntity(DTInterface.getResponse(), "UTF-8");
+		body.setContentType("text/json; charset=UTF-8");
+	    response.setEntity(body);
 	}
     
 }

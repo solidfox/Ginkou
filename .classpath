@@ -3,17 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="lib/httpcore-nio-4.1.4.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/Users/spike/Dropbox/Developer/eclipse/workspace/Ginkou/third party packages/httpcomponents-core-4.1.4/javadoc/"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="lib/sqlitejdbc-v056.jar"/>
-	<classpathentry kind="lib" path="lib/httpcore-4.1.4.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/Users/spike/Dropbox/Developer/eclipse/workspace/Ginkou/third party packages/httpcomponents-core-4.1.4/javadoc/"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="lib/joda-time-2.1.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/Ginkou/third party packages/joda-time-2.1/joda-time-2.1-javadoc.jar!/"/>
@@ -43,6 +33,17 @@
 	<classpathentry kind="lib" path="lib/gson-2.1.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/Ginkou/lib/gson-2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/httpcore-4.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/spike/Dropbox/Developer/eclipse/workspace/Ginkou/third party packages/httpcomponents-core-4.2/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/httpcore-ab-4.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-nio-4.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/spike/Dropbox/Developer/eclipse/workspace/Ginkou/third party packages/httpcomponents-core-4.2/javadoc/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
