@@ -13,6 +13,8 @@ import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
 import org.joda.time.DateTime;
 
 import se.ginkou.Account;
@@ -25,13 +27,13 @@ import se.ginkou.Transaction;
 public class SQLiteDB implements Database {
 	
 	static HashMap<String,SQLiteDB> dbs = new HashMap<String,SQLiteDB>();
-	Connection conn;
+	private Connection conn;
+	public final AccountDB accounts;
 	
 	/**
 	 * Factory method to get a database object.
-	 * @return a SQLiteDB object.
-	 * @throws ClassNotFoundException
-	 * @throws SQLException
+	 * @param dbPath the path of the database.
+	 * @return an SQLiteDB object.
 	 */
 	public static SQLiteDB getDB(String dbPath) {
 		SQLiteDB db = dbs.get(dbPath);
@@ -42,13 +44,15 @@ public class SQLiteDB implements Database {
 		return db;
 	}
 	
-	public static SQLiteDB getDB() {
+	public static Database getDB() {
 		return getDB("ginkou.db");
 	}
 	
 	private SQLiteDB(String dbPath) {
 		assertConnection(dbPath);
 		assertTransactionTable();
+		assertAccountTable();
+		accounts = new AccountDB(this);
 	}
 	
 	/**
@@ -91,6 +95,20 @@ public class SQLiteDB implements Database {
 		}
 	}
 	
+	private void assertAccountTable() {
+		try {
+			Statement stat = conn.createStatement();
+			stat.executeUpdate(
+					"CREATE TABLE IF NOT EXISTS " +
+					"accounts(" +
+						"id	 		NUMERIC 	NOT NULL, " +
+						"name 		TEXT 		DEFAULT NULL)");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public int sizeTransactions() {
 		try {
 			Statement stat = conn.createStatement();
@@ -107,22 +125,45 @@ public class SQLiteDB implements Database {
 	}
 
 	@Override
-	public void addTransaction(Transaction t) {
+	public boolean addAccount(Account a) {
+		try {
+			assertAccountTable();
+			conn.createStatement().execute(
+					"INSERT " +
+					"INTO accounts (id, name) " +
+					"VALUES (" + a.getNumber() + ",'" + a.getName() + "')");
+			conn.commit();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	@Override
+	public boolean addTransaction(Transaction t) {
 		InsertTransactionStatement statement;
 		try {
 			statement = new InsertTransactionStatement();
 			statement.addTransaction(t);
 			statement.executeBatch();
 			conn.commit();
+			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
-		
 	}
 	
 	@Override
-	public void addTransactions(Transaction[] ts) {
+	public boolean addTransactions(List<Transaction> ts) {
+		return addTransactions(ts.toArray(new Transaction[ts.size()]));
+	}
+
+	@Override
+	public boolean addTransactions(Transaction[] ts) {
 		InsertTransactionStatement statement;
 		try {
 			statement = new InsertTransactionStatement();
@@ -131,15 +172,35 @@ public class SQLiteDB implements Database {
 			}
 			statement.executeBatch();
 			conn.commit();
+			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 
 	}
 
 	@Override
-	public ArrayList<Transaction> getTransactions(String searchString) {
+	public List<Account> getAccounts() {
+		assertAccountTable();
+		ResultSet rs;
+		ArrayList<Account> accounts = new ArrayList<Account>();
+		try {
+			rs = conn.createStatement().executeQuery("SELECT * FROM accounts");
+			while (rs.next()) {
+				accounts.add(accountFromResult(rs));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return accounts;
+	}
+	
+	@Override
+	public List<Transaction> getTransactions(String searchString) {
 		ResultSet rs;
 		ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 		try {
@@ -155,7 +216,12 @@ public class SQLiteDB implements Database {
 		return transactions;
 	}
 	
-	public void clearTransactions() {
+	public void clear() {
+		clearAllTransactions();
+		clearAllAccounts();
+	}
+
+	public void clearAllTransactions() {
 		try {
 			conn.createStatement().execute("DROP TABLE transactions");
 			conn.commit();
@@ -166,17 +232,36 @@ public class SQLiteDB implements Database {
 		assertTransactionTable();
 	}
 	
-	private Transaction transactionFromResult(ResultSet SQLResults) throws SQLException {
-		int id = SQLResults.getInt("id");          
-		Account account = new Account(SQLResults.getInt("accountID")); 
-		DateTime date = new DateTime(SQLResults.getDate("date"));
-		String notice = SQLResults.getString("notice");
-		double amount = SQLResults.getDouble("amount");
+	public void clearAllAccounts() {
+		try {
+			conn.createStatement().execute("DROP TABLE accounts");
+			conn.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		assertTransactionTable();
+	}
+	
+	private Transaction transactionFromResult(ResultSet sqlResults) throws SQLException {
+		int id = sqlResults.getInt("id");          
+		Account account = accounts.get(sqlResults.getLong("accountID")); 
+		DateTime date = new DateTime(sqlResults.getDate("date"));
+		String notice = sqlResults.getString("notice");
+		double amount = sqlResults.getDouble("amount");
 		return new Transaction(id, account, date, notice, amount);
 	}
 	
 	
 	
+	private Account accountFromResult(ResultSet sqlResults) throws SQLException {
+		long number = sqlResults.getLong("id");
+		String name = sqlResults.getString("name");
+		return new Account(number, name);
+	}
+
+
+
 	class InsertTransactionStatement {
 		PreparedStatement prep;
 		
@@ -189,18 +274,18 @@ public class SQLiteDB implements Database {
 			assertTransactionTable();
 			prep = conn.prepareStatement(
 					"insert into transactions " +
-					"(id, 	accountID, 	date, 	notice, 	amount, 	categoryID) " +
+					"(accountID, 	date, 	notice, 	amount, 	categoryID) " +
 					"values " +
-					"(?, 	?, 			?, 		?,			?, 			?);");
+					"(?, 			?, 		?,			?, 			?);");
 		}
 		
 		public void addTransaction(Transaction t) throws SQLException {
-			prep.setInt(1, t.getId());
-			prep.setInt(2, t.getAccount().getID());
-			prep.setDate(3, new Date(t.getDate().getMillis()));
-			prep.setString(4, t.getNotice());
-			prep.setDouble(5, t.getAmount());
-			prep.setNull(6, Types.INTEGER);
+			accounts.add(t.getAccount());
+			prep.setLong(1, t.getAccount().getNumber());
+			prep.setDate(2, new Date(t.getDate().getMillis()));
+			prep.setString(3, t.getNotice());
+			prep.setDouble(4, t.getAmount());
+			prep.setNull(5, Types.INTEGER);
 			prep.addBatch();
 		}
 		

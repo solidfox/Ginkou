@@ -1,41 +1,53 @@
 package se.ginkou;
 
+/**
+ * This class represents a bank account.
+ * @author Daniel Schlaug
+ * @version 0.1
+ */
 public class Account {
 	
-	int id;
-	String accountNumber;
-	String accountName;
-
-	public Account(int accountId) {
-		id = accountId;
+	private final long number; // Unique account number
+	private String name; // Optional name of the account, can be null.
+	
+	public Account(long accountNumber, String accountName) {
+		this.number = accountNumber;
+		this.name = accountName;
 	}
 
-	public Account(String accountNumber) {
-		this.accountNumber = accountNumber;
-		// TODO generate unique accountID
+	/**
+	 * Returns the account number.
+	 * @return the account number.
+	 */
+	public long getNumber() {
+		return number;
+	}
+	
+	/**
+	 * Returns the name of the account or the empty string if it has no name.
+	 * @return the name of the account or the empty string if it has no name.
+	 */
+	public String getName() {
+		return (name == null ? "" : name);
 	}
 
-	public int getID() {
-		return id;
-	}
-
-	public String getAccountNumber() {
-		return accountNumber;
-	}
-
+	/**
+	 * Returns a string with information about the account.
+	 */
 	@Override
 	public String toString() {
-		return accountNumber + (accountName != null ? " " + accountName : "");
+		return number + (name != null ? " " + name : "");
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + id;
-		return result;
+		return (int) number;
 	}
 
+	/**
+	 * Returns true if obj is an account with the same account number
+	 * as this one. Otherwise false.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -45,9 +57,8 @@ public class Account {
 		if (getClass() != obj.getClass())
 			return false;
 		Account other = (Account) obj;
-		if (id != other.id)
+		if (number != other.number)
 			return false;
 		return true;
 	}
-
 }

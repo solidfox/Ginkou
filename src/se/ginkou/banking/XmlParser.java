@@ -2,6 +2,7 @@ package se.ginkou.banking;
 import java.io.FileNotFoundException;
 import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -14,22 +15,30 @@ import org.webharvest.runtime.variables.Variable;
 
 import se.ginkou.Account;
 import se.ginkou.Transaction;
+import se.ginkou.database.Database;
 import se.ginkou.database.SQLiteDB;
 public class XmlParser {
-	public static void main(String[] args) {
-		parseXml("sebscrapper.xml", "8702190011", "hemligt");
+	private String xml;
+	private String userid;
+	private String password;
+	
+	public XmlParser(String xmlFile, String userid, String password) {
+		this.xml = xmlFile;
+		this.userid = userid;
+		this.password = password;
 	}
 	
-	public static void parseXml(String xmlFile, String userid, String passwd){
+	public List<Transaction> run(){
 		// register external plugins if there are any
+		ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 
 		ScraperConfiguration config;
 		try {
-			config = new ScraperConfiguration(xmlFile);
+			config = new ScraperConfiguration(xml);
 			Scraper scraper = new Scraper(config, ".");
 			
 			scraper.addVariableToContext("userid", userid);
-			scraper.addVariableToContext("passwd", passwd);
+			scraper.addVariableToContext("passwd", password);
 			
 			//scraper.setDebug(true);
 			scraper.execute();	
@@ -39,33 +48,30 @@ public class XmlParser {
 			//System.out.println(context.size());
 			//System.out.println(context);			
 			
-			System.out.println(((Variable) context.get("login1")).toString());
-			System.out.println(((Variable) context.get("accounts")).toString());
-			
-			ArrayList<Transaction> al = new ArrayList<Transaction>();
-			int i=1;  
 			Variable account, date, notice, amount;
 			if((account = (Variable) context.get("account"))  != null){
 
+				int i=1;  
 				while ((date = (Variable) context.get("date."+i))  != null && 
 						(notice = (Variable) context.get("notice."+i))  != null &&
 						(amount = (Variable) context.get("amount."+i))  != null){
-					al.add(new Transaction(new Account(account.toString()), 
+					transactions.add(new Transaction(
+							new Account(Long.parseLong(account.toString().replaceAll("[\\-\\s]", "")), ""), 
 							DateTime.parse(date.toString().trim(), DateTimeFormat.forPattern("yyMMdd")), 
 							notice.toString(), 
 							Double.parseDouble(amount.toString().replace(".", "").replace(",", "."))));
 					i++;  
 				}
 			}
-			i = 0;
-			for(Transaction t: al){
-				//System.out.println(i +": "+t.toString());
-            	//SQLiteDB.getDB().addTransaction(t);
-            	++i;
-            }
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return transactions;
+	}
+
+	public static void main(String[] args) {
+		XmlParser parser = new XmlParser("dummyscraper.xml", "8702190011", "ingetINGET5");
+		System.out.println(parser.run());
 	}
 }

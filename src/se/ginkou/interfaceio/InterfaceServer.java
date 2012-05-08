@@ -82,8 +82,11 @@ public class InterfaceServer {
 	public static final int PORT = 38602;
 
     public static void main(String[] args) throws Exception {
-        
-        HttpParams params = new SyncBasicHttpParams();
+        startServer();
+    }
+    
+    public static void startServer() throws Exception {
+    	HttpParams params = new SyncBasicHttpParams();
         params
             .setIntParameter(CoreConnectionPNames.SO_TIMEOUT, 5000)
             .setIntParameter(CoreConnectionPNames.SOCKET_BUFFER_SIZE, 8 * 1024)
@@ -106,6 +109,7 @@ public class InterfaceServer {
 
         // Set up request handlers
         HttpRequestHandlerRegistry reqistry = new HttpRequestHandlerRegistry();
+        reqistry.register("*/datatables", new DataTablesHandler());
         reqistry.register("*", new HttpJSONHandler());
 
         handler.setHandlerResolver(reqistry);
@@ -152,15 +156,6 @@ public class InterfaceServer {
                 throw new MethodNotSupportedException(method + " method not supported");
             }
 
-            // Save incoming POST data
-            if (request instanceof HttpEntityEnclosingRequest) {
-                HttpEntity entity = ((HttpEntityEnclosingRequest) request).getEntity();
-                byte[] entityContent = EntityUtils.toByteArray(entity);
-                inString = new String(entityContent);
-                System.out.println("Incoming entity content (bytes): " + entityContent.length);
-                System.out.println("Incoming entity: " + inString);
-            }
-
             
             String path = request.getRequestLine().getUri();
             if (!existsPath(path)) {
@@ -183,7 +178,6 @@ public class InterfaceServer {
                 System.out.println("User forbidden to access " + path);
 
             } else {
-
             	if (method.equals("GET")) {
             		if(path.equals("/dummybank")) {
             			final File file = new File(".", "dummypage.html");
@@ -193,24 +187,6 @@ public class InterfaceServer {
                         System.out.println("Serving file " + file.getPath());
             		} 
             	}
-            	
-            	if(method.equals("POST")){
-            		if(path.equals("/ping")){
-            			response.setStatusCode(HttpStatus.SC_OK);
-                        NStringEntity body = new NStringEntity(inString, "UTF-8");
-                        body.setContentType("text/json; charset=UTF-8");
-                        response.setEntity(body);
-                        System.out.println("Responding to " + path);
-            		} else if (path.equals("/datatables")) { 
-            			response.setStatusCode(HttpStatus.SC_OK);
-            			response.addHeader("Access-Control-Allow-Origin", "*");
-            			DataTablesInterface DTInterface = new DataTablesInterface(inString);
-                        NStringEntity body = new NStringEntity(DTInterface.getResponse(), "UTF-8");
-                        body.setContentType("text/json; charset=UTF-8");
-                        response.setEntity(body);
-                        System.out.println("Responding to " + path);
-            		}
-                }
             }
         }
 

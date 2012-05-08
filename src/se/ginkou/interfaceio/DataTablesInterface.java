@@ -1,7 +1,10 @@
 package se.ginkou.interfaceio;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.TreeMap;
 
 import com.google.gson.Gson;
@@ -11,15 +14,20 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import se.ginkou.Transaction;
+import se.ginkou.database.Database;
 import se.ginkou.database.SQLiteDB;
 
 public class DataTablesInterface {
 	
 	TreeMap<String, String> commands;
-	SQLiteDB db;
+	Database db;
 	
-	public DataTablesInterface(String inString) {
-		String[] rawCommands = inString.split("&");
+	public DataTablesInterface(final String inString) {
+		String decodedString = "";
+		try {
+			decodedString = URLDecoder.decode(inString, "utf-8");
+		} catch (UnsupportedEncodingException e) {throw new IllegalStateException("The URLDecoder could not handle utf-8");}
+		String[] rawCommands = decodedString.split("&");
 		commands = new TreeMap<String,String>();
 		for (String aCommand : rawCommands) {
 			String[] commandParts = aCommand.split("=");
@@ -102,7 +110,7 @@ public class DataTablesInterface {
 		query = "SELECT *" + 
 				" FROM " + sqlTable + " " + sqlWhere + sqlOrder + sqlLimit;
 		
-		ArrayList<Transaction> transactions = db.getTransactions(query);
+		List<Transaction> transactions = db.getTransactions(query);
 		
 		/* Data set length after filtering */
 		int iFilteredTotal = transactions.size();
