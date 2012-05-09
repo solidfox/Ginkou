@@ -41,23 +41,23 @@
             <var-def name="${qookiename}">
                 <var name="qookieqontent"/>
             </var-def>
-            <var-def name="rexname">
-                <regexp>
-                    <regexp-pattern><var name="qookiename"/>=</regexp-pattern>
-                    <regexp-source>
-                        <var name="qookielist"/>
-                    </regexp-source>
+            <var-def name="qookielist">
+                <regexp replace="true">
+                    <regexp-pattern><var name="qookiename"/></regexp-pattern>
+                    <regexp-source><var name="qookielist"/></regexp-source>
+                    <regexp-result></regexp-result>
                 </regexp>
             </var-def>
-            <case>
-                <if condition="${rexname} == ${qookiename}=">
-                </if>
-                <else>
-                    <var-def name="qookielist">
-                        <template>${qookielist} ${qookiename}=${qookieqontent}</template>
-                    </var-def>
-                </else>
-            </case>
+            <!--<var-def name="qookielist">
+                <regexp replace="true">
+                    <regexp-pattern> =[^ ]*</regexp-pattern>
+                    <regexp-source><var name="qookielist"/></regexp-source>
+                    <regexp-result></regexp-result>
+                </regexp>
+            </var-def>-->
+            <var-def name="qookielist">
+                <template>${qookielist} ${qookiename}=${qookieqontent}</template>
+            </var-def>
             <var-def name="k">1</var-def>
         </while>
         <var-def name="qookiesendstring"></var-def>
@@ -66,9 +66,7 @@
             <list>
                 <regexp>
                     <regexp-pattern>[^ ]*</regexp-pattern>
-                    <regexp-source>
-                        <var name="qookielist"/>
-                    </regexp-source>
+                    <regexp-source><var name="qookielist"/></regexp-source>
                 </regexp>
             </list>
             <body>
@@ -80,9 +78,6 @@
                 <var-def name="qookiesendstring">
                     <template>${qookiesendstring} ${qn}</template>
                 </var-def>
-            <!--<var-def name="qookiesendstring">
-                    <template>${qookiesendstring} ${qn}=<var name="${qn}"/></template>
-                </var-def>-->
                 <var-def name="qookiesendstring">
                     <regexp replace="true" flag-multiline="true">
                         <regexp-pattern>(\n|\r)+</regexp-pattern>
