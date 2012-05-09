@@ -3,7 +3,9 @@
 
     <var-def name="file">  
         <html-to-xml>
-            <http url="localhost:38602/dummybank"/>
+            <file path="dummypage.html"
+			      charset="utf-8">
+			</file>
         </html-to-xml>  
     </var-def>
     <var-def name="account">  

@@ -12,8 +12,6 @@ import org.junit.Test;
 import se.ginkou.Account;
 import se.ginkou.Transaction;
 
-import junit.framework.TestCase;
-
 public class SQLiteDBTest {
 	
 	private SQLiteDB db;
@@ -106,6 +104,13 @@ public class SQLiteDBTest {
 		
 		//db.addTransactions(dummyTransactions());
 		
+	}
+	
+	@Test
+	public void sizeOfResult() {
+		db.addTransactions(randomTransactions());
+		assertEquals(10, db.sizeTransactions());
+		assertEquals(10, db.sizeOfResult("SELECT * FROM transactions"));
 	}
 	
 	private Transaction[] randomTransactions() {

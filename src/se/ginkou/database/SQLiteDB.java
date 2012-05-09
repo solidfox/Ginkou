@@ -18,6 +18,7 @@ import java.util.List;
 import org.joda.time.DateTime;
 
 import se.ginkou.Account;
+import se.ginkou.Debug;
 import se.ginkou.Transaction;
 
 /**
@@ -127,8 +128,9 @@ public class SQLiteDB implements Database {
 	@Override
 	public int sizeOfResult(String searchString) {
 		try {
-			searchString = searchString.replace("SELECT\\s*(\\*|([\\w]*(,\\s*)?)*)", "SELECT count(*)");
+			searchString = searchString.replaceFirst("SELECT\\s+(\\*|([\\w]*(,\\s*)?)*)", "SELECT count(*)");
 			searchString.trim();
+			Debug.out("sizeOfResult came up with search string: " + searchString);
 			if (!searchString.startsWith("SELECT")) {
 				return -1;
 			}
@@ -244,7 +246,7 @@ public class SQLiteDB implements Database {
 
 	public void clearAllTransactions() {
 		try {
-			conn.createStatement().execute("DROP TABLE transactions");
+			conn.createStatement().execute("DROP TABLE IF EXISTS transactions");
 			conn.commit();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -255,7 +257,7 @@ public class SQLiteDB implements Database {
 	
 	public void clearAllAccounts() {
 		try {
-			conn.createStatement().execute("DROP TABLE accounts");
+			conn.createStatement().execute("DROP TABLE IF EXISTS accounts");
 			conn.commit();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

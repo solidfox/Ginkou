@@ -1,8 +1,8 @@
 package se.ginkou.interfaceio;
 
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.util.Arrays;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -10,6 +10,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import se.ginkou.Debug;
 import se.ginkou.Transaction;
 import se.ginkou.database.Database;
 import se.ginkou.database.SQLiteDB;
@@ -33,11 +34,11 @@ public class DataTablesInterface {
 		}
 		
 		db = SQLiteDB.getDB();
-		System.out.println(commands);
+		Debug.out(commands.toString());
 	}
 	
 	public String getResponse() {
-		final String[] columns = {"accountID", "date", "notice", "amount"};
+		final String[] columns = {"id", "accountID", "date", "notice", "amount"};
 		final String sqlTable = "transactions";
 		
 		/* 
@@ -108,7 +109,7 @@ public class DataTablesInterface {
 		}
 		sqlColumns.setLength(sqlColumns.length() - 2);
 		
-		String baseQuery = "SELECT (" + sqlColumns.toString() + ") " +
+		String baseQuery = "SELECT " + sqlColumns.toString() +
 				" FROM " + sqlTable + " " + sqlWhere + sqlOrder;
 		String pagedQuery = baseQuery + sqlLimit;
 		
