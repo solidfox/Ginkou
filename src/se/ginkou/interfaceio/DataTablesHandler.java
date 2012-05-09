@@ -7,10 +7,6 @@ import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.nio.entity.NStringEntity;
-import org.apache.http.nio.protocol.BasicAsyncRequestConsumer;
-import org.apache.http.nio.protocol.BasicAsyncResponseProducer;
-import org.apache.http.nio.protocol.HttpAsyncExchange;
-import org.apache.http.nio.protocol.HttpAsyncRequestConsumer;
 import org.apache.http.protocol.HttpContext;
 
 public class DataTablesHandler extends HttpRequestHandler {
@@ -29,7 +25,7 @@ public class DataTablesHandler extends HttpRequestHandler {
 		}
 		
 		response.setStatusCode(HttpStatus.SC_OK);
-		response.addHeader("Access-Control-Allow-Origin", "*");
+		//response.addHeader("Access-Control-Allow-Origin", "*");
 		DataTablesInterface DTInterface = new DataTablesInterface(getBody(request));
 	    NStringEntity body;
 		body = new NStringEntity(DTInterface.getResponse(), "UTF-8");

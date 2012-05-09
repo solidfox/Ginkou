@@ -2,6 +2,7 @@ package se.ginkou.interfaceio;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.Arrays;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -39,15 +40,13 @@ public class DataTablesInterface {
 		final String[] columns = {"accountID", "date", "notice", "amount"};
 		final String sqlTable = "transactions";
 		
-		String query = "";
-		
 		/* 
 		 * Paging
 		 */
 		String sqlLimit = "";
 		if ( commands.containsKey("iDisplayStart") && !commands.get("iDisplayLength").equals("-1") )
 		{
-			sqlLimit = " LIMIT " + commands.get("iDisplayStart") + ", " + commands.get("iDisplayLength");
+			sqlLimit = " LIMIT " + commands.get("iDisplayLength") + " OFFSET " + commands.get("iDisplayStart");
 		}
 		
 		/*
@@ -55,7 +54,7 @@ public class DataTablesInterface {
 		 */
 		String sqlOrder = "";
 		if ( commands.containsKey("iSortCol_0") ) {
-			sqlOrder = "ORDER BY  ";
+			sqlOrder = " ORDER BY  ";
 			for ( int i = 0 ; i < Integer.parseInt(commands.get("iSortingCols")) ; i++ )
 			{
 				if ( commands.get( "bSortable_" + Integer.parseInt(commands.get("iSortCol_" + i)) ).equals("true") ) {
@@ -64,7 +63,7 @@ public class DataTablesInterface {
 			}
 			
 			sqlOrder = sqlOrder.substring(0, sqlOrder.length() - 2);
-			if ( sqlOrder.equals("ORDER BY ") ) {
+			if ( sqlOrder.equals(" ORDER BY ") ) {
 				sqlOrder = "";
 			}
 		}
@@ -103,13 +102,22 @@ public class DataTablesInterface {
 		 * SQL queries
 		 * Get data to display
 		 */
-		query = "SELECT *" + 
-				" FROM " + sqlTable + " " + sqlWhere + sqlOrder + sqlLimit;
+		StringBuilder sqlColumns = new StringBuilder(9 * columns.length);
+		for (String aColumn : columns) {
+			sqlColumns.append(aColumn).append(", ");
+		}
+		sqlColumns.setLength(sqlColumns.length() - 2);
 		
-		List<Transaction> transactions = db.getTransactions(query);
+		String baseQuery = "SELECT (" + sqlColumns.toString() + ") " +
+				" FROM " + sqlTable + " " + sqlWhere + sqlOrder;
+		String pagedQuery = baseQuery + sqlLimit;
+		
+		List<Transaction> transactions = db.getTransactions(pagedQuery);
+		
+		
 		
 		/* Data set length after filtering */
-		int iFilteredTotal = transactions.size();
+		int iFilteredTotal = db.sizeOfResult(baseQuery);
 		
 
 		JsonParser jParser = new JsonParser();
