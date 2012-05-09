@@ -37,6 +37,7 @@ public class XmlParser {
 			config = new ScraperConfiguration(xml);
 			Scraper scraper = new Scraper(config, ".");
 			
+			//scraper.getHttpClientManager().setHttpProxy("localhost", 8888); //Fiddling ;)
 			scraper.addVariableToContext("userid", userid);
 			scraper.addVariableToContext("passwd", password);
 			
@@ -49,12 +50,13 @@ public class XmlParser {
 			//System.out.println(context);			
 			
 			Variable account, date, notice, amount;
-			if((account = (Variable) context.get("account"))  != null){
+			int q = 1;
+			while((account = (Variable) context.get("account."+q))  != null){
 
 				int i=1;  
-				while ((date = (Variable) context.get("date."+i))  != null && 
-						(notice = (Variable) context.get("notice."+i))  != null &&
-						(amount = (Variable) context.get("amount."+i))  != null){
+				while ((date = (Variable) context.get("date."+q+"."+i))  != null && 
+						(notice = (Variable) context.get("notice."+q+"."+i))  != null &&
+						(amount = (Variable) context.get("amount."+q+"."+i))  != null){
 					transactions.add(new Transaction(
 							new Account(Long.parseLong(account.toString().replaceAll("[\\-\\s]", "")), ""), 
 							DateTime.parse(date.toString().trim(), DateTimeFormat.forPattern("yyMMdd")), 
@@ -62,6 +64,7 @@ public class XmlParser {
 							Double.parseDouble(amount.toString().replace(".", "").replace(",", "."))));
 					i++;  
 				}
+				++q;
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -71,7 +74,10 @@ public class XmlParser {
 	}
 
 	public static void main(String[] args) {
-		XmlParser parser = new XmlParser("dummyscraper.xml", "8702190011", "ingetINGET5");
-		System.out.println(parser.run());
+		XmlParser parser = new XmlParser("SEB.xml", "8702190011", "ingetINGET5");
+		List<Transaction> trans = parser.run();
+		for(Transaction t: trans)
+			System.out.println(t);
+		System.out.println(trans.size());
 	}
 }
