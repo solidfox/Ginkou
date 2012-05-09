@@ -48,13 +48,13 @@
                     <regexp-result></regexp-result>
                 </regexp>
             </var-def>
-            <!--<var-def name="qookielist">
+            <var-def name="qookielist">
                 <regexp replace="true">
-                    <regexp-pattern> =[^ ]*</regexp-pattern>
+                    <regexp-pattern>\s=[^ ]*</regexp-pattern>
                     <regexp-source><var name="qookielist"/></regexp-source>
                     <regexp-result></regexp-result>
                 </regexp>
-            </var-def>-->
+            </var-def>
             <var-def name="qookielist">
                 <template>${qookielist} ${qookiename}=${qookieqontent}</template>
             </var-def>
@@ -90,6 +90,13 @@
                         <regexp-pattern>^; </regexp-pattern>
                         <regexp-source><var name="qookiesendstring"/></regexp-source>
                         <regexp-result></regexp-result>
+                    </regexp>
+                </var-def>
+                <var-def name="qookiesendstring">
+                    <regexp replace="true">
+                        <regexp-pattern>;+</regexp-pattern>
+                        <regexp-source><var name="qookiesendstring"/></regexp-source>
+                        <regexp-result>;</regexp-result>
                     </regexp>
                 </var-def>
                 <var-def name="k">1</var-def>
