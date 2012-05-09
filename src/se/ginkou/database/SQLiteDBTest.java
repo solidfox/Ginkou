@@ -19,6 +19,7 @@ public class SQLiteDBTest {
 	private SQLiteDB db;
 	private Transaction[] randomT;
 	private Account account;
+	private Account account2;
 
 	@Before
 	public void setUp() {
@@ -26,6 +27,7 @@ public class SQLiteDBTest {
 		db.clear();
 		randomT = randomTransactions();
 		account = new Account(26762537, "Testaccount");
+		account2 = new Account(26762578, "Testaccount2");
 	}
 	
 	@Test
@@ -54,11 +56,63 @@ public class SQLiteDBTest {
 		assertEquals(account, result.get(0));
 	}
 	
+	@Test
+	public void clearAllTransactionsFrom() {
+		DateTime before = new DateTime("2012-04-23");
+		DateTime after = new DateTime("2012-04-30");
+		DateTime onDate = new DateTime("2012-04-27");
+		db.addTransaction(new Transaction(
+				account, 
+				before,
+				"before transaction",
+				(double)(100)));
+		db.addTransaction(new Transaction(
+				account, 
+				onDate,
+				"ondate transaction",
+				(double)(100)));
+		db.addTransaction(new Transaction(
+				account, 
+				after,
+				"after transaction",
+				(double)(100)));
+		db.addTransaction(new Transaction(
+				account2, 
+				before,
+				"before transaction",
+				(double)(100)));
+		db.addTransaction(new Transaction(
+				account2, 
+				onDate,
+				"ondate transaction",
+				(double)(100)));
+		db.addTransaction(new Transaction(
+				account2, 
+				after,
+				"after transaction",
+				(double)(100)));
+		assertEquals(6, db.sizeTransactions());
+		db.clearAllTransactionsFrom(new DateTime(), account);
+		assertEquals(6, db.sizeTransactions());
+		db.clearAllTransactionsFrom(after, account);
+		assertEquals(5, db.sizeTransactions());
+		db.clearAllTransactionsFrom(onDate, account);
+		assertEquals(4, db.sizeTransactions());
+		db.clearAllTransactionsFrom(before, account2);
+		assertEquals(1, db.sizeTransactions());
+		db.clearAllTransactionsFrom(before, account);
+		assertEquals(0, db.sizeTransactions());
+		
+		
+		//db.addTransactions(dummyTransactions());
+		
+	}
+	
 	private Transaction[] randomTransactions() {
 		Transaction[] transactions = new Transaction[10];
 		
 		for (int i = 0; i < 10; i++) {
-			transactions[i] = new Transaction(i, 
+			transactions[i] = new Transaction( 
 					new Account(51232897892L, null), 
 					new DateTime(), 
 					"Test transaction " + i, 

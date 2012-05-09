@@ -125,6 +125,27 @@ public class SQLiteDB implements Database {
 	}
 
 	@Override
+	public int sizeOfResult(String searchString) {
+		try {
+			searchString = searchString.replace("SELECT\\s*(\\*|([\\w]*(,\\s*)?)*)", "SELECT count(*)");
+			searchString.trim();
+			if (!searchString.startsWith("SELECT")) {
+				return -1;
+			}
+			Statement stat = conn.createStatement();
+			ResultSet rs = stat.executeQuery(searchString);
+			rs.next();
+			int size = rs.getInt(1);
+			rs.close();
+			return size;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return -1;
+	}
+
+	@Override
 	public boolean addAccount(Account a) {
 		try {
 			assertAccountTable();
@@ -243,6 +264,26 @@ public class SQLiteDB implements Database {
 		assertTransactionTable();
 	}
 	
+	@Override
+	public boolean clearAllTransactionsFrom(DateTime date, Account fromAccount) {
+		assertTransactionTable();
+		try {
+			String deleteStatement = 
+					"DELETE FROM transactions " +
+					"WHERE " +
+					"	date(date/1000, 'unixepoch') >= date(" + date.getMillis()/1000 + ", 'unixepoch') " +
+					"	AND " +
+					"	accountID == " + fromAccount.getNumber();
+			conn.createStatement().execute(deleteStatement);
+			conn.commit();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 	private Transaction transactionFromResult(ResultSet sqlResults) throws SQLException {
 		int id = sqlResults.getInt("id");          
 		Account account = accounts.get(sqlResults.getLong("accountID")); 
