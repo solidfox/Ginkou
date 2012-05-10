@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+dummybank
+Aqqount name
+PassQode
+-->
+<config>
+    <var-def name="accessGranted">
+        <case>
+            <if condition="${key_0.toString().equals(&quot;dummyuser&quot;) &amp;&amp; key_1.toString().equals(&quot;dummypass&quot;)}">
+                true
+            </if>
+            <else>
+                false
+            </else>
+        </case>
+    </var-def>
+</config>
