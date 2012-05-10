@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+SEB
+Personnummer
+Personlig kod
+-->
+<config>
+    <include path="lib/qookiehandler.xml"/>
+    <var-def name="qookielist"></var-def>
+    <var-def name="login1">
+            <http url="https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx" method="POST" charset="UTF-8" cookie-policy="ignore">
+                <http-param name="A3">4</http-param>
+                <http-param name="A1"><var name="userid"/></http-param>
+                <http-param name="A2"><var name="passwd"/></http-param>
+            </http>
+    </var-def>
+    <var-def name="accountsXml">
+        <html-to-xml>
+            <http url="https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1" charset="UTF-8" cookie-policy="ignore">
+                <http-header name="Cookie">
+                    <var-def name="qookielist">
+                        <call name="fixqookies">
+                            <call-param name="qookielist">
+                                <var name="qookielist"/>
+                            </call-param>
+                        </call>
+                    </var-def>
+                </http-header>
+            </http>
+        </html-to-xml>
+    </var-def>
+
+    <loop item="href" index="q">
+        <list>
+            <xpath expression="//div[@id='MPSMaster_MainPlaceHolder_pnlOverview']//td/a/@href">
+                <var name="accountsXml"/>
+            </xpath>
+        </list>
+        <body>
+            <while condition="${href.toString().length() > 0}" index="ii">
+                <var-def name="file">
+                    <html-to-xml>
+                        <http url="https://m.seb.se${href}" charset="UTF-8" cookie-policy="ignore">
+                            <http-header name="Cookie">
+                                <var-def name="qookielist">
+                                    <call name="fixqookies">
+                                        <call-param name="qookielist">
+                                            <var name="qookielist"/>
+                                        </call-param>
+                                    </call>
+                                </var-def>
+                            </http-header>
+                        </http>
+                    </html-to-xml>
+                </var-def>
+                <var-def name="account.${q}">
+                    <regexp>
+                        <regexp-pattern>
+                            ( |[0-9])*
+                        </regexp-pattern>
+                        <regexp-source>
+                            <xpath expression="//div[@id='MPSMaster_MainPlaceHolder_pnlAccountTransactions']/table/thead/tr[1]/th/span[@class='name']/text()">
+                                <template>${file}</template>
+                            </xpath>
+                        </regexp-source>
+                    </regexp>
+                </var-def>
+                <loop item="uid" index="i">
+                    <list>
+                        <xpath expression="//div[@id='MPSMaster_MainPlaceHolder_pnlAccountTransactions']/table//td">
+                            <var name="file"/>
+                        </xpath>
+                    </list>
+                    <body>
+                        <var-def name="date.${q}.${(Integer.parseInt(ii.toString())-1)*20+Integer.parseInt(i.toString())}">
+                            <xpath expression="//td/text()">
+                                <var name="uid"/>
+                            </xpath>
+                        </var-def>
+                        <var-def name="notice.${q}.${(Integer.parseInt(ii.toString())-1)*20+Integer.parseInt(i.toString())}">
+                            <xpath expression="//span[@class='name']/text()">
+                                <var name="uid"/>
+                            </xpath>
+                        </var-def>
+                        <var-def name="amount.${q}.${(Integer.parseInt(ii.toString())-1)*20+Integer.parseInt(i.toString())}">
+                            <xpath expression="//span[@class='value']/text()">
+                                <var name="uid"/>
+                            </xpath>
+                        </var-def>
+                    </body>
+                </loop>
+                <var-def name="href">
+                    <xpath expression="//a[@id='MPSMaster_MainPlaceHolder_lnkNext']/@href">
+                        <var name="file"/>
+                    </xpath>
+                </var-def>
+            </while>
+        </body>
+    </loop>
+</config>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <function name="fixqookies">
+        <var-def name="k">0</var-def>
+        <var-def name="maxloops"><template>${http.getHeaders("Set-Cookie").length}</template></var-def>
+        <while condition="${true}" maxloops="${maxloops}">
+            <var-def name="httpsetqookie"><template>${http.getHeaders("Set-Cookie")[<var name="k"/>]}</template></var-def>
+            <var-def name="qookiestring">
+                <regexp>
+                    <regexp-pattern>^[^ ;]*</regexp-pattern>
+                    <regexp-source>
+                        <template>${httpsetqookie}</template>
+                    </regexp-source>
+                </regexp>
+            </var-def>
+            <var-def name="qookiename">
+            <regexp>
+                <regexp-pattern>^[^ =]*</regexp-pattern>
+                    <regexp-source>
+                        <var name="qookiestring"/>
+                    </regexp-source>
+                </regexp>
+            </var-def>
+            <var-def name="qookieqontent">
+                <regexp>
+                    <regexp-pattern>=.*$</regexp-pattern>
+                    <regexp-source>
+                        <var name="qookiestring"/>
+                    </regexp-source>
+                </regexp>
+            </var-def>
+            <var-def name="qookieqontent">
+                <regexp replace="true">
+                    <regexp-pattern>^=</regexp-pattern>
+                    <regexp-source>
+                        <var name="qookieqontent"/>
+                    </regexp-source>
+                    <regexp-result></regexp-result>
+                </regexp>
+            </var-def>
+            <var-def name="${qookiename}">
+                <var name="qookieqontent"/>
+            </var-def>
+            <var-def name="qookielist">
+                <regexp replace="true">
+                    <regexp-pattern><var name="qookiename"/></regexp-pattern>
+                    <regexp-source><var name="qookielist"/></regexp-source>
+                    <regexp-result></regexp-result>
+                </regexp>
+            </var-def>
+            <var-def name="qookielist">
+                <regexp replace="true">
+                    <regexp-pattern>\s=[^ ]*</regexp-pattern>
+                    <regexp-source><var name="qookielist"/></regexp-source>
+                    <regexp-result></regexp-result>
+                </regexp>
+            </var-def>
+            <var-def name="qookielist">
+                <template>${qookielist} ${qookiename}=${qookieqontent}</template>
+            </var-def>
+            <var-def name="k">1</var-def>
+        </while>
+        <var-def name="qookiesendstring"></var-def>
+        <var-def name="k">0</var-def>
+        <loop item="qn" index="i">
+            <list>
+                <regexp>
+                    <regexp-pattern>[^ ]*</regexp-pattern>
+                    <regexp-source><var name="qookielist"/></regexp-source>
+                </regexp>
+            </list>
+            <body>
+                <case>
+                    <if condition="${k.toString() != '0'}">
+                        <var-def name="qookiesendstring"><var name="qookiesendstring"/>;</var-def>
+                    </if>
+                </case>
+                <var-def name="qookiesendstring">
+                    <template>${qookiesendstring} ${qn}</template>
+                </var-def>
+                <var-def name="qookiesendstring">
+                    <regexp replace="true" flag-multiline="true">
+                        <regexp-pattern>(\n|\r)+</regexp-pattern>
+                        <regexp-source><var name="qookiesendstring"/></regexp-source>
+                        <regexp-result></regexp-result>
+                    </regexp>
+                </var-def>
+                <var-def name="qookiesendstring">
+                    <regexp replace="true" flag-multiline="true">
+                        <regexp-pattern>^; </regexp-pattern>
+                        <regexp-source><var name="qookiesendstring"/></regexp-source>
+                        <regexp-result></regexp-result>
+                    </regexp>
+                </var-def>
+                <var-def name="qookiesendstring">
+                    <regexp replace="true">
+                        <regexp-pattern>;+</regexp-pattern>
+                        <regexp-source><var name="qookiesendstring"/></regexp-source>
+                        <regexp-result>;</regexp-result>
+                    </regexp>
+                </var-def>
+                <var-def name="k">1</var-def>
+            </body>
+        </loop>
+        <return><var name="qookiesendstring"/></return>
+    </function>
+</config>
