@@ -3,6 +3,7 @@ var gin = {};
 gin.filter = new GINFilter();
 gin.server = new GINServer("127.0.0.1");
 
+
 // Point jQuery UI to the tabs
 $(function() {
 	$( "#maintabs" ).tabs({
@@ -12,8 +13,20 @@ $(function() {
 	});
 });
 
-// Point DataTable to the history
 $(document).ready(function() {
+
+	gin.moduleSheet = document.getElementById("moduleSheet");
+
+	gin.server.get("loginmodules",
+		function (loginModules) {
+			for (aModule in loginModules) {
+				var loginModule = new GINLoginModule(loginModules[aModule]);
+				gin.moduleSheet.appendChild(loginModule.element);
+			}
+		}
+	);
+	
+	// Point DataTable to the history
 	gin.historyTable = $('#DThistory').dataTable( {
 			"bJQueryUI": true,
 			"bProcessing": true,
@@ -24,7 +37,7 @@ $(document).ready(function() {
 				{ "mDataProp": "account", 	"sTitle": "Konto", 	"sClass": "account" },
 				{ "mDataProp": "date", 		"sTitle": "Datum", 	"sClass": "date" },
 				{ "mDataProp": "notice", 	"sTitle": "Notis", 	"sClass": "notice" },
-				{ "mDataProp": "amount", 		"sTitle": "Summa", 	"sClass": "amount" }
+				{ "mDataProp": "amount", 	"sTitle": "Summa", 	"sClass": "amount" }
 			],
 			"fnServerParams": function ( aoData ) {
 	            aoData.push( { "accounts": gin.filter.accounts, "dateRange": gin.filter.dateRange } );
@@ -32,13 +45,3 @@ $(document).ready(function() {
 	} );
 	gin.historyTable.fnSort( [ [1,'desc'] ] );	
 } );
-
-
-gin.server.get("loginmodules",
-	function (loginModules) {
-		for (aModule in loginModules) {
-			var loginModule = new GINLoginModule(data[aModule]);
-			gin.moduleSheet.appendChild(loginModule.element);
-		}
-	}
-);

@@ -32,26 +32,26 @@ GINServer.prototype.get = function (path, success, error) {
 	})
 }
 
-function GINLoginModule(loginModule) {
-	this.module = loginModule["module"];
-	this.bankName = loginModule["bankName"];
+function GINLoginModule(jsonLoginModule) {
+	this.module = jsonLoginModule["module"];
+	this.bankName = jsonLoginModule["bankName"];
 	this.element = document.createElement('div');
 	this.form = document.createElement("form");
 	
-	element.className = "loginModule";
-	element.innerHTML = "<header><h1>" + bankName + "</h1><header>";
-	element.appendChild(form);
-	for (var key in loginModule) {
+	this.element.className = "loginModule";
+	this.element.innerHTML = "<header><h1>" + this.bankName + "</h1><header>";
+	this.element.appendChild(this.form);
+	for (var key in jsonLoginModule) {
 		if (key.match(/^key_/)) {
 			var field = document.createElement('input');
 			field.type = "text";
 			field.name = key;
-			field.placeholder = loginModule[key];
-			form.appendChild(field);
+			field.placeholder = jsonLoginModule[key];
+			this.form.appendChild(field);
 		}
 	}
 	var submitButton = document.createElement('input');
 	submitButton.type = "submit";
 	submitButton.value = "Hämta transaktioner";
-	form.appendChild(submitButton);
+	this.form.appendChild(submitButton);
 }
