@@ -39,9 +39,9 @@ test("Can we log in to dummymodule?", 1, function() {
 	  var server = new GINServer("127.0.0.1");
 	  stop();
 	  var data = {
-			  "module" = "dummybank.xml",
-			  "key_0" = "dummyuser",
-			  "key_1" = "dummypass"
+			  "module": "dummybank.xml",
+			  "key_0": "dummyuser",
+			  "key_1": "dummypass"
 	  };
 	  server.post("login", data, 
 			  function (data, textStatus) {
@@ -60,9 +60,9 @@ test("Can do we get an error on wrong pass?", 1, function() {
 	  var server = new GINServer("127.0.0.1");
 	  stop();
 	  var data = {
-			  "module" = "dummybank.xml",
-			  "key_0" = "dummyuser",
-			  "key_1" = "wrongpass"
+			  "module": "dummybank.xml",
+			  "key_0": "dummyuser",
+			  "key_1": "wrongpass"
 	  };
 	  server.post("login", data, 
 			  function (data, textStatus) {
