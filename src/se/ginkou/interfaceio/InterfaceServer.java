@@ -106,6 +106,8 @@ public class InterfaceServer {
         // Set up request handlers
         HttpAsyncRequestHandlerRegistry reqistry = new HttpAsyncRequestHandlerRegistry();
         reqistry.register("*/datatables", new DataTablesHandler());
+        reqistry.register("*/getloginrules", new RuleFileHandler());
+        reqistry.register("*/login", new LoginHandler());
         reqistry.register("*", new HttpFileHandler(new File("website")));
         reqistry.register("*/ping", new TestHandler());
 

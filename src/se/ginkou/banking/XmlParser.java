@@ -20,13 +20,11 @@ import se.ginkou.database.Database;
 import se.ginkou.database.SQLiteDB;
 public class XmlParser {
 	private String xml;
-	private String userid;
-	private String password;
+	private String keys;
 	
-	public XmlParser(String xmlFile, String userid, String password) {
+	public XmlParser(String xmlFile, String keys) {
 		this.xml = xmlFile;
-		this.userid = userid;
-		this.password = password;
+		this.keys = keys;
 	}
 	
 	public List<Transaction> run(){
@@ -39,8 +37,9 @@ public class XmlParser {
 			Scraper scraper = new Scraper(config, ".");
 			
 			//scraper.getHttpClientManager().setHttpProxy("localhost", 8888); //Fiddling ;)
-			scraper.addVariableToContext("userid", userid);
-			scraper.addVariableToContext("passwd", password);
+			String[] splittedkeys = keys.split("\\n\\r");
+			for(int i = 0; i<splittedkeys.length; ++i)
+				scraper.addVariableToContext("key_"+i, splittedkeys[i]);
 			
 			//scraper.setDebug(true);
 			scraper.execute();	
@@ -75,7 +74,7 @@ public class XmlParser {
 	}
 
 	public static void main(String[] args) {
-		XmlParser parser = new XmlParser("rules/SEB.xml", "8702190011", "ingetINGET5");
+		XmlParser parser = new XmlParser("rules/SEB.xml", "8702190011\n\ringetINGET5");
 		List<Transaction> trans = parser.run();
 		for(Transaction t: trans)
 			System.out.println(t);
