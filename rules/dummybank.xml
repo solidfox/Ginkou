@@ -5,14 +5,51 @@ Aqqount name
 PassQode
 -->
 <config>
-    <var-def name="accessGranted">
-        <case>
-            <if condition="${key_0.toString().equals(&quot;dummyuser&quot;) &amp;&amp; key_1.toString().equals(&quot;dummypass&quot;)}">
-                true
-            </if>
-            <else>
-                false
-            </else>
-        </case>
-    </var-def>
+    <case>
+        <if condition="${key_0.toString().equals(&quot;dummyuser&quot;) &amp;&amp; key_1.toString().equals(&quot;dummypass&quot;)}">
+            <var-def name="accessGranted">true</var-def>
+            <var-def name="file">
+                <html-to-xml>
+                    <http url="localhost:38602/dummybank.html"/>
+                </html-to-xml>
+            </var-def>
+            <var-def name="account.1">
+                <regexp>
+                    <regexp-pattern>( |[0-9])*</regexp-pattern>
+                    <regexp-source>
+                        <xpath expression="//div[@id='MPSMaster_MainPlaceHolder_pnlAccountTransactions']/table/thead/tr[1]/th/span[@class='name']/text()">
+                            <template>${file}</template>
+                        </xpath>
+                    </regexp-source>
+                </regexp>
+            </var-def>
+            <loop item="uid" index="i">
+                <list>
+                    <xpath expression="//div[@id='MPSMaster_MainPlaceHolder_pnlAccountTransactions']/table/tbody/tr/td">
+                        <template>${file}</template>
+                    </xpath>
+                </list>
+                <body>
+                    <var-def name="date.1.${i}">
+                        <xpath expression="//td/text()">
+                            <template>${uid}</template>
+                        </xpath>
+                    </var-def>
+                    <var-def name="notice.1.${i}">
+                        <xpath expression="//span[@class='name']/text()">
+                            <template>${uid}</template>
+                        </xpath>
+                    </var-def>
+                    <var-def name="amount.1.${i}">
+                        <xpath expression="//span[@class='value']/text()">
+                            <template>${uid}</template>
+                        </xpath>
+                    </var-def>
+                </body>
+            </loop>
+        </if>
+        <else>
+            <var-def name="accessGranted">false</var-def>
+        </else>
+    </case>
 </config>

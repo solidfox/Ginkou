@@ -74,6 +74,12 @@ class HttpFileHandler extends HttpRequestHandler {
 			return ContentType.create("text/css"); 
 		} else if (fileEnding.equals("js")) {
 			return ContentType.create("application/javascript");
+		} else if (fileEnding.equals("png")) {
+			return ContentType.create("image/png");
+		} else if (fileEnding.matches("jpg||jpeg")) {
+			return ContentType.create("image/jpeg");
+		} else if (fileEnding.equals("gif")) {
+			return ContentType.create("image/gif");
 		} else {
 			return ContentType.create("text/html");
 		} 
