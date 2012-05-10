@@ -55,3 +55,7 @@ function GINLoginModule(jsonLoginModule) {
 	submitButton.value = "Hämta transaktioner";
 	this.form.appendChild(submitButton);
 }
+
+GINLoginModule.prototype.login = function () {
+	
+}
