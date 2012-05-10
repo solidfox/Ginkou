@@ -23,16 +23,26 @@ function GINFilter() {
 }
 
 /* 	
-	Sends a command to the server
-	@arg callback is called 
+	Sends a command to the server 
 */
-GINServer.prototype.post = function (command, data, success, error) {
+GINServer.prototype.post = function (path, data, success, error) {
 	$.ajax({
 		type: "POST",
-		url: this.url+"/"+command,
+		url: this.url+"/"+path,
 		data: data,
 		timeout: 10000,
 		success: success,
 		error: error
 	});
+}
+
+
+GINServer.prototype.get = function (path, success, error) {
+	$.ajax({
+		type: "GET",
+		url: this.url + "/" + path,
+		timeout: 10000,
+		success: success,
+		error: error
+	})
 }

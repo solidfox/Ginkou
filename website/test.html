@@ -31,6 +31,43 @@
 		  
 		});
 		
+		test("Do we get loginmodules?", 1, function() {
+			  var server = new GINServer("127.0.0.1");
+			  stop();
+			  server.get("loginmodules", 
+					  function (data, textStatus) {
+					  	ok(true, "Request succeded: " + JSON.stringify(data) + ". Status: " + textStatus);
+					  	start();
+					  },
+					  function (data, textStatus) {
+					  	ok(false, "Request failed: " + JSON.stringify(data) + ". Status: " + textStatus);
+					  	start();
+					  }
+					);
+			  
+			});
+		
+		test("Can we log in to dummymodule?", 1, function() {
+			  var server = new GINServer("127.0.0.1");
+			  stop();
+			  var data = {
+					  "module" = "dummybank.xml",
+					  "key_0" = "dummyuser",
+					  "key_1" = "dummypass"
+			  }
+			  server.post("loginmodules", data, 
+					  function (data, textStatus) {
+					  	ok(true, "Request succeded: " + JSON.stringify(data) + ". Status: " + textStatus);
+					  	start();
+					  },
+					  function (data, textStatus) {
+					  	ok(false, "Request failed: " + JSON.stringify(data) + ". Status: " + textStatus);
+					  	start();
+					  }
+					);
+			  
+			});
+		
 /* 		test("second test within module", function() {
 		  ok( true, "all pass" );
 		});
