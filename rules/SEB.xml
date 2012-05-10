@@ -10,8 +10,8 @@ Personlig kod
     <var-def name="login1">
             <http url="https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx" method="POST" charset="UTF-8" cookie-policy="ignore">
                 <http-param name="A3">4</http-param>
-                <http-param name="A1"><var name="userid"/></http-param>
-                <http-param name="A2"><var name="passwd"/></http-param>
+                <http-param name="A1"><var name="key_0"/></http-param>
+                <http-param name="A2"><var name="key_1"/></http-param>
             </http>
     </var-def>
     <var-def name="accountsXml">
