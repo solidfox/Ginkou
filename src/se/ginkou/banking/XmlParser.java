@@ -20,9 +20,9 @@ import se.ginkou.database.Database;
 import se.ginkou.database.SQLiteDB;
 public class XmlParser {
 	private String xml;
-	private String keys;
+	private String[] keys;
 	
-	public XmlParser(String xmlFile, String keys) {
+	public XmlParser(String xmlFile, String[] keys) {
 		this.xml = xmlFile;
 		this.keys = keys;
 	}
@@ -41,9 +41,8 @@ public class XmlParser {
 			Scraper scraper = new Scraper(config, ".");
 			
 			//scraper.getHttpClientManager().setHttpProxy("localhost", 8888); //Fiddling ;)
-			String[] splittedkeys = keys.split("\\n\\r");
-			for(int i = 0; i<splittedkeys.length; ++i)
-				scraper.addVariableToContext("key_"+i, splittedkeys[i]);
+			for(int i = 0; i<keys.length; ++i)
+				scraper.addVariableToContext("key_"+i, keys[i]);
 			
 			//scraper.setDebug(true);
 			scraper.execute();	
@@ -83,8 +82,9 @@ public class XmlParser {
 	}
 
 	public static void main(String[] args) {
-		XmlParser parser = new XmlParser("rules/SEB.xml", "8702190011\n\ringetINGET5");
-		//XmlParser parser = new XmlParser("rules/dummybank.xml", "dummyuser\n\rdummypass");
+		String[] s = {"8702190011","ingetINGET5"};
+		XmlParser parser = new XmlParser("rules/SEB.xml", s);
+		//XmlParser parser = new XmlParser("rules/dummybank.xml", s2);
 		List<Transaction> trans = parser.run();
 		if(trans==null){
 			System.err.println("trans==null");
