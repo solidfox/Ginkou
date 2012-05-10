@@ -1,10 +1,14 @@
 package se.ginkou.banking;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.DateTimePrinter;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
 import org.webharvest.runtime.ScraperContext;
@@ -12,29 +16,17 @@ import org.webharvest.runtime.variables.Variable;
 
 import se.ginkou.Account;
 import se.ginkou.Transaction;
+import se.ginkou.database.Database;
+import se.ginkou.database.SQLiteDB;
 public class XmlParser {
 	private String xml;
 	private String userid;
 	private String password;
 	
-	/**
-	 * Create a new XmlParser with the given xml file, userid and password.
-	 * @param xmlFile the file to use as a parser.
-	 * @param userid the userid to use in the parser.
-	 * @param password the password to use in the parser.
-	 */
 	public XmlParser(String xmlFile, String userid, String password) {
 		this.xml = xmlFile;
 		this.userid = userid;
 		this.password = password;
-	}
-	
-	/**
-	 * Create a new XmlParser with the given xml file.
-	 * @param xmlFile the file to use as a parser.
-	 */
-	public XmlParser(String xmlFile) {
-		this(xmlFile, null, null);
 	}
 	
 	public List<Transaction> run(){
@@ -47,12 +39,8 @@ public class XmlParser {
 			Scraper scraper = new Scraper(config, ".");
 			
 			//scraper.getHttpClientManager().setHttpProxy("localhost", 8888); //Fiddling ;)
-			if (userid != null) {
-				scraper.addVariableToContext("userid", userid);
-			}
-			if (password != null) {
-				scraper.addVariableToContext("passwd", password);
-			}
+			scraper.addVariableToContext("userid", userid);
+			scraper.addVariableToContext("passwd", password);
 			
 			//scraper.setDebug(true);
 			scraper.execute();	
@@ -87,7 +75,7 @@ public class XmlParser {
 	}
 
 	public static void main(String[] args) {
-		XmlParser parser = new XmlParser("SEB.xml", "8702190011", "ingetINGET5");
+		XmlParser parser = new XmlParser("rules/SEB.xml", "8702190011", "ingetINGET5");
 		List<Transaction> trans = parser.run();
 		for(Transaction t: trans)
 			System.out.println(t);
