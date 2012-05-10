@@ -1,18 +1,3 @@
-/*
- Creates a new BankCredentials object.
- First argument must be one of the following strings
- SEB
- 
- Second argument must be a string with the username
- Third argument must be a string with the password
- */
-function GINBankCredentials(bank, username, password) {
-	this.bank = bank;
-	this.username = username;
-	this.password = password;
-}
-
-
 function GINServer(url, port) {
 	this.url = "http://" + url + (port == undefined ? ":38602" : ":" + port);
 }
@@ -20,6 +5,15 @@ function GINServer(url, port) {
 function GINFilter() {
 	this.accounts = [ "all" ];
 	this.dateRange = { "startDate": (moment().subtract('months', 3)), "endDate": moment() }
+}
+
+function GINLoginModule(loginModule) {
+	this.module = loginModule["module"];
+	this.bankName = loginModule["bankName"];
+	this.fields = [];
+	for (var key in loginModule) {
+
+	}
 }
 
 /* 	

@@ -22,7 +22,24 @@ import com.google.gson.JsonObject;
 
 import se.ginkou.Transaction;
 import se.ginkou.banking.XmlParser;
-
+/**
+ * Handles calls to /loginmodules.
+ * Responds with JSON containing of the following form
+ * {
+ * "[moduleName]" :
+ * 		{
+ * 		"module": "[moduleName]",
+ * 		"bankName": "[bankName]",
+ * 		"key_0": "[keyName]",		E g Username
+ * 		"key_1": "[keyName]", 		E g Password
+ * 		"key_n": "[keyName]"
+ * 		},
+ * "[moduleName2]" : {...},
+ * "[moduleName3]" : {...}
+ * }
+ * @author spike
+ *
+ */
 public class RuleFileHandler extends HttpRequestHandler{
 	private final static String NAME = RuleFileHandler.class.getName();
 	public void handleInternal(
@@ -62,7 +79,7 @@ public class RuleFileHandler extends HttpRequestHandler{
 				}
 				if(a.size()>0){
 					JsonObject fileInfo = new JsonObject();
-					fileInfo.addProperty("fileName", s);
+					fileInfo.addProperty("module", s);
 					fileInfo.addProperty("bankName", a.get(0));
 					for(int i = 1; i<a.size(); ++i){
 						fileInfo.addProperty("key_"+(i-1), a.get(i));

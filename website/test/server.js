@@ -42,7 +42,7 @@ test("Can we log in to dummymodule?", 1, function() {
 			  "module" = "dummybank.xml",
 			  "key_0" = "dummyuser",
 			  "key_1" = "dummypass"
-	  }
+	  };
 	  server.post("login", data, 
 			  function (data, textStatus) {
 			  	ok(true, "Request succeded: " + JSON.stringify(data) + ". Status: " + textStatus);
@@ -63,7 +63,7 @@ test("Can do we get an error on wrong pass?", 1, function() {
 			  "module" = "dummybank.xml",
 			  "key_0" = "dummyuser",
 			  "key_1" = "wrongpass"
-	  }
+	  };
 	  server.post("login", data, 
 			  function (data, textStatus) {
 			  	fail("Response syntax yet to be defined");
