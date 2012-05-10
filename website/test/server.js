@@ -56,25 +56,25 @@ test("Can we log in to dummymodule?", 1, function() {
 	  
 	});
 
-test("Can do we get an error on wrong pass?", 1, function() {
-	  var server = new GINServer("127.0.0.1");
-	  stop();
-	  var data = {
-			  "module": "dummybank.xml",
-			  "key_0": "dummyuser",
-			  "key_1": "wrongpass"
-	  };
-	  server.post("login", data, 
-			  function (data, textStatus) {
-			  	fail("Response syntax yet to be defined");
+//test("Can do we get an error on wrong pass?", 1, function() {
+//	  var server = new GINServer("127.0.0.1");
+//	  stop();
+//	  var data = {
+//			  "module": "dummybank.xml",
+//			  "key_0": "dummyuser",
+//			  "key_1": "wrongpass"
+//	  };
+//	  server.post("login", data, 
+//			  function (data, textStatus) {
+//			  	fail("Response syntax yet to be defined");
 		  		//ok(true, "Request succeded: " + JSON.stringify(data) + ". Status: " + textStatus);
-			  	start();
-			  },
-			  function (data, textStatus) {
-				  fail("Response syntax yet to be defined");
-				  ok(false, "Request failed: " + JSON.stringify(data) + ". Status: " + textStatus);
-			  	start();
-			  }
-			);
-	  
-	});
+//			  	start();
+//			  },
+//			  function (data, textStatus) {
+//				  fail("Response syntax yet to be defined");
+//				  ok(false, "Request failed: " + JSON.stringify(data) + ". Status: " + textStatus);
+//			  	start();
+//			  }
+//			);
+//	  
+//	});

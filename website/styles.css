@@ -16,6 +16,10 @@ body > header h2 {
 	font-size: 1em;
 	font-weight: normal;
 	color: #8d8d8d;}
+	
+#maintabs {
+	border: none;
+}
 
 /* @group Sidebar */
 

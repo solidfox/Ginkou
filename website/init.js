@@ -1,6 +1,7 @@
-var ginkou = {};
+var gin = {};
 
-ginkou.filter = new GINFilter();
+gin.filter = new GINFilter();
+gin.server = new GINServer("127.0.0.1");
 
 // Point jQuery UI to the tabs
 $(function() {
@@ -13,7 +14,7 @@ $(function() {
 
 // Point DataTable to the history
 $(document).ready(function() {
-	ginkou.historyTable = $('#DThistory').dataTable( {
+	gin.historyTable = $('#DThistory').dataTable( {
 			"bJQueryUI": true,
 			"bProcessing": true,
 	        "bServerSide": true,
@@ -26,9 +27,18 @@ $(document).ready(function() {
 				{ "mDataProp": "amount", 		"sTitle": "Summa", 	"sClass": "amount" }
 			],
 			"fnServerParams": function ( aoData ) {
-	            aoData.push( { "accounts": ginkou.filter.accounts, "dateRange": ginkou.filter.dateRange } );
+	            aoData.push( { "accounts": gin.filter.accounts, "dateRange": gin.filter.dateRange } );
 	        }
 	} );
-	ginkou.historyTable.fnSort( [ [1,'desc'] ] );	
+	gin.historyTable.fnSort( [ [1,'desc'] ] );	
 } );
 
+
+gin.server.get("loginmodules",
+	function (loginModules) {
+		for (aModule in loginModules) {
+			var loginModule = new GINLoginModule(data[aModule]);
+			gin.moduleSheet.appendChild(loginModule.element);
+		}
+	}
+);

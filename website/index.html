@@ -48,7 +48,16 @@
 		</header>
 		<p>Ginkou laddar ned kontohistorik från din internetbank och sparar den i en databas.</p>
 		<section id="SEBlogin" class="logindialog">
-			<header><h1>Log in to SEB</h1></header>
+			<header><h1>Log in</h1></header>
+			<section class="bankModule">
+				<h1>SEB</h1>
+				<form action="login">
+					<input style="display: none;" type="text" name="module" />
+					<input type="text" name="key_0" placeholder="Personummer" />
+					<input type="password" name="key_1" placeholder="Personlig kod" />
+					<input type="submit" value="Logga in" />
+				</form>
+			</section>
 		</section>
 	</article>
 	<article id="history">
