@@ -73,7 +73,9 @@ public class LoginHandler extends HttpRequestHandler{
 		String[] args = new String[keys.size()];
 		keys.toArray(args);
 		
-		XmlParser parser = new XmlParser("rules/"+commands.get("module"), args);
+		String fileName = commands.get("module");
+		
+		XmlParser parser = new XmlParser("rules/"+fileName, args);
 		List<Transaction> trans = parser.run();
 		Debug.out("LoginHandler finished parsing bank");
 		response.setStatusCode(HttpStatus.SC_OK);
