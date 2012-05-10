@@ -48,7 +48,6 @@ public class RuleFileHandler extends HttpRequestHandler{
 			HttpContext context) throws HttpException, IOException {
 
 		if (
-				//				!(request instanceof HttpEntityEnclosingRequest) ||
 				!(this.getMethod(request).equals("GET"))
 		) {
 			response.setStatusCode(HttpStatus.SC_BAD_REQUEST);
@@ -99,7 +98,6 @@ public class RuleFileHandler extends HttpRequestHandler{
 			}
 		}
 		response.setStatusCode(HttpStatus.SC_OK);
-		response.addHeader("Access-Control-Allow-Origin", "*"); //TODO remove this line?
 		NStringEntity body = new NStringEntity(returnJson.toString(), "UTF-8");
 		body.setContentType("text/json; charset=UTF-8");
 		response.setEntity(body);

@@ -27,6 +27,10 @@ public class XmlParser {
 		this.keys = keys;
 	}
 	
+	 /**
+	  * 
+	  * @return null if provided with non-functional keys, else a List of Transactions.
+	  */
 	public List<Transaction> run(){
 		// register external plugins if there are any
 		ArrayList<Transaction> transactions = new ArrayList<Transaction>();
@@ -49,6 +53,9 @@ public class XmlParser {
 			//System.out.println(context.size());
 			//System.out.println(context);			
 			
+			String accessGranted = ((Variable) context.get("accessGranted")).toString();
+			if(!accessGranted.equals("true"))
+				return null;
 			Variable account, date, notice, amount;
 			int q = 1;
 			while((account = (Variable) context.get("account."+q))  != null){
@@ -70,12 +77,19 @@ public class XmlParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
 		return transactions;
 	}
 
 	public static void main(String[] args) {
 		XmlParser parser = new XmlParser("rules/SEB.xml", "8702190011\n\ringetINGET5");
+		//XmlParser parser = new XmlParser("rules/dummybank.xml", "dummyuser\n\rdummypass");
 		List<Transaction> trans = parser.run();
+		if(trans==null){
+			System.err.println("trans==null");
+			return;
+		}
 		for(Transaction t: trans)
 			System.out.println(t);
 		System.out.println(trans.size());

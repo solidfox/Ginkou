@@ -36,13 +36,22 @@ public class LoginHandler extends HttpRequestHandler{
 			return;
 		}
 		
-		String body = getBody(request);
-		int firstBreak = body.indexOf("\n\r");
-		String fileName = body.substring(0,firstBreak);
-		String args = body.substring(firstBreak+2);
-		XmlParser parser = new XmlParser("rules/"+fileName, args);
+		String reqbody = getBody(request);
+		int firstBreak = reqbody.indexOf("\n\r");
+		String fileName = reqbody.substring(0,firstBreak);
+		String args = reqbody.substring(firstBreak+2);
 		
+		XmlParser parser = new XmlParser("rules/"+fileName, args);
+		List<Transaction> trans = parser.run();
+		if(trans==null){
+			NStringEntity body = new NStringEntity("{module: \"" + fileName + "\", accessGranted: false}", "UTF-8");
+			body.setContentType("text/json; charset=UTF-8");
+			response.setEntity(body);	
+		} else {
+			for(Transaction t: trans){
+
+			}
+		}
 		response.setStatusCode(HttpStatus.SC_OK);
-		response.addHeader("Access-Control-Allow-Origin", "*"); //TODO remove this line?
 	}
 }
