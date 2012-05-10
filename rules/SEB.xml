@@ -8,7 +8,7 @@ Personlig kod
     <include path="lib/qookiehandler.xml"/>
     <var-def name="qookielist"></var-def>
     <var-def name="login1">
-            <http url="https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx" method="POST" charset="UTF-8" cookie-policy="ignore">
+            <http url="https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx" method="POST" charset="iso-8859-1" cookie-policy="ignore">
                 <http-param name="A3">4</http-param>
                 <http-param name="A1"><var name="key_0"/></http-param>
                 <http-param name="A2"><var name="key_1"/></http-param>
@@ -24,7 +24,7 @@ Personlig kod
             <var-def name="accessGranted">true</var-def>
             <var-def name="accountsXml">
                 <html-to-xml>
-                    <http url="https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1" charset="UTF-8" cookie-policy="ignore">
+                    <http url="https://m.seb.se/cgi-bin/pts3/mps/1100/mps1101.aspx?X1=digipassAppl1" charset="iso-8859-1" cookie-policy="ignore">
                         <http-header name="Cookie">
                             <var-def name="qookielist">
                                 <call name="fixqookies">
@@ -48,7 +48,7 @@ Personlig kod
                     <while condition="${href.toString().length() > 0}" index="ii">
                         <var-def name="file">
                             <html-to-xml>
-                                <http url="https://m.seb.se${href}" charset="UTF-8" cookie-policy="ignore">
+                                <http url="https://m.seb.se${href}" charset="iso-8859-1" cookie-policy="ignore">
                                     <http-header name="Cookie">
                                         <var-def name="qookielist">
                                             <call name="fixqookies">
