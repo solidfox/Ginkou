@@ -6,8 +6,10 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 import org.apache.http.HttpEntityEnclosingRequest;
@@ -21,12 +23,17 @@ import org.apache.http.nio.protocol.BasicAsyncResponseProducer;
 import org.apache.http.nio.protocol.HttpAsyncExchange;
 import org.apache.http.nio.protocol.HttpAsyncRequestConsumer;
 import org.apache.http.protocol.HttpContext;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 
 import com.google.gson.JsonObject;
 
+import se.ginkou.Account;
 import se.ginkou.Debug;
 import se.ginkou.Transaction;
 import se.ginkou.banking.XmlParser;
+import se.ginkou.database.Database;
+import se.ginkou.database.SQLiteDB;
 
 public class LoginHandler extends HttpRequestHandler{
 	
@@ -84,9 +91,22 @@ public class LoginHandler extends HttpRequestHandler{
 			body.setContentType("text/json; charset=UTF-8");
 			response.setEntity(body);	
 		} else {
+			Database db = SQLiteDB.getDB();
+			Account oldestAcc = null;
+			HashSet<Account> sa = new HashSet<Account>();
 			for(Transaction t: trans){
-
+				sa.add(t.getAccount());
 			}
+			DateTime clearDate = (new DateTime()).minusDays(14); 
+			for(Account saInst: sa){
+				db.clearAllTransactionsFrom(clearDate, saInst);
+			}
+			List<Transaction> l = new ArrayList<Transaction>();
+			for(Transaction t: trans){
+				if(t.getDate().isAfter(clearDate))
+					l.add(t);
+			}
+			db.addTransactions(l);
 		}
 		Debug.out("LoginHandler finished");
 	}
