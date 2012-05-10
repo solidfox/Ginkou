@@ -107,7 +107,7 @@ public class InterfaceServer {
         HttpAsyncRequestHandlerRegistry reqistry = new HttpAsyncRequestHandlerRegistry();
         reqistry.register("*/datatables", new DataTablesHandler());
         reqistry.register("*", new HttpFileHandler(new File("website")));
-        reqistry.register("*/dummybank", new HttpJSONHandler());
+        reqistry.register("*/ping", new TestHandler());
 
         // Create server-side HTTP protocol handler
         HttpAsyncService protocolHandler = new HttpAsyncService(
@@ -124,7 +124,6 @@ public class InterfaceServer {
                 System.out.println(conn + ": connection closed");
                 super.closed(conn);
             }
-
         };
         // Create HTTP connection factory
         NHttpConnectionFactory<DefaultNHttpServerConnection> connFactory;
@@ -162,53 +161,5 @@ public class InterfaceServer {
             System.err.println("I/O error: " + e.getMessage());
         }
         System.out.println("Shutdown");
-    }
-
-    static class HttpJSONHandler implements HttpAsyncRequestHandler<HttpRequest>  {
-
-        public HttpJSONHandler() {
-            super();
-        }
-
-        public HttpAsyncRequestConsumer<HttpRequest> processRequest(
-                final HttpRequest request,
-                final HttpContext context) {
-            // Buffer request content in memory for simplicity
-            return new BasicAsyncRequestConsumer();
-        }
-        
-        public void handle(
-                final HttpRequest request,
-                final HttpAsyncExchange httpexchange,
-                final HttpContext context) throws HttpException, IOException {
-            HttpResponse response = httpexchange.getResponse();
-            handleInternal(request, response, context);
-            httpexchange.submitResponse(new BasicAsyncResponseProducer(response));
-        }
-        
-        public void handleInternal(
-                final HttpRequest request,
-                final HttpResponse response,
-                final HttpContext context) throws HttpException, IOException {
-        	
-        	
-        	// Check that we support the HTTP method
-            String method = request.getRequestLine().getMethod().toUpperCase(Locale.ENGLISH);
-            if (!method.equals("GET") && !method.equals("HEAD") && !method.equals("POST")) {
-                throw new MethodNotSupportedException(method + " method not supported");
-            }
-
-            
-            String path = request.getRequestLine().getUri();
-            if (method.equals("GET")) {
-            		if(path.equals("/dummybank")) {
-            			final File file = new File(".", "dummypage.html");
-            			response.setStatusCode(HttpStatus.SC_OK);
-                        NFileEntity body = new NFileEntity(file, ContentType.create("text/html"));
-                        response.setEntity(body);
-                        System.out.println("Serving file " + file.getPath());
-            		} 
-            }
-        }
     }
 }

@@ -26,20 +26,13 @@ function GINFilter() {
 	Sends a command to the server
 	@arg callback is called 
 */
-GINServer.prototype.send = function (command, JSONData, callback) {
-	success = function (data, textStatus, jqXHR) {
-		callback(true, data);
-	}
-	error = function (data, textStatus, jqXHR) {
-		callback(false, data);
-	}
+GINServer.prototype.post = function (command, data, success, error) {
 	$.ajax({
-	  url: this.url+"/"+command,
-	  data: JSONData,
-	  timeout: 3000,
-	  success: success,
-	  error: error,
-	  dataType: "json",
-      type: "POST"
+		type: "POST",
+		url: this.url+"/"+command,
+		data: data,
+		timeout: 10000,
+		success: success,
+		error: error
 	});
 }
