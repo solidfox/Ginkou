@@ -21,16 +21,37 @@ body > header h2 {
 	border: none;
 }
 
+#moduleSheet {
+	text-align: center;
+}
+
 .loginModule {
+	margin: 20px;
 	width: 200px;
 	height: 140px;
 	display: inline-block;
 }
 
+.loginModule form {
+	width: 100%;
+}
+
+.loginModule form input {
+	width: 200px;
+}
+
+.loginModule form input[type="text"],
+.loginModule form input[type="password"] {
+	width: 192px;
+	padding: 3px;
+	border-radius: 3px;
+	border: 1px solid #b4b4b4;
+}
+
 /* @group Sidebar */
 
 /* Room for the sidebar */
-.ui-tabs-panel {
+/*.ui-tabs-panel {
 	margin-left: 224px;
 }
 
@@ -48,7 +69,7 @@ body > header h2 {
 }
 #sidebar ul {
 	padding-left: 0;
-}
+}*/
 
 /* @end */
 
