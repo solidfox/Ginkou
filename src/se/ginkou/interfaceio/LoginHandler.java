@@ -91,11 +91,12 @@ public class LoginHandler extends HttpRequestHandler{
 			responseBody = "{module: \"" + fileName + "\", accessGranted: false}";
 		} else {
 			Database db = SQLiteDB.getDB();
-			HashSet<Account> sa = new HashSet<Account>();
+			List<Transaction> toDB = new ArrayList<Transaction>();
+			/*HashSet<Account> sa = new HashSet<Account>();
 			for(Transaction t: trans){
 				sa.add(t.getAccount());
 			}
-			List<Transaction> toDB = new ArrayList<Transaction>();
+			
 			HashMap<Account, DateTime> accountStatus = new HashMap<Account, DateTime>();
 			DateTime today = new DateTime();
 			for(Account saInst: sa){
@@ -109,10 +110,12 @@ public class LoginHandler extends HttpRequestHandler{
 			}
 			for(Account a: db.getAccounts()){
 				toDB.add(new Transaction(a, today, "GinkouLogin", 0));
-			}
+			}*/
+			
+			db.clearAllTransactions();
 			for(Transaction t: trans){
-				DateTime addAfter = accountStatus.get(t.getAccount());
-				if(addAfter==null || t.getDate().isAfter(addAfter))
+				//DateTime addAfter = accountStatus.get(t.getAccount());
+				//if(addAfter==null || t.getDate().isAfter(addAfter))
 					toDB.add(t);
 			}
 			
