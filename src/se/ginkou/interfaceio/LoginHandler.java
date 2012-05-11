@@ -1,3 +1,13 @@
+/**
+ * Handles calls to /login
+ * Responds with JSON with info about login success or failure.
+ * 	"{module: \"" + fileName + "\", accessGranted: true}"
+ * 	for success
+ * 	"{module: \"" + fileName + "\", accessGranted: false}"
+ * 	for failure
+ * 	where fileName is the "module" http-parameter sent with the login request.
+ * @author Frans Tegelmark & Daniel Schlaug
+ */
 package se.ginkou.interfaceio;
 import java.io.BufferedReader;
 import java.io.File;
@@ -92,12 +102,12 @@ public class LoginHandler extends HttpRequestHandler{
 			access = "false";
 		} else {
 			Database db = SQLiteDB.getDB();
-			List<Transaction> toDB = new ArrayList<Transaction>();
-			/*HashSet<Account> sa = new HashSet<Account>();
+			/*List<Transaction> toDB = new ArrayList<Transaction>();
+			
+			HashSet<Account> sa = new HashSet<Account>();
 			for(Transaction t: trans){
 				sa.add(t.getAccount());
 			}
-			
 			HashMap<Account, DateTime> accountStatus = new HashMap<Account, DateTime>();
 			DateTime today = new DateTime();
 			for(Account saInst: sa){

@@ -1,56 +1,54 @@
 package se.ginkou.banking;
-import java.io.File;
+
 import java.io.FileNotFoundException;
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.DateTimePrinter;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
 import org.webharvest.runtime.ScraperContext;
 import org.webharvest.runtime.variables.Variable;
-
 import se.ginkou.Account;
 import se.ginkou.Transaction;
-import se.ginkou.database.Database;
-import se.ginkou.database.SQLiteDB;
+
+/**
+ * @author Frans Tegelmark
+ */
 public class XmlParser {
-	private String xml;
-	private String[] keys;
+	private String xml; // the .xml file with login and scraping rules  
+	private String[] keys; //login credentials
 	
+	/**
+	 * Creates a XmlParser with sufficient data for execution with run().
+	 * @param xmlFile	The .xml file that will be executed with web-harvest.
+	 * @param keys		Array of Strings for credentials. How the Strings are used depends on the .xml file entirely.
+	 */
 	public XmlParser(String xmlFile, String[] keys) {
 		this.xml = xmlFile;
 		this.keys = keys;
 	}
 	
 	 /**
-	  * 
+	  * Executes the .xml
+	  * The keys are provided to the .xml script, named "key_#" with value keys[#]
+	  *  where # is the argument number (starting with 0).
+	  * (Actual behaviour depending on the .xml file)  
 	  * @return null if provided with non-functional keys, else a List of Transactions.
 	  */
 	public List<Transaction> run(){
-		// register external plugins if there are any
-		ArrayList<Transaction> transactions = new ArrayList<Transaction>();
-
+		ArrayList<Transaction> transactions = new ArrayList<Transaction>(); 
 		ScraperConfiguration config;
 		try {
 			config = new ScraperConfiguration(xml);
 			Scraper scraper = new Scraper(config, ".");
 			
-			//scraper.getHttpClientManager().setHttpProxy("localhost", 8888); //Fiddling ;)
+			//scraper.getHttpClientManager().setHttpProxy("localhost", 8888); //for debugging with fiddler2
 			for(int i = 0; i<keys.length; ++i)
-				scraper.addVariableToContext("key_"+i, keys[i]);
-			
-			//scraper.setDebug(true);
-			scraper.execute();	
-			
+				scraper.addVariableToContext("key_"+i, keys[i]);		
+			scraper.execute();				
 			// takes variable created during execution			
-			ScraperContext context = scraper.getContext();
-			//System.out.println(context.size());
-			//System.out.println(context);			
+			ScraperContext context = scraper.getContext();		
 			
 			String accessGranted = ((Variable) context.get("accessGranted")).toString();
 			if(!accessGranted.equals("true"))
@@ -76,15 +74,16 @@ public class XmlParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 		return transactions;
 	}
-
+	
+	/**
+	 * Demo.
+	 * @param args	Not used.
+	 */
 	public static void main(String[] args) {
 		String[] s = {"8702190011","ingetINGET5"};
 		XmlParser parser = new XmlParser("rules/SEB.xml", s);
-		//XmlParser parser = new XmlParser("rules/dummybank.xml", s2);
 		List<Transaction> trans = parser.run();
 		if(trans==null){
 			System.err.println("trans==null");
