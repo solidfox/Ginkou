@@ -1,0 +1,649 @@
+127.0.0.1:38602<->127.0.0.1:2938[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2939[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2940[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2941[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2943[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2942[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2938[ACTIVE]: serving file website\index.html
+127.0.0.1:38602<->127.0.0.1:2938[ACTIVE]: serving file website\lib\jquery.cookie.js
+127.0.0.1:38602<->127.0.0.1:2939[ACTIVE]: serving file website\lib\jquery.dataTables.js
+127.0.0.1:38602<->127.0.0.1:2940[ACTIVE]: serving file website\lib\moment.js
+127.0.0.1:38602<->127.0.0.1:2942[ACTIVE]: serving file website\init.js
+127.0.0.1:38602<->127.0.0.1:2941[ACTIVE]: serving file website\ginkou.js
+127.0.0.1:38602<->127.0.0.1:2943[ACTIVE]: serving file website\css\datatables\demo_table_jui.css
+127.0.0.1:38602<->127.0.0.1:2938[ACTIVE]: serving file website\css\jqueryui\jquery-ui-1.8.19.custom.css
+127.0.0.1:38602<->127.0.0.1:2942[ACTIVE]: serving file website\styles.css
+127.0.0.1:38602<->127.0.0.1:2941[ACTIVE]: serving file website\css\jqueryui\images\ui-bg_glass_65_ffffff_1x400.png
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=2, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=desc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `accountID` desc
+127.0.0.1:38602<->127.0.0.1:2940[ACTIVE]: serving file website\css\jqueryui\images\ui-bg_glass_75_e6e6e6_1x400.png
+127.0.0.1:38602<->127.0.0.1:2938[ACTIVE]: serving file website\css\jqueryui\images\ui-bg_flat_75_ffffff_40x100.png
+java.sql.SQLException: database locked
+	at org.sqlite.DB.execute(DB.java:270)
+	at org.sqlite.DB.executeUpdate(DB.java:281)
+	at org.sqlite.Stmt.executeUpdate(Stmt.java:103)
+	at se.ginkou.database.SQLiteDB.assertTransactionTable(SQLiteDB.java:84)
+	at se.ginkou.database.SQLiteDB.<init>(SQLiteDB.java:54)
+	at se.ginkou.database.SQLiteDB.getDB(SQLiteDB.java:42)
+	at se.ginkou.database.SQLiteDB.getDB(SQLiteDB.java:49)
+	at se.ginkou.interfaceio.DataTablesInterface.<init>(DataTablesInterface.java:36)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:29)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+0.0.0.0:38602<->127.0.0.1:2940[CLOSED]: connection closed
+0.0.0.0:38602<->127.0.0.1:2938[CLOSED]: connection closed
+0.0.0.0:38602<->127.0.0.1:2942[CLOSED]: connection closed
+java.sql.SQLException: database locked
+	at org.sqlite.DB.execute(DB.java:270)
+	at org.sqlite.DB.executeUpdate(DB.java:281)
+	at org.sqlite.Stmt.executeUpdate(Stmt.java:103)
+	at se.ginkou.database.SQLiteDB.assertAccountTable(SQLiteDB.java:102)
+	at se.ginkou.database.SQLiteDB.<init>(SQLiteDB.java:55)
+	at se.ginkou.database.SQLiteDB.getDB(SQLiteDB.java:42)
+	at se.ginkou.database.SQLiteDB.getDB(SQLiteDB.java:49)
+	at se.ginkou.interfaceio.DataTablesInterface.<init>(DataTablesInterface.java:36)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:29)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: database locked
+	at org.sqlite.DB.execute(DB.java:270)
+	at org.sqlite.DB.executeUpdate(DB.java:281)
+	at org.sqlite.Stmt.executeUpdate(Stmt.java:103)
+	at se.ginkou.database.SQLiteDB.assertAccountTable(SQLiteDB.java:102)
+	at se.ginkou.database.SQLiteDB.getAccounts(SQLiteDB.java:209)
+	at se.ginkou.database.AccountDB.updateCache(AccountDB.java:55)
+	at se.ginkou.database.AccountDB.<init>(AccountDB.java:16)
+	at se.ginkou.database.SQLiteDB.<init>(SQLiteDB.java:56)
+	at se.ginkou.database.SQLiteDB.getDB(SQLiteDB.java:42)
+	at se.ginkou.database.SQLiteDB.getDB(SQLiteDB.java:49)
+	at se.ginkou.interfaceio.DataTablesInterface.<init>(DataTablesInterface.java:36)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:29)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: accounts
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.getAccounts(SQLiteDB.java:213)
+	at se.ginkou.database.AccountDB.updateCache(AccountDB.java:55)
+	at se.ginkou.database.AccountDB.<init>(AccountDB.java:16)
+	at se.ginkou.database.SQLiteDB.<init>(SQLiteDB.java:56)
+	at se.ginkou.database.SQLiteDB.getDB(SQLiteDB.java:42)
+	at se.ginkou.database.SQLiteDB.getDB(SQLiteDB.java:49)
+	at se.ginkou.interfaceio.DataTablesInterface.<init>(DataTablesInterface.java:36)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:29)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=0, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=1, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.getTransactions(SQLiteDB.java:230)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:116)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeOfResult(SQLiteDB.java:138)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:121)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `id` asc
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeTransactions(SQLiteDB.java:116)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:133)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+0.0.0.0:38602<->127.0.0.1:2941[CLOSED]: connection closed
+0.0.0.0:38602<->127.0.0.1:2939[CLOSED]: connection closed
+127.0.0.1:38602<->127.0.0.1:2944[ACTIVE]: connection open
+0.0.0.0:38602<->127.0.0.1:2943[CLOSED]: connection closed
+127.0.0.1:38602<->127.0.0.1:2945[ACTIVE]: connection open
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=0, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=1, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `id` asc
+127.0.0.1:38602<->127.0.0.1:2945[ACTIVE]: serving file website\css\jqueryui\images\ui-bg_glass_65_ffffff_1x400.png
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.getTransactions(SQLiteDB.java:230)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:116)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeOfResult(SQLiteDB.java:138)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:121)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeTransactions(SQLiteDB.java:116)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:133)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+File website\favicon.ico not found
+127.0.0.1:38602<->127.0.0.1:2946[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2947[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2948[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2949[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2944[ACTIVE]: serving file website\index.html
+127.0.0.1:38602<->127.0.0.1:2944[ACTIVE]: serving file website\lib\jquery.cookie.js
+127.0.0.1:38602<->127.0.0.1:2945[ACTIVE]: serving file website\lib\jquery.dataTables.js
+127.0.0.1:38602<->127.0.0.1:2946[ACTIVE]: serving file website\lib\moment.js
+127.0.0.1:38602<->127.0.0.1:2947[ACTIVE]: serving file website\ginkou.js
+127.0.0.1:38602<->127.0.0.1:2948[ACTIVE]: serving file website\init.js
+127.0.0.1:38602<->127.0.0.1:2949[ACTIVE]: serving file website\css\datatables\demo_table_jui.css
+127.0.0.1:38602<->127.0.0.1:2944[ACTIVE]: serving file website\css\jqueryui\jquery-ui-1.8.19.custom.css
+127.0.0.1:38602<->127.0.0.1:2947[ACTIVE]: serving file website\styles.css
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=0, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=1, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `id` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=2, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=desc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `accountID` desc
+127.0.0.1:38602<->127.0.0.1:2945[ACTIVE]: serving file website\css\jqueryui\images\ui-bg_flat_75_ffffff_40x100.png
+127.0.0.1:38602<->127.0.0.1:2949[ACTIVE]: serving file website\css\jqueryui\images\ui-bg_glass_75_e6e6e6_1x400.png
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.getTransactions(SQLiteDB.java:230)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:116)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeOfResult(SQLiteDB.java:138)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:121)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeTransactions(SQLiteDB.java:116)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:133)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.getTransactions(SQLiteDB.java:230)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:116)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeOfResult(SQLiteDB.java:138)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:121)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeTransactions(SQLiteDB.java:116)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:133)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+127.0.0.1:38602<->127.0.0.1:2946[ACTIVE]: serving file website\css\jqueryui\images\ui-bg_glass_65_ffffff_1x400.png
+File website\favicon.ico not found
+0.0.0.0:38602<->127.0.0.1:2944[CLOSED]: connection closed
+0.0.0.0:38602<->127.0.0.1:2948[CLOSED]: connection closed
+0.0.0.0:38602<->127.0.0.1:2945[CLOSED]: connection closed
+0.0.0.0:38602<->127.0.0.1:2949[CLOSED]: connection closed
+0.0.0.0:38602<->127.0.0.1:2947[CLOSED]: connection closed
+0.0.0.0:38602<->127.0.0.1:2946[CLOSED]: connection closed
+127.0.0.1:38602<->127.0.0.1:2950[ACTIVE]: connection open
+127.0.0.1:38602<->127.0.0.1:2950[ACTIVE]: serving file website\css\jqueryui\images\ui-bg_glass_75_dadada_1x400.png
+127.0.0.1:38602<->127.0.0.1:2950[ACTIVE]: serving file website\css\jqueryui\images\ui-icons_888888_256x240.png
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=2, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=3, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+java.sql.SQLException: no such table: transactions
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `date` asc
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.getTransactions(SQLiteDB.java:230)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:116)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeOfResult(SQLiteDB.java:138)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:121)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeTransactions(SQLiteDB.java:116)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:133)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=2, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=4, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=desc, undefined=undefined}
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `date` desc
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.getTransactions(SQLiteDB.java:230)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:116)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeOfResult(SQLiteDB.java:138)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:121)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+java.sql.SQLException: no such table: transactions
+	at org.sqlite.DB.throwex(DB.java:288)
+	at org.sqlite.NativeDB.prepare(Native Method)
+	at org.sqlite.DB.prepare(DB.java:114)
+	at org.sqlite.Stmt.executeQuery(Stmt.java:89)
+	at se.ginkou.database.SQLiteDB.sizeTransactions(SQLiteDB.java:116)
+	at se.ginkou.interfaceio.DataTablesInterface.getResponse(DataTablesInterface.java:133)
+	at se.ginkou.interfaceio.DataTablesHandler.handleInternal(DataTablesHandler.java:31)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:47)
+	at se.ginkou.interfaceio.HttpRequestHandler.handle(HttpRequestHandler.java:1)
+	at org.apache.http.nio.protocol.HttpAsyncService.processRequest(HttpAsyncService.java:521)
+	at org.apache.http.nio.protocol.HttpAsyncService.inputReady(HttpAsyncService.java:288)
+	at org.apache.http.impl.nio.DefaultNHttpServerConnection.consumeInput(DefaultNHttpServerConnection.java:199)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:117)
+	at org.apache.http.impl.nio.DefaultHttpServerIODispatch.onInputReady(DefaultHttpServerIODispatch.java:50)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:112)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:160)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:342)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:320)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:604)
+	at java.lang.Thread.run(Unknown Source)
+0.0.0.0:38602<->127.0.0.1:2950[CLOSED]: connection closed
+127.0.0.1:38602<->127.0.0.1:2951[ACTIVE]: connection open
+log4j:WARN No appenders could be found for logger (org.webharvest.definition.XmlParser).
+log4j:WARN Please initialize the log4j system properly.
+LoginHandler finished parsing bank
+LoginHandler finished
+0.0.0.0:38602<->127.0.0.1:2951[CLOSED]: connection closed
+127.0.0.1:38602<->127.0.0.1:2953[ACTIVE]: connection open
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=2, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=5, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `date` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=2, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=6, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=desc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `date` desc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=0, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=7, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `id` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=10, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=8, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=9, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `accountID` asc
+0.0.0.0:38602<->127.0.0.1:2953[CLOSED]: connection closed
+127.0.0.1:38602<->127.0.0.1:2959[ACTIVE]: connection open
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=10, sSearch=s, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%s%' OR `accountID` LIKE '%s%' OR `date` LIKE '%s%' OR `notice` LIKE '%s%' OR `amount` LIKE '%s%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=11, sSearch=se, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%se%' OR `accountID` LIKE '%se%' OR `date` LIKE '%se%' OR `notice` LIKE '%se%' OR `amount` LIKE '%se%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=12, sSearch=seb, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%seb%' OR `accountID` LIKE '%seb%' OR `date` LIKE '%seb%' OR `notice` LIKE '%seb%' OR `amount` LIKE '%seb%') ORDER BY  `accountID` asc
+0.0.0.0:38602<->127.0.0.1:2959[CLOSED]: connection closed
+127.0.0.1:38602<->127.0.0.1:2960[ACTIVE]: connection open
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=13, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=14, sSearch=7, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%7%' OR `accountID` LIKE '%7%' OR `date` LIKE '%7%' OR `notice` LIKE '%7%' OR `amount` LIKE '%7%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=15, sSearch=71, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%71%' OR `accountID` LIKE '%71%' OR `date` LIKE '%71%' OR `notice` LIKE '%71%' OR `amount` LIKE '%71%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=16, sSearch=715, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%715%' OR `accountID` LIKE '%715%' OR `date` LIKE '%715%' OR `notice` LIKE '%715%' OR `amount` LIKE '%715%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=17, sSearch=7150, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%7150%' OR `accountID` LIKE '%7150%' OR `date` LIKE '%7150%' OR `notice` LIKE '%7150%' OR `amount` LIKE '%7150%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=18, sSearch=715, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%715%' OR `accountID` LIKE '%715%' OR `date` LIKE '%715%' OR `notice` LIKE '%715%' OR `amount` LIKE '%715%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=19, sSearch=71, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%71%' OR `accountID` LIKE '%71%' OR `date` LIKE '%71%' OR `notice` LIKE '%71%' OR `amount` LIKE '%71%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=20, sSearch=7, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%7%' OR `accountID` LIKE '%7%' OR `date` LIKE '%7%' OR `notice` LIKE '%7%' OR `amount` LIKE '%7%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=21, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `accountID` asc
+0.0.0.0:38602<->127.0.0.1:2960[CLOSED]: connection closed
+127.0.0.1:38602<->127.0.0.1:2961[ACTIVE]: connection open
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=22, sSearch=^, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%^%' OR `accountID` LIKE '%^%' OR `date` LIKE '%^%' OR `notice` LIKE '%^%' OR `amount` LIKE '%^%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=23, sSearch=^., sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%^.%' OR `accountID` LIKE '%^.%' OR `date` LIKE '%^.%' OR `notice` LIKE '%^.%' OR `amount` LIKE '%^.%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=24, sSearch=^, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%^%' OR `accountID` LIKE '%^%' OR `date` LIKE '%^%' OR `notice` LIKE '%^%' OR `amount` LIKE '%^%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=25, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=26, sSearch=., sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions WHERE (`id` LIKE '%.%' OR `accountID` LIKE '%.%' OR `date` LIKE '%.%' OR `notice` LIKE '%.%' OR `amount` LIKE '%.%') ORDER BY  `accountID` asc
+{bRegex=false, bRegex_0=false, bRegex_1=false, bRegex_2=false, bRegex_3=false, bSearchable_0=true, bSearchable_1=true, bSearchable_2=true, bSearchable_3=true, bSortable_0=true, bSortable_1=true, bSortable_2=true, bSortable_3=true, iColumns=4, iDisplayLength=100, iDisplayStart=0, iSortCol_0=1, iSortingCols=1, mDataProp_0=account, mDataProp_1=date, mDataProp_2=notice, mDataProp_3=amount, sColumns=null, sEcho=27, sSearch=null, sSearch_0=null, sSearch_1=null, sSearch_2=null, sSearch_3=null, sSortDir_0=asc, undefined=undefined}
+sizeOfResult came up with search string: SELECT count(*) FROM transactions  ORDER BY  `accountID` asc
+0.0.0.0:38602<->127.0.0.1:2961[CLOSED]: connection closed

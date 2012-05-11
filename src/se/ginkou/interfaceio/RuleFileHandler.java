@@ -37,7 +37,7 @@ import se.ginkou.banking.XmlParser;
  * "[moduleName2]" : {...},
  * "[moduleName3]" : {...}
  * }
- * @author spike
+ * @author Daniel Schlaug & Frans Tegelmark
  *
  */
 public class RuleFileHandler extends HttpRequestHandler{
