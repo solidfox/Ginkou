@@ -112,14 +112,15 @@ public class LoginHandler extends HttpRequestHandler{
 				toDB.add(new Transaction(a, today, "GinkouLogin", 0));
 			}*/
 			
-			db.clearAllTransactions();
-			for(Transaction t: trans){
+			
+			//for(Transaction t: trans){
 				//DateTime addAfter = accountStatus.get(t.getAccount());
 				//if(addAfter==null || t.getDate().isAfter(addAfter))
-					toDB.add(t);
-			}
+				//	toDB.add(t);
+			//}
 			
-			db.addTransactions(toDB);
+			db.clearAllTransactions();
+			db.addTransactions(trans);
 			responseBody = "{module: \"" + fileName + "\", accessGranted: true}";
 		}
 		NStringEntity body = new NStringEntity(responseBody, "UTF-8");

@@ -21,6 +21,11 @@ body > header h2 {
 	border: none;
 }
 
+.loginModule {
+	width: 200px;
+	height: 140px;
+}
+
 /* @group Sidebar */
 
 /* Room for the sidebar */
