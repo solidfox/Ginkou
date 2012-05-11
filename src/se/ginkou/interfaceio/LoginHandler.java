@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -90,21 +91,29 @@ public class LoginHandler extends HttpRequestHandler{
 			responseBody = "{module: \"" + fileName + "\", accessGranted: false}";
 		} else {
 			Database db = SQLiteDB.getDB();
-			Account oldestAcc = null;
 			HashSet<Account> sa = new HashSet<Account>();
 			for(Transaction t: trans){
 				sa.add(t.getAccount());
 			}
-			DateTime clearDate = (new DateTime()).minusDays(14); 
+			HashMap<Account, DateTime> accountStatus = new HashMap<Account, DateTime>();
+			DateTime defClearDate = (new DateTime()).minusDays(14);
 			for(Account saInst: sa){
-				db.clearAllTransactionsFrom(clearDate, saInst);
+				if(db.getAccounts().contains(saInst)){
+					DateTime latestUpdate = db.getTransactions("SELECT * FROM transactions WHERE accountID IS "+saInst+" ORDER BY date desc LIMIT 1").get(0).getDate();
+					db.clearAllTransactionsFrom(latestUpdate.minusDays(14), saInst);
+					accountStatus.put(saInst, latestUpdate.minusDays(14));
+				}
+				else
+					accountStatus.put(saInst, null);
 			}
-			List<Transaction> l = new ArrayList<Transaction>();
+			List<Transaction> toDB = new ArrayList<Transaction>();
 			for(Transaction t: trans){
-				if(t.getDate().isAfter(clearDate))
-					l.add(t);
+				DateTime addAfter = accountStatus.get(t.getAccount());
+				if(addAfter==null || t.getDate().isAfter(addAfter))
+					toDB.add(t);
 			}
-			db.addTransactions(l);
+			
+			db.addTransactions(toDB);
 			responseBody = "{module: \"" + fileName + "\", accessGranted: true}";
 		}
 		NStringEntity body = new NStringEntity(responseBody, "UTF-8");

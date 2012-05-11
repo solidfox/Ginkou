@@ -15,7 +15,7 @@ GINServer.prototype.post = function (path, data, success, error) {
 		type: "POST",
 		url: this.url+"/"+path,
 		data: data,
-		timeout: 10000,
+		timeout: 20000,
 		success: success,
 		error: error
 	});
@@ -60,6 +60,7 @@ function GINLoginModule(jsonLoginModule) {
 	submitButton.value = "Hämta transaktioner";
 	this.form.appendChild(submitButton);
 	this.form.action = "/";
+	this.element.id = this.module;
 	this.form.loginModule = this;
 	$(this.form).submit( function (event) {
 			event.preventDefault();
@@ -69,12 +70,20 @@ function GINLoginModule(jsonLoginModule) {
 }
 
 GINLoginModule.prototype.login = function () {
+	$(this.form).fadeOut();
 	var formData = "module=" + encodeURIComponent(this.module) + "&" + $(this.form).serialize();
 	gin.server.post("login", formData, 
 			this.success
 		);
 }
 
-GINLoginModule.prototype.success = function () {
-	alert(this.module);
+GINLoginModule.prototype.success = function (jsonResponse) {
+	var element = $(document.getElementById(jsonResponse["module"]));
+	var form = element.getElementsByTagName("form")[0];
+	alert(stringify(element));
+	if (jsonResponse["accessGranted"]) {
+		$(element).append("Transaktioner laddade");
+	} else {
+		form.fadeIn();
+	}
 }
