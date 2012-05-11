@@ -24,6 +24,7 @@ body > header h2 {
 .loginModule {
 	width: 200px;
 	height: 140px;
+	display: inline-block;
 }
 
 /* @group Sidebar */
