@@ -95,8 +95,9 @@ public class LoginHandler extends HttpRequestHandler{
 			for(Transaction t: trans){
 				sa.add(t.getAccount());
 			}
+			List<Transaction> toDB = new ArrayList<Transaction>();
 			HashMap<Account, DateTime> accountStatus = new HashMap<Account, DateTime>();
-			DateTime defClearDate = (new DateTime()).minusDays(14);
+			DateTime today = new DateTime();
 			for(Account saInst: sa){
 				if(db.getAccounts().contains(saInst)){
 					DateTime latestUpdate = db.getTransactions("SELECT * FROM transactions WHERE accountID IS "+saInst+" ORDER BY date desc LIMIT 1").get(0).getDate();
@@ -106,7 +107,9 @@ public class LoginHandler extends HttpRequestHandler{
 				else
 					accountStatus.put(saInst, null);
 			}
-			List<Transaction> toDB = new ArrayList<Transaction>();
+			for(Account a: db.getAccounts()){
+				toDB.add(new Transaction(a, today, "GinkouLogin", 0));
+			}
 			for(Transaction t: trans){
 				DateTime addAfter = accountStatus.get(t.getAccount());
 				if(addAfter==null || t.getDate().isAfter(addAfter))
