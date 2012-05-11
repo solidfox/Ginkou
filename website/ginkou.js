@@ -70,7 +70,7 @@ function GINLoginModule(jsonLoginModule) {
 }
 
 GINLoginModule.prototype.login = function () {
-	$(this.form).slideUp();
+	$(this.form).fadeOut();
 	$(this.element).append("<p class='loading'>Laddar...</p>");
 	var formData = "module=" + encodeURIComponent(this.module) + "&" + $(this.form).serialize();
 	gin.server.post("login", formData, 
@@ -84,6 +84,8 @@ GINLoginModule.prototype.login = function () {
 					gin.historyTable.fnSort( [ [1,'desc'] ] );
 				} else {
 					$(form).fadeIn();
+					$(element).append("<p class='loading'>Fel inloggningsuppgifter.</p>")
+//					$(element).effect("shake", {times:2}, 100);
 				}
 			}
 		);
