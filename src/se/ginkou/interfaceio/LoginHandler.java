@@ -86,11 +86,9 @@ public class LoginHandler extends HttpRequestHandler{
 		XmlParser parser = new XmlParser("rules/"+fileName, args);
 		List<Transaction> trans = parser.run();
 		Debug.out("LoginHandler finished parsing bank");
-		response.setStatusCode(HttpStatus.SC_OK);
+		String responseBody = null;
 		if(trans==null){
-			NStringEntity body = new NStringEntity("{module: \"" + fileName + "\", accessGranted: false}", "UTF-8");
-			body.setContentType("text/json; charset=UTF-8");
-			response.setEntity(body);	
+			responseBody = "{module: \"" + fileName + "\", accessGranted: false}";
 		} else {
 			Database db = SQLiteDB.getDB();
 			HashSet<Account> sa = new HashSet<Account>();
@@ -116,6 +114,10 @@ public class LoginHandler extends HttpRequestHandler{
 			}
 			db.addTransactions(toDB);
 		}
+		NStringEntity body = new NStringEntity(responseBody, "UTF-8");
+		body.setContentType("text/json; charset=UTF-8");
+		response.setEntity(body);	
+		response.setStatusCode(HttpStatus.SC_OK);
 		Debug.out("LoginHandler finished");
 	}
 }

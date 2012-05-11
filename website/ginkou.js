@@ -43,8 +43,13 @@ function GINLoginModule(jsonLoginModule) {
 	this.element.appendChild(this.form);
 	for (var key in jsonLoginModule) {
 		if (key.match(/^key_/)) {
+			var fieldName = jsonLoginModule[key];
 			var field = document.createElement('input');
-			field.type = "text";
+			if (fieldName.match(/(Pas.*)|(Lös.*)|(.*kod.*)/)) {
+				field.type = "password";
+			} else {
+				field.type = "text";
+			}
 			field.name = key;
 			field.placeholder = jsonLoginModule[key];
 			this.form.appendChild(field);
@@ -54,8 +59,22 @@ function GINLoginModule(jsonLoginModule) {
 	submitButton.type = "submit";
 	submitButton.value = "Hämta transaktioner";
 	this.form.appendChild(submitButton);
+	this.form.action = "/";
+	this.form.loginModule = this;
+	$(this.form).submit( function (event) {
+			event.preventDefault();
+			this.loginModule.login();
+			return false;
+		});
 }
 
 GINLoginModule.prototype.login = function () {
-	
+	var formData = "module=" + encodeURIComponent(this.module) + "&" + $(this.form).serialize();
+	gin.server.post("login", formData, 
+			this.success
+		);
+}
+
+GINLoginModule.prototype.success = function () {
+	alert(this.module);
 }

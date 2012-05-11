@@ -21,6 +21,7 @@ $(document).ready(function() {
 		function (loginModules) {
 			for (aModule in loginModules) {
 				var loginModule = new GINLoginModule(loginModules[aModule]);
+				gin.test = loginModule;
 				gin.moduleSheet.appendChild(loginModule.element);
 			}
 		}
