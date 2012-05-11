@@ -96,14 +96,15 @@ public class LoginHandler extends HttpRequestHandler{
 		XmlParser parser = new XmlParser("rules/"+fileName, args);
 		List<Transaction> trans = parser.run();
 		Debug.out("LoginHandler finished parsing bank");
-		String responseBody = null;
+		
+		String access;
 		if(trans==null){
-			responseBody = "{module: \"" + fileName + "\", accessGranted: false}";
+			access = "false";
 		} else {
 			Database db = SQLiteDB.getDB();
-			List<Transaction> toDB = new ArrayList<Transaction>();
+			/*List<Transaction> toDB = new ArrayList<Transaction>();
 			
-			/*HashSet<Account> sa = new HashSet<Account>();
+			HashSet<Account> sa = new HashSet<Account>();
 			for(Transaction t: trans){
 				sa.add(t.getAccount());
 			}
@@ -122,15 +123,19 @@ public class LoginHandler extends HttpRequestHandler{
 				toDB.add(new Transaction(a, today, "GinkouLogin", 0));
 			}*/
 			
-			db.clearAllTransactions();
-			for(Transaction t: trans){
+			
+			//for(Transaction t: trans){
 				//DateTime addAfter = accountStatus.get(t.getAccount());
 				//if(addAfter==null || t.getDate().isAfter(addAfter))
-					toDB.add(t);
-			}
-			db.addTransactions(toDB);
-			responseBody = "{module: \"" + fileName + "\", accessGranted: true}";
+				//	toDB.add(t);
+			//}
+			
+			db.clearAllTransactions();
+			db.addTransactions(trans);
+			access = "true";
 		}
+		
+		String responseBody = "{\"module\": \"" + fileName + "\", \"accessGranted\": " + access + "}";
 		NStringEntity body = new NStringEntity(responseBody, "UTF-8");
 		body.setContentType("text/json; charset=UTF-8");
 		response.setEntity(body);	

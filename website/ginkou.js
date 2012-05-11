@@ -11,7 +11,7 @@ function GINFilter() {
 	Sends a command to the server 
 */
 GINServer.prototype.post = function (path, data, success, error) {
-	$.ajax({
+	return $.ajax({
 		type: "POST",
 		url: this.url+"/"+path,
 		data: data,
@@ -70,20 +70,21 @@ function GINLoginModule(jsonLoginModule) {
 }
 
 GINLoginModule.prototype.login = function () {
-	$(this.form).fadeOut();
+	$(this.form).slideUp();
+	$(this.element).append("<p class='loading'>Laddar...</p>");
 	var formData = "module=" + encodeURIComponent(this.module) + "&" + $(this.form).serialize();
 	gin.server.post("login", formData, 
-			this.success
+			function (response) {
+				var element = document.getElementById(response["module"]);
+				var form = element.getElementsByTagName("form")[0];
+				$(element.getElementsByClassName("loading")).remove();
+				
+				if (response["accessGranted"]) {
+					$(element).append("Transaktioner laddade");
+					gin.historyTable.fnSort( [ [1,'desc'] ] );
+				} else {
+					$(form).fadeIn();
+				}
+			}
 		);
-}
-
-GINLoginModule.prototype.success = function (jsonResponse) {
-	var element = $(document.getElementById(jsonResponse["module"]));
-	var form = element.getElementsByTagName("form")[0];
-	alert(stringify(element));
-	if (jsonResponse["accessGranted"]) {
-		$(element).append("Transaktioner laddade");
-	} else {
-		form.fadeIn();
-	}
 }

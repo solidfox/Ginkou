@@ -1,5 +1,5 @@
 .DS_Store
-test.db*
+*.db*
 bin
 *.esproj
 *.espressostorage
