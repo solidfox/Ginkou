@@ -115,7 +115,9 @@ public class LoginHandler extends HttpRequestHandler{
 				if(addAfter==null || t.getDate().isAfter(addAfter))
 					toDB.add(t);
 			}
+			
 			db.addTransactions(toDB);
+			responseBody = "{module: \"" + fileName + "\", accessGranted: true}";
 		}
 		NStringEntity body = new NStringEntity(responseBody, "UTF-8");
 		body.setContentType("text/json; charset=UTF-8");
