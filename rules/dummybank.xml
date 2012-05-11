@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Dummy bank
-Aqqount name
-PassQode
+Dummy
+Aqqount name: user
+PassQode: pass
 -->
 <config>
     <case>
-        <if condition="${key_0.toString().equals(&quot;dummyuser&quot;) &amp;&amp; key_1.toString().equals(&quot;dummypass&quot;)}">
+        <if condition="${key_0.toString().equals(&quot;user&quot;) &amp;&amp; key_1.toString().equals(&quot;pass&quot;)}">
             <var-def name="accessGranted">true</var-def>
             <var-def name="file">
                 <html-to-xml>
