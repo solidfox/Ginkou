@@ -102,33 +102,33 @@ public class LoginHandler extends HttpRequestHandler{
 			access = "false";
 		} else {
 			Database db = SQLiteDB.getDB();
-			/*List<Transaction> toDB = new ArrayList<Transaction>();
-			
-			HashSet<Account> sa = new HashSet<Account>();
-			for(Transaction t: trans){
-				sa.add(t.getAccount());
-			}
-			HashMap<Account, DateTime> accountStatus = new HashMap<Account, DateTime>();
-			DateTime today = new DateTime();
-			for(Account saInst: sa){
-				if(db.getAccounts().contains(saInst)){
-					DateTime latestUpdate = db.getTransactions("SELECT * FROM transactions WHERE accountID IS "+saInst+" ORDER BY date desc LIMIT 1").get(0).getDate();
-					db.clearAllTransactionsFrom(latestUpdate.minusDays(14), saInst);
-					accountStatus.put(saInst, latestUpdate.minusDays(14));
-				}
-				else
-					accountStatus.put(saInst, null);
-			}
-			for(Account a: db.getAccounts()){
-				toDB.add(new Transaction(a, today, "GinkouLogin", 0));
-			}*/
-			
-			
-			//for(Transaction t: trans){
-				//DateTime addAfter = accountStatus.get(t.getAccount());
-				//if(addAfter==null || t.getDate().isAfter(addAfter))
-				//	toDB.add(t);
-			//}
+//			List<Transaction> toDB = new ArrayList<Transaction>();
+//			
+//			HashSet<Account> sa = new HashSet<Account>();
+//			for(Transaction t: trans){
+//				sa.add(t.getAccount());
+//			}
+//			HashMap<Account, DateTime> accountStatus = new HashMap<Account, DateTime>();
+//			DateTime today = new DateTime();
+//			for(Account saInst: sa){
+//				if(db.getAccounts().contains(saInst)){
+//					DateTime latestUpdate = today;//db.getTransactions("SELECT * FROM transactions WHERE accountID IS "+saInst+" ORDER BY date desc LIMIT 1").get(0).getDate();
+//					db.clearAllTransactionsFrom(latestUpdate.minusDays(14), saInst);
+//					accountStatus.put(saInst, latestUpdate.minusDays(14));
+//				}
+//				else
+//					accountStatus.put(saInst, null);
+//			}
+//			for(Account a: db.getAccounts()){
+//				toDB.add(new Transaction(a, today, "GinkouLogin", 0));
+//			}
+//			
+//			
+//			for(Transaction t: trans){
+//				DateTime addAfter = accountStatus.get(t.getAccount());
+//				if(addAfter==null || t.getDate().isAfter(addAfter))
+//					toDB.add(t);
+//			}
 			
 			db.clearAllTransactions();
 			db.addTransactions(trans);
