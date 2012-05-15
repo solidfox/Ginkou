@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-SWEDBANK
+Swedbank
 Personnummer
 Personlig kod
 -->
 <config>
+    
     <var-def name="login1">
             <http url="https://mobilbank.swedbank.se/banking/swedbank/login.html" method="GET" charset="iso-8859-1">
                 <http-header name="User-Agent"></http-header>
-                <http-param name="xyz"><var name="key_0"/></http-param>
             </http>
     </var-def>
     <var-def name="_csrf_token">
@@ -37,14 +37,17 @@ Personlig kod
                 <http-param name="_csrf_token"><var name="_csrf_token"/></http-param>
             </http>
     </var-def>
-    <var-def name="headerlocation"><template>${http.getHeaders("Location")[0]}</template></var-def>
+    <var-def name="login4">
+            <http url="https://mobilbank.swedbank.se/banking/swedbank/login.html" method="GET" charset="iso-8859-1">
+            </http>
+    </var-def>
     <var-def name="event">
-        <xpath expression="//div[@class='section error']//h2.text()">
-            <html-to-xml><var name="login3"/></html-to-xml>
+        <xpath expression="//div[@id='content']/h1/text()">
+            <html-to-xml><var name="login4"/></html-to-xml>
         </xpath>
     </var-def>
     <case>
-        <if condition="${!event.toString().equals(&quot;Fel&quot;)}">
+        <if condition="${!event.toString().equals(&quot;Mobilbanken&quot;)}">
             <var-def name="accessGranted">true</var-def>
             <!--<var-def name="accountsXml">
                 <html-to-xml>
@@ -132,5 +135,5 @@ Personlig kod
         <else>
             <var-def name="accessGranted">false</var-def>
         </else>
-    </case>  
+    </case>
 </config>
