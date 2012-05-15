@@ -47,7 +47,7 @@ Personlig kod
         </xpath>
     </var-def>
     <case>
-        <if condition="${!event.toString().equals(&quot;Mobilbanken&quot;)}">
+        <if condition="${event.toString().equals(&quot;Mobilbanken&quot;)}">
             <var-def name="accessGranted">true</var-def>
             <!--<var-def name="accountsXml">
                 <html-to-xml>
