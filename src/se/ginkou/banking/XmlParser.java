@@ -82,8 +82,8 @@ public class XmlParser {
 	 * @param args	Not used.
 	 */
 	public static void main(String[] args) {
-		String[] s = {"8702190011","ingetINGET5"};
-		XmlParser parser = new XmlParser("rules/SEB.xml", s);
+		String[] s = {"1992","hemligt"};
+		XmlParser parser = new XmlParser("rules/SWED.xml", s);
 		List<Transaction> trans = parser.run();
 		if(trans==null){
 			System.err.println("trans==null");

@@ -8,7 +8,7 @@ Personlig kod
     
     <var-def name="login1">
             <http url="https://mobilbank.swedbank.se/banking/swedbank/login.html" method="GET" charset="iso-8859-1">
-                <http-header name="User-Agent"></http-header>
+                <http-header name="User-Agent">QON</http-header>
             </http>
     </var-def>
     <var-def name="_csrf_token">
@@ -18,7 +18,7 @@ Personlig kod
     </var-def>
     <var-def name="login2">
             <http url="https://mobilbank.swedbank.se/banking/swedbank/loginNext.html" method="POST" charset="iso-8859-1">
-                <http-header name="User-Agent"></http-header>
+                <http-header name="User-Agent">QON</http-header>
                 <http-param name="xyz"><var name="key_0"/></http-param>
                 <http-param name="auth-method">code</http-param>
                 <http-param name="_csrf_token"><var name="_csrf_token"/></http-param>
@@ -32,13 +32,13 @@ Personlig kod
     </var-def>
     <var-def name="login3">
             <http url="https://mobilbank.swedbank.se/banking/swedbank/login.html" method="POST" charset="iso-8859-1">
-                <http-header name="User-Agent"></http-header>
-                <http-param name="xyz"><var name="key_1"/></http-param>
+                <http-header name="User-Agent">QON</http-header>
+                <http-param name="zyx"><var name="key_1"/></http-param>
                 <http-param name="_csrf_token"><var name="_csrf_token"/></http-param>
             </http>
     </var-def>
     <var-def name="login4">
-            <http url="https://mobilbank.swedbank.se/banking/swedbank/login.html" method="GET" charset="iso-8859-1">
+            <http url="https://mobilbank.swedbank.se/banking/swedbank/menu.html?optionalServices=PAYMENTS&amp;optionalServices=CHANGE_PIN&amp;requestId=1" method="GET" charset="iso-8859-1">
             </http>
     </var-def>
     <var-def name="event">
