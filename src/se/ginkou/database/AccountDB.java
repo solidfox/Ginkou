@@ -5,6 +5,11 @@ import java.util.List;
 
 import se.ginkou.Account;
 
+/**
+ * This class provides functionality for adding and loading accounts
+ * from the database in an effective manner.
+ * @author Daniel Schlaug
+ */
 public class AccountDB {
 
 	// Cache of accounts loaded from database 

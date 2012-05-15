@@ -22,7 +22,7 @@ import se.ginkou.Debug;
 import se.ginkou.Transaction;
 
 /**
- * @author spike
+ * @author Daniel Schlaug
  *
  */
 public class SQLiteDB implements Database {

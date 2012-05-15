@@ -1,6 +1,3 @@
-/**
- * @author Frans Tegelmark
- */
 package se.ginkou.banking;
 
 import java.io.FileNotFoundException;
@@ -15,6 +12,9 @@ import org.webharvest.runtime.variables.Variable;
 import se.ginkou.Account;
 import se.ginkou.Transaction;
 
+/**
+ * @author Frans Tegelmark
+ */
 public class XmlParser {
 	private String xml; // the .xml file with login and scraping rules  
 	private String[] keys; //login credentials

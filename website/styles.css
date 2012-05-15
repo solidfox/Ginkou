@@ -30,6 +30,7 @@ body > header h2 {
 	width: 200px;
 	height: 140px;
 	display: inline-block;
+	vertical-align: top;
 }
 
 .loginModule form {
